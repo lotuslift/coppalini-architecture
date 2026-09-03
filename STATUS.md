@@ -10,8 +10,4 @@
 | Continuum Closure in Covariant LQG v1.1 | **PAPER / criterion stated; model-specific UV test OPEN** | Eq. (44) intentionally remains a calculation for a concrete fixed-point construction. |
 | Compatibility Without Flatness v0.1 | **PAPER / explicit constructive witness** | Zenodo package prepared; no claim that compatibility implies physical flatness. |
 | Coarse-Grained Entropy and Exterior Records v0.1 | **PAPER / bounded theorem note** | Semiclassical black-hole use only; microscopic quantum-gravity entropy and fundamental information recovery remain outside scope. |
-| Language Mechanics | **SEPARATE REPOSITORY PLANNED** | Foundational field formalism intentionally excluded from this public architecture/tooling seed. |
 
-## MoneyRoot version note
-
-A v0.3 source exists in the research corpus, adding a T7 no-least-supplement counterexample. The retained v0.3 handoff marks its Lean elaboration as **OPEN**. It is therefore not promoted into this initial public seed. v0.2 is the latest version included here with a clean elaboration receipt.
