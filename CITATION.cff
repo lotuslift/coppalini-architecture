@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "For research claims, please cite the specific paper/result when possible; cite this repository for the Coppalini Architecture software and method collection."
+title: "Coppalini Architecture"
+type: software
+authors:
+  - family-names: "Coppa"
+    given-names: "Anthony Vito"
+version: 0.1.0
+date-released: 2026-09-02
+abstract: >-
+  Formal interface-audit tools, proof kernels, methodology, and selected research
+  applications for preserving definitions, constraints, evidence, and claim
+  boundaries across transformations and representations.
+keywords:
+  - formal methods
+  - interface audit
+  - reference preservation
+  - reader sufficiency
+  - proof receipts
+  - C++20
+  - Lean
+  - mathematical physics

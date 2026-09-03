@@ -1,0 +1,28 @@
+# Local build products
+build/
+*.o
+*.out
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

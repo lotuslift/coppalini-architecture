@@ -1,0 +1,664 @@
+\documentclass[aps,prd,reprint,nofootinbib,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,array}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+\newcommand{\Hkin}{\mathcal H_{\mathrm{kin}}}
+\newcommand{\Hphys}{\mathcal H_{\mathrm{phys}}}
+\newcommand{\D}{\mathcal D}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\phys}{\mathrm{phys}}
+\newcommand{\TT}{\mathrm{TT}}
+\newcommand{\UV}{\mathrm{UV}}
+\newcommand{\IR}{\mathrm{IR}}
+\newcommand{\id}{\mathbf 1}
+
+\begin{document}
+
+\title{Continuum Closure in Covariant Loop Quantum Gravity: Compatibility, Physical-State Refinement, and the Spin-Two Sector}
+
+\author{A. V. Coppa}
+\affiliation{Coppalini Architecture}
+\date{2 September 2026}
+
+\begin{abstract}
+Obtaining a four-dimensional continuum theory from covariant loop quantum gravity requires more than convergence of spin-foam amplitudes. A viable refinement limit must glue local discrete geometric descriptions consistently, descend through the gravitational constraints to physical states, and retain the propagating spin-two sector of general relativity. Recent results sharpen this problem: sufficiently strong normalizable refinement can collapse to a topological theory, whereas distributional refinement admits a rigging-map construction of the physical state space; independently, Lorentzian EPRL amplitudes admit curved Regge sectors and perturbative continuum analyses recover the massless transverse-traceless graviton pole. The missing piece is an exact compatibility criterion that can close the discrete description without imposing flatness on the physical connection.
+
+We formulate that criterion for local frame and boundary-geometric data carried by neighboring cells of a spin-foam discretization. Group-valued transition maps define non-Abelian cocycle defects, while transported bivector and induced-geometry residuals test agreement across shared faces. Their common zero locus defines exact gluing. Because these residuals compare local descriptions after transport rather than constrain the curvature-bearing face holonomy, compatibility closure does not impose dynamical flatness. An earlier explicit continuum construction, \emph{Motion and Difference}, supplies a direct witness of this separation: exact gluing coexists with nonzero curvature, nontrivial holonomy, and unequal proper time.
+
+Refinement is then required to preserve the compatibility transport and the chosen observable readout before passage to the distributional physical state space. The resulting closure criterion is non-erasing: compatibility defects vanish while a spin-two-resolving physical observable satisfies $\mathcal W_2[\mathcal G_{\phys}]\neq0$. Thus a topological limit is excluded as an acceptable gravitational closure even when its coarse amplitudes converge. For the completed compatibility transport $G_e$, the cocycle structure closes around the boundary of each compatibility two-cell as $\overrightarrow{\prod_{e\subset\partial f}}G_e=I$, while the physical connection holonomy may remain nontrivial. Under the stated distributional-refinement and infrared spin-two hypotheses, the remaining ultraviolet test is model-specific: identify a physical deformation whose two-point function has nonzero spin-two residue.
+\end{abstract}
+
+\maketitle
+
+\section{Problem and result}
+
+Canonical loop quantum gravity (LQG) provides a background-independent quantization of geometry in terms of holonomies and fluxes, with spin-network states furnishing the standard kinematical basis \cite{AshtekarLewandowski2004,AshtekarBianchi2021}. Covariant dynamics is encoded by spin-foam amplitudes, in particular the Lorentzian Engle--Pereira--Rovelli--Livine (EPRL) model, whose boundary states are the $\SU(2)$ spin networks of the canonical theory \cite{EnglePereiraRovelli2007,Perez2013}.
+
+A continuum construction must satisfy several logically distinct requirements:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+\item local descriptions must define one compatible discrete geometry;
+\item the gravitational constraints must select the physical sector;
+\item dependence on the chosen discretization must be removed;
+\item physical observables must survive the quotient and continuum limit;
+\item the long-distance theory must retain the propagating spin-two sector of general relativity.
+\end{enumerate}
+No one item substitutes for the others. In particular, convergence of amplitudes is not by itself sufficient: a continuum limit can converge so strongly that the resulting theory becomes topological \cite{BrunoEtAl2026}.
+
+The argument below keeps the corresponding interfaces explicit. Compatibility of neighboring descriptions is tested without imposing a flatness condition on the physical connection; removal of discretization dependence is separated from passage to the physical quotient; and passage to the physical quotient is separated from the observable test of spin-two survival.
+
+The new step developed here is the compatibility layer. Local frame changes are assigned group-valued transition maps; their cocycle defects detect failure of atlas consistency, while transported bivector and induced-geometry residuals detect failure of neighboring cells to assign the same boundary geometry. The common zero locus defines exact gluing. This construction is then composed with three established ingredients: the EPRL constrained-BF gravitational sector, the distributional continuum construction of Bruno \emph{et al.} \cite{BrunoEtAl2026}, and the perturbative spin-two continuum sector of Dittrich and Kogios \cite{DittrichKogios2023}. The resulting criterion has the form
+\begin{equation}
+\boxed{
+\mathcal F_{\mathrm{comp}}=0,
+\qquad
+\mathcal W_2[\mathcal G_{\phys}]\neq0.
+}
+\label{eq:maincriterion}
+\end{equation}
+The first condition says that the descriptions close; the second says that the target massless spin-two sector survives that closure.
+
+A final distinction is essential. Let $U_e$ denote the physical connection transport around a curvature-bearing dual face and let $G_e$ denote the completed compatibility transport between already matched local descriptions. In general,
+\begin{equation}
+H_f^{\phys}:=\overrightarrow{\prod_{e\subset\partial f_{\phys}}}U_e
+\label{eq:physicalhol}
+\end{equation}
+need not equal the identity. By contrast, after compatibility has been established, the transition product around the boundary of a compatibility two-cell satisfies
+\begin{equation}
+\boxed{
+\overrightarrow{\prod_{e\subset\partial f_{\mathrm{comp}}}}G_e=I.
+}
+\label{eq:master}
+\end{equation}
+Equation \eqref{eq:master} is therefore a closure relation for the completed description, not a flatness condition on the physical gravitational connection.
+
+\section{Canonical boundary data and covariant amplitudes}
+
+Let $\Gamma$ be an oriented graph with $E(\Gamma)$ links. Before imposing gauge invariance at the nodes, the graph Hilbert space is
+\begin{equation}
+\mathcal H_{\Gamma}
+=
+L^2\!\left(\SU(2)^{E(\Gamma)},d\mu_H^{E(\Gamma)}\right),
+\label{eq:Hgamma}
+\end{equation}
+with $d\mu_H$ the Haar measure. Gauge-invariant spin-network states assign an irreducible representation $j\in\frac12\mathbb N_0$ to each link and an invariant intertwiner to each node. Cylindrical consistency over graphs gives the standard Ashtekar--Lewandowski kinematical Hilbert space $\Hkin$ \cite{AshtekarLewandowski2004}.
+
+The Lorentzian EPRL model uses $\SL(2,\C)$ in the bulk and $\SU(2)$ spin networks on the boundary. In the conventional unitary-principal-series notation, the simplicity map selects
+\begin{equation}
+\rho=\gamma j,
+\qquad
+k=j,
+\label{eq:EPRLmap}
+\end{equation}
+where $\gamma$ is the Barbero--Immirzi parameter \cite{Perez2013}. Thus canonical boundary states and covariant amplitudes already share a representation-theoretic interface.
+
+For a two-complex or triangulation $\Delta$ with boundary graph $\Gamma$, write the regulated amplitude schematically as
+\begin{equation}
+Z_{\Delta}:\mathcal D_{\Gamma}\longrightarrow\C,
+\label{eq:ZDelta}
+\end{equation}
+where $\mathcal D_{\Gamma}$ is a suitable dense boundary domain. Refinement changes $\Delta$ and generally changes $Z_{\Delta}$. The continuum problem asks for a regulator-independent physical object obtained from a directed family of such amplitudes.
+
+\section{Compatibility of local discrete descriptions}
+\label{sec:compatibility}
+
+\subsection{Transition maps and cocycle defects}
+
+Consider a finite family of local cells or patches $\{U_\alpha\}$ adapted to a spin-foam discretization. Each cell carries a local frame for the discrete geometric data. On a nonempty overlap $U_\alpha\cap U_\beta$, let
+\begin{equation}
+G_{\alpha\beta}:U_\alpha\cap U_\beta\longrightarrow\mathsf G
+\label{eq:transition}
+\end{equation}
+be the change of local frame, with $\mathsf G=\SL(2,\C)$ in the Lorentzian bulk or $\SU(2)$ on the canonical boundary. Indices are ordered so that $G_{\alpha\beta}$ transports data from the $\beta$ frame to the $\alpha$ frame. We assume
+\begin{equation}
+G_{\beta\alpha}=G_{\alpha\beta}^{-1}.
+\label{eq:inverse-transition}
+\end{equation}
+On a triple overlap define the non-Abelian cocycle defect
+\begin{equation}
+C_{\alpha\beta\gamma}
+:=
+G_{\alpha\beta}G_{\beta\gamma}G_{\gamma\alpha}.
+\label{eq:cocycledefect}
+\end{equation}
+Atlas consistency is the exact condition
+\begin{equation}
+\boxed{C_{\alpha\beta\gamma}=I}
+\qquad
+\text{on every nonempty triple overlap.}
+\label{eq:cocyclezero}
+\end{equation}
+Under a change of local frames $h_\alpha$, the transitions transform as
+\begin{equation}
+G_{\alpha\beta}\mapsto h_\alpha G_{\alpha\beta}h_\beta^{-1},
+\end{equation}
+so
+\begin{equation}
+C_{\alpha\beta\gamma}
+\mapsto
+h_\alpha C_{\alpha\beta\gamma}h_\alpha^{-1}.
+\label{eq:cocyclegauge}
+\end{equation}
+Hence the zero locus \eqref{eq:cocyclezero} is independent of the chosen local frames.
+
+The following finite lemma makes the content explicit.
+
+\paragraph{Lemma 1 (finite non-Abelian compatibility on a sparse 2-complex).}
+Let $K$ be a connected finite two-dimensional cell complex with oriented edge data $G_e\in\mathsf G$ satisfying $G_{\bar e}=G_e^{-1}$. If an oriented path is listed in traversal order as $\ell=(e_1,\ldots,e_n)$, write its transport as $G_\ell:=G_{e_n}\cdots G_{e_1}$. Suppose the ordered product around the boundary of every oriented two-cell $f\subset K$ is the identity,
+\begin{equation}
+G_{\partial f}
+:=
+\overrightarrow{\prod_{e\subset\partial f}}G_e
+=I.
+\label{eq:facecocycle}
+\end{equation}
+Then on every connected simply connected subcomplex $K_0\subseteq K$ there exist vertex frames $s_v\in\mathsf G$, unique up to common right multiplication, such that for every oriented edge $e:u\to v$ in $K_0$,
+\begin{equation}
+\boxed{G_e=s_v s_u^{-1}.}
+\label{eq:puregaugeframes}
+\end{equation}
+In particular, if $K$ is simply connected, the factorization holds globally.
+
+\emph{Proof.}
+Choose a base vertex $v_0$ and a spanning tree $T$ of $K_0$. Set $s_{v_0}=I$ and, for each vertex $v$, define $s_v$ to be the ordered transport along the unique tree path from $v_0$ to $v$, using $G_{\bar e}=G_e^{-1}$ when an edge is traversed against its orientation. Thus for every tree edge $e:u\to v$, one has $s_v=G_e s_u$, which is equivalent to \eqref{eq:puregaugeframes}. For an edge $e:u\to v$ not in $T$, the tree path from $v_0$ to $u$, followed by $e$, followed by the reverse tree path from $v$ to $v_0$, is a closed loop. Because every oriented face-boundary word is mapped to $I$, edge-word transport is invariant under the elementary two-cell homotopies and therefore factors through the fundamental groupoid of $K_0$. Since $K_0$ is simply connected, every closed edge loop represents the identity in $\pi_1(K_0,v_0)$ and hence has transport $I$. Applied to the loop just described, this gives
+\begin{equation}
+s_v^{-1}\,G_e\,s_u=I,
+\end{equation}
+which is equivalent to \eqref{eq:puregaugeframes}. If $\{t_v\}$ is a second factorization, then $s_v^{-1}t_v$ is constant along every edge; connectedness gives $t_v=s_v k$ for one $k\in\mathsf G$. \hfill$\square$
+
+For a simplicial nerve, each two-cell is a triangle and \eqref{eq:facecocycle} is exactly the cocycle condition \eqref{eq:cocyclezero}. Completeness of the one-skeleton is not required. The lemma says only that trivial compatibility transport around the faces makes the transition data pure gauge on any simply connected region. Its role is limited and precise: it characterizes compatibility of frame changes, not the physical curvature of the gravitational connection.
+
+\subsection{Transported bivector and induced-geometry matching}
+
+Cocycle consistency alone does not guarantee that neighboring cells assign the same geometry to a shared boundary. Let cells $v$ and $v'$ meet at a common face $f$. Suppose $X_{vf}$ and $X_{v'f}$ are local representatives of the same geometric datum in the two frames. Let $G_{v'v}$ carry the $v$ frame into the $v'$ frame and let $\rho_X$ be the relevant representation. Define
+\begin{equation}
+\Delta^X_{vv'f}
+:=
+X_{v'f}
+-
+\varepsilon_{vv'f}\,\rho_X(G_{v'v})X_{vf},
+\label{eq:Xdefect}
+\end{equation}
+where $\varepsilon_{vv'f}=\pm1$ records the chosen relative orientation convention. Exact transported matching is
+\begin{equation}
+\boxed{\Delta^X_{vv'f}=0.}
+\label{eq:Xmatch}
+\end{equation}
+
+For bivectors one may write
+\begin{equation}
+\Delta^B_{vv'f}
+=
+B_{v'f}
+-
+\varepsilon_{vv'f}\,\Ad_{G_{v'v}}B_{vf}.
+\label{eq:Bdefect}
+\end{equation}
+For the induced intrinsic geometry of the shared face, after both local descriptions have been expressed in one frame, define
+\begin{equation}
+\Delta^q_{vv'f}
+:=
+q_f^{(v')}-q_f^{(v)}.
+\label{eq:qdefect}
+\end{equation}
+The distinction is standard in discrete LQG geometry: twisted geometries can be locally well defined while adjacent local patches fail to glue into a single Regge geometry, and shape-matching conditions select the Regge subsector \cite{FreidelSpeziale2010}.
+
+Equations \eqref{eq:Bdefect} and \eqref{eq:qdefect} therefore test two distinct compatibility conditions. The bivector residual tests transported geometric agreement in the chosen representation; the induced-geometry residual tests whether the common face has one intrinsic geometry rather than two locally compatible but mutually twisted descriptions.
+
+\subsection{The compatibility zero locus}
+
+Choose positive auxiliary norms on the finite-dimensional spaces in which the defects are evaluated. For the noncompact Lorentzian group the numerical norm is auxiliary; only the simultaneous zero locus will be used. Define
+\begin{align}
+\mathcal F_{\mathrm{comp}}
+:= {}&
+\sum_{\alpha\beta\gamma}
+ w_{\alpha\beta\gamma}
+ \|C_{\alpha\beta\gamma}-I\|^2
+\notag\\
+&+
+\lambda_B\sum_{vv'f}\|\Delta^B_{vv'f}\|^2
++
+\lambda_q\sum_{vv'f}\|\Delta^q_{vv'f}\|^2,
+\label{eq:Fcomp}
+\end{align}
+with strictly positive weights. Then
+\begin{equation}
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\iff
+\begin{cases}
+C_{\alpha\beta\gamma}=I,\\
+\Delta^B_{vv'f}=0,\\
+\Delta^q_{vv'f}=0,
+\end{cases}}
+\label{eq:Fcompzero}
+\end{equation}
+throughout the finite complex under consideration.
+
+No numerical value of \eqref{eq:Fcomp} away from zero is assigned invariant physical meaning here. The statement used below is exactly the zero-locus statement \eqref{eq:Fcompzero}.
+
+\section{Exact gluing does not imply flatness}
+\label{sec:glueflat}
+
+The compatibility conditions above constrain how local descriptions fit together. They do not set the physical connection curvature to zero. This distinction is already explicit in a continuum gauge construction developed in Ref.~\cite{CoppaMotionDifference2026}. There, a positive gluing functional $\mathcal F_\Lambda$ satisfies
+\begin{equation}
+\mathcal F_\Lambda=0
+\label{eq:oldglue}
+\end{equation}
+exactly when the local section, connection, and transition-map defects vanish, while an explicit Lorentzian realization simultaneously has, for its $\SO(2)$ gauge curvature $F=dA$,
+\begin{equation}
+F\neq0,
+\qquad
+\operatorname{Hol}_A(\ell)\neq I,
+\qquad
+\Delta\tau\neq0.
+\label{eq:oldnonzero}
+\end{equation}
+Within that family, the global holonomy can be varied while the nonzero curvature is held fixed, and the proper-time difference is controlled independently by the chosen endpoint-sharing paths. Thus exact gluing is compatible with nonzero curvature, nontrivial global holonomy, and unequal proper time. The quantities in \eqref{eq:oldnonzero} have different codomains and are not identified with one another.
+
+The same logical separation is required in a spin-foam setting. Let the physical connection transport around a dual face $f$ be
+\begin{equation}
+H_f^{\phys}
+:=
+\overrightarrow{\prod_{e\subset\partial f}}U_e.
+\label{eq:Hphysface}
+\end{equation}
+The condition $H_f^{\phys}=I$ is a flatness condition on that physical transport. It is not the compatibility condition \eqref{eq:Fcompzero}. Therefore
+\begin{equation}
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\quad\centernot\Longrightarrow\quad
+H_f^{\phys}=I.
+}
+\label{eq:notflat}
+\end{equation}
+
+This is not merely a logical possibility. Lorentzian EPRL amplitudes admit curved Regge configurations with nonzero deficit angles in the semiclassical regime \cite{HanEtAl2022}. In those configurations the amplitude is governed by the Regge action plus higher-curvature corrections. Compatibility of the local discrete geometry is therefore not purchased by requiring the physical curvature to vanish.
+
+\section{Gravitational-sector selection and curved EPRL geometry}
+
+The distinction between topological BF theory and gravity is carried by the simplicity constraints. In the EPRL construction, the simplicity map selects a constrained gravitational sector of the Lorentzian BF carrier \cite{EnglePereiraRovelli2007,Perez2013}. Schematically,
+\begin{equation}
+\mathcal H_{\mathrm{BF}}
+\xrightarrow{\ \mathcal S_\gamma\ }
+\mathcal H_{\mathrm{grav}}.
+\label{eq:simplicity}
+\end{equation}
+The simplicity map is not part of the compatibility functional \eqref{eq:Fcomp}; it has a different type and a different physical role.
+
+Han, Huang, Liu, and Qu identified dominant complex critical points of large-$j$ Lorentzian EPRL amplitudes corresponding to curved Regge geometries with small nonzero deficit angles \cite{HanEtAl2022}. In the relevant semiclassical regime,
+\begin{equation}
+\begin{aligned}
+Z_\Delta&\sim\exp\!\left(i\mathcal I_\Delta\right),\\
+\mathcal I_\Delta&=S_{\mathrm{Regge}}[\Delta]
++\text{higher-curvature corrections}.
+\end{aligned}
+\label{eq:curvedEPRL}
+\end{equation}
+Thus curvature can live inside the constrained gravitational sector. The compatibility problem and the curvature problem are not two names for one obstruction.
+
+The correct order is therefore
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{local consistency}
+\xrightarrow{\mathcal F_{\mathrm{comp}}=0}
+\text{global discrete carrier}\\[-0.5mm]
+\xrightarrow{\mathcal S_\gamma}
+\text{gravitational sector}.
+\end{gathered}
+}
+\label{eq:order}
+\end{equation}
+with $H_f^{\phys}$ left free to encode the physical curvature of that sector.
+
+\section{Refinement and the physical-state quotient}
+\label{sec:refinement}
+
+\subsection{Refinement must preserve transport and readout}
+
+Let $\Delta\preceq\Delta'$ denote refinement and let
+\begin{equation}
+\iota_{\Delta\Delta'}:
+\mathcal D_\Delta\longrightarrow\mathcal D_{\Delta'}
+\label{eq:refmap}
+\end{equation}
+be the corresponding boundary refinement map. Denote by $T_\Delta$ the compatibility transport induced on the local compatibility data at scale $\Delta$. The minimum refinement requirement used here is the commuting square
+\begin{equation}
+\boxed{
+\iota_{\Delta\Delta'}\circ T_\Delta
+=
+T_{\Delta'}\circ\iota_{\Delta\Delta'}.
+}
+\label{eq:transportcommute}
+\end{equation}
+Equation \eqref{eq:transportcommute} says that refining the representation of a transported datum and transporting its refined representative describe the same compatibility relation.
+
+Likewise an observable readout cannot depend on which regulator representative was used. If $r_\Delta$ is the chosen readout map at scale $\Delta$, its refinement law must factor through a map $\bar\iota_{\Delta\Delta'}$ on readout space:
+\begin{equation}
+\boxed{
+r_{\Delta'}\circ\iota_{\Delta\Delta'}
+=
+\bar\iota_{\Delta\Delta'}\circ r_\Delta.
+}
+\label{eq:readoutcommute}
+\end{equation}
+These equations are not asserted as automatic properties of every spin-foam refinement scheme. They are the interface conditions required for a refinement sequence to preserve the compatibility statement and the observable used to certify physical survival.
+
+\subsection{Strong convergence and the topological obstruction}
+
+Bruno, Colafranceschi, Mele, and Rovelli give a model-independent analysis of the spin-foam continuum limit \cite{BrunoEtAl2026}. Under natural assumptions, sufficiently strong convergence of the amplitude net in the inductive Hilbert space yields a TQFT-type continuum. A four-dimensional continuum intended to retain propagating gravitational degrees of freedom therefore cannot require every refined amplitude to converge as an ordinary normalizable vector of the kinematical inductive limit.
+
+The weakened construction is distributional. For a boundary $\Sigma$, choose a Gelfand triple
+\begin{equation}
+\mathcal D_\Sigma
+\subset
+\mathcal H_\Sigma^{\mathrm{ind}}
+\subset
+\mathcal D_\Sigma'.
+\label{eq:gelfand}
+\end{equation}
+The refined amplitude may converge in $\mathcal D_\Sigma'$ rather than strongly in $\mathcal H_\Sigma^{\mathrm{ind}}$. For the cylinder, the continuum amplitude defines a rigging map
+\begin{equation}
+P_\Sigma:\mathcal D_\Sigma\longrightarrow\mathcal D_\Sigma',
+\label{eq:rigging}
+\end{equation}
+and the corresponding physical space is
+\begin{equation}
+\boxed{
+\mathcal H_\Sigma^{\phys}
+=
+\overline{\mathcal D_\Sigma/\ker P_\Sigma}.
+}
+\label{eq:Hphys}
+\end{equation}
+The quotient in \eqref{eq:Hphys} is crucial. Equality of physical states is equality of equivalence classes, not equality of all kinematical representatives.
+
+Let
+\begin{equation}
+q_{\phys}:\mathcal D_\Sigma\to\mathcal H_\Sigma^{\phys}
+\end{equation}
+be the quotient map. Then for $\chi\in\ker P_\Sigma$,
+\begin{equation}
+q_{\phys}(\phi)=q_{\phys}(\phi+\chi),
+\label{eq:quotienteq}
+\end{equation}
+while a physical observable may still distinguish inequivalent classes. This is the appropriate level at which the ultraviolet and infrared sectors must be compared.
+
+\section{A sufficiently resolving physical observable}
+\label{sec:spin2}
+
+A physical-state construction does not by itself establish gravitational dynamics. The continuum criterion must include an observable capable of distinguishing the propagating mode that the theory is required to retain.
+
+Dittrich and Kogios analyzed the Area Regge action on a regular centrally subdivided hypercubical lattice and extracted its continuum limit order by order in the lattice spacing $a$ \cite{DittrichKogios2023}. To leading order, the length-metric sector reproduces the graviton dynamics of linearized general relativity. After the additional non-length-metric degrees of freedom are integrated out, the next correction to the effective action is second order in $a$ and quadratic in the linearized Weyl curvature. Schematically,
+\begin{align}
+S_{\mathrm{eff}}^{(2)}
+={}&
+S_{\mathrm{EH}}^{(2)}
++a^2c_W\int d^4x\,
+C^{(1)}_{\mu\nu\rho\sigma}
+C^{(1)\mu\nu\rho\sigma}
+\notag\\
+&+\text{higher-order terms}.
+\label{eq:Seff}
+\end{align}
+After gauge reduction the radiative perturbation is transverse and traceless,
+\begin{equation}
+\partial_i h_{ij}^{\TT}=0,
+\qquad
+h_{ii}^{\TT}=0,
+\label{eq:TT}
+\end{equation}
+and carries the two helicity-two polarizations. The corresponding long-distance two-point function has the massless spin-two pole
+\begin{equation}
+\mathcal G_{\TT}(k)
+\sim
+\frac{P_{\TT}(k)}{Z_hk^2}
+\qquad(k^2\to0),
+\label{eq:gravitonpole}
+\end{equation}
+where $P_{\TT}$ is the transverse-traceless projector. Earlier spin-foam metric-correlation calculations recover the expected perturbative graviton behavior in controlled large-spin/vertex expansions \cite{BianchiMagliaroPerini2009}.
+
+Define the physical spin-two residue
+\begin{equation}
+\boxed{
+\mathcal W_2[\mathcal G]
+:=
+\lim_{k^2\to0}
+ k^2P_{\TT}(k)
+ \mathcal G(k)
+ P_{\TT}(k).
+}
+\label{eq:W2}
+\end{equation}
+The continuum-survival condition is
+\begin{equation}
+\boxed{
+\mathcal W_2[\mathcal G_{\phys}]\neq0.
+}
+\label{eq:W2nonzero}
+\end{equation}
+A scalar partition function, trace, or coarse amplitude may be exactly defined and still be too coarse to certify \eqref{eq:W2nonzero}. The observable used to claim physical survival must resolve the structure claimed to survive.
+
+Combining Sections~\ref{sec:compatibility}--\ref{sec:spin2} gives the non-erasing closure criterion
+\begin{equation}
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\quad\land\quad
+\mathcal W_2[\mathcal G_{\phys}]\neq0.
+}
+\label{eq:nonerasing}
+\end{equation}
+Equation \eqref{eq:nonerasing} excludes a purely topological endpoint as an acceptable gravitational continuum even if its coarse amplitudes converge.
+
+\section{The ultraviolet fixed point and the model-specific matching test}
+\label{sec:UV}
+
+Han's 2026 construction considers the complete Lorentzian covariant LQG amplitude obtained by summing spin-foam amplitudes over two-complexes \cite{Han2026}. Spin-network stacks and their covariant spin-foam stacks organize that sum into families. At a candidate ultraviolet small-spin fixed point, the complete amplitude reduces to a topological theory at leading order and the triangulation ambiguity is reduced to finitely many boundary coefficients.
+
+The first propagating corrections occur away from the leading topological fixed point. We write their structure schematically as
+\begin{equation}
+\mathscr A(A)
+=
+\mathscr A_*
++A^{-1}Z_1^{\UV}
++O(A^{-2}),
+\label{eq:UVexpansion}
+\end{equation}
+where \eqref{eq:UVexpansion} is only notation for the first nontrivial deformation sector, not an identification of $Z_1^{\UV}$ with any independently defined geometric scalar or operator.
+
+The model-specific ultraviolet test is therefore
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{the complete amplitude satisfies the}\\
+\text{distributional physical-state hypotheses},\\[1mm]
+Z_1^{\UV}\longmapsto [Z_1^{\UV}]_{\phys},\\[1mm]
+[Z_1^{\UV}]_{\phys}
+\ \text{contains a component } Z_1^{(2)},\\[1mm]
+\mathcal W_2[\mathcal G_{Z_1^{(2)}}]\neq0.
+\end{gathered}}
+\label{eq:open}
+\end{equation}
+Here $[Z_1^{\UV}]_{\phys}$ denotes the physical class induced by the deformation after the constraints and gauge redundancies have been removed; the arrow is schematic notation for passage through the rigging-map/quotient construction, not an additional projection operator. The object $\mathcal G_{Z_1^{(2)}}$ is the physical two-point function induced by the spin-two component.
+
+The first line of \eqref{eq:open} is not automatic: Ref.~\cite{BrunoEtAl2026} supplies a model-independent distributional construction, while Ref.~\cite{Han2026} supplies a specific complete ultraviolet amplitude. The literature has not yet shown that the latter realizes all hypotheses of the former on the required physical boundary domain. Nor has the relevant subleading deformation been directly matched to the infrared spin-two sector. The target of the calculation is nevertheless fixed by \eqref{eq:W2nonzero}.
+
+This distinction prevents an open model-specific calculation from being promoted into a gap in the compatibility theorem itself. If \eqref{eq:open} is satisfied, the candidate ultraviolet construction is directly joined to the established infrared gravitational mode. If every relevant physical deformation has vanishing spin-two residue, that ultraviolet realization does not flow to ordinary four-dimensional graviton dynamics.
+
+\section{Compatibility closure theorem}
+\label{sec:closure}
+
+We can now state the result in the order in which each ingredient has been earned.
+
+\paragraph{Theorem 2 (non-erasing continuum closure).}
+Consider a directed family of covariant loop-gravity discretizations satisfying the following hypotheses:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+\item at each scale, neighboring local frames and boundary data satisfy the exact compatibility condition \eqref{eq:Fcompzero};
+\item the gravitational sector is selected by the stated EPRL simplicity construction;
+\item refinement preserves the compatibility transport and observable readout through \eqref{eq:transportcommute} and \eqref{eq:readoutcommute};
+\item the refinement limit satisfies the distributional hypotheses yielding the physical quotient \eqref{eq:Hphys};
+\item the physical two-point function satisfies the spin-two survival condition \eqref{eq:W2nonzero}.
+\end{enumerate}
+Then the compatibility relation and the spin-two survival criterion compose on the physical refinement chain without imposing a flatness equation on the physical connection. In particular,
+\begin{equation}
+\mathcal F_{\mathrm{comp}}=0
+\quad\centernot\Longrightarrow\quad
+H_f^{\phys}=I.
+\end{equation}
+
+Let $K_{\mathrm{comp}}$ denote the two-skeleton of the compatibility nerve determined by the transition data. For every connected simply connected subcomplex $K_0\subseteq K_{\mathrm{comp}}$, Lemma~1 gives vertex frames on $K_0$. Hence every closed oriented edge loop $\ell=(e_1,\ldots,e_n)\subset K_0$ satisfies
+\begin{equation}
+G_{\ell}
+:=
+G_{e_n}\cdots G_{e_1}
+=I.
+\label{eq:telescope}
+\end{equation}
+In particular, for every compatibility two-cell $f\subset K_0$,
+\begin{equation}
+\boxed{
+\overrightarrow{\prod_{e\subset\partial f}}G_e=I.
+}
+\label{eq:finalmaster}
+\end{equation}
+
+\emph{Proof.}
+Hypothesis (i) gives exact compatibility at each scale. Hypothesis (ii) places the dynamical data in the constrained gravitational sector without replacing compatibility by a flatness condition. Hypothesis (iii) preserves the compatibility transport and observable readout under refinement, while hypothesis (iv) carries the construction to the physical quotient. Hypothesis (v) supplies a nonzero physical spin-two witness on that quotient. Thus the joint criterion \eqref{eq:nonerasing} is well defined along the stated physical refinement chain. On the compatibility two-complex, the face cocycle condition and simple connectivity of $K_0$ give the spanning-tree factorization of Lemma~1; ordered composition around any closed loop in $K_0$ then telescopes, and the boundary of a compatibility two-cell gives \eqref{eq:finalmaster}. No step identifies $G_e$ with the physical connection transport $U_e$, so Eq.~\eqref{eq:finalmaster} places no condition $H_f^{\phys}=I$ on the curvature-bearing gravitational holonomy. \hfill$\square$
+
+The theorem can be displayed in the verification order
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{local geometric data}
+\xrightarrow{\ \mathcal F_{\mathrm{comp}}=0\ }
+\text{compatible discrete carrier}\\[-0.5mm]
+\xrightarrow{\ \mathcal S_\gamma\ }
+\text{gravitational sector}\\[-0.5mm]
+\xrightarrow{\ \text{refinement}\ }
+\mathcal H^{\phys}
+\xrightarrow{\ \mathcal W_2\neq0\ }
+\text{spin-two survival}\\[-0.5mm]
+\xrightarrow{\ \text{compatibility closure}\ }
+\overrightarrow{\prod_{\partial f}}G_e=I.
+\end{gathered}}
+\label{eq:wholechain}
+\end{equation}
+The last equality is the retained compatibility closure, displayed only after the physical spin-two content has been independently certified.
+
+\section{Discussion}
+
+The continuum problem in covariant LQG is often phrased as a single demand to remove the regulator. The results assembled here show why that formulation is too coarse. A useful continuum construction must distinguish at least three kinds of closure.
+
+First, local geometric descriptions must be mutually compatible; the cocycle, transported bivector, and induced-geometry residuals test this requirement. Second, gravitational-sector selection and gauge/constraint reduction must be handled by the simplicity map, the rigging map, and the quotient by $\ker P_\Sigma$. Third, the continuum theory must retain a nontrivial gravitational observable, certified here by the transverse-traceless two-point function and its nonzero spin-two residue.
+
+The compatibility functional is therefore deliberately not a curvature functional. Setting it to zero removes descriptive mismatch, not physical gravitational curvature. That distinction is independently witnessed by the explicit continuum gauge example of Ref.~\cite{CoppaMotionDifference2026} and by the existence of curved Regge sectors in Lorentzian EPRL amplitudes \cite{HanEtAl2022}. The same distinction prevents the final product \eqref{eq:finalmaster} from being misread as a return to BF flatness: the product is taken over compatibility transitions, not over the physical connection transports of Eq.~\eqref{eq:Hphysface}.
+
+The distributional refinement result of Bruno \emph{et al.} and the ultraviolet fixed point of Han address complementary sides of the continuum problem \cite{BrunoEtAl2026,Han2026}. The former identifies how a physical Hilbert space can arise without the strong-convergence topological collapse. The latter supplies a concrete complete-amplitude ultraviolet organization whose leading bulk is topological. Their direct composition is not yet established. Equation \eqref{eq:open} gives the required model-specific test after the physical quotient, where the relevant deformation must be evaluated by an observable capable of resolving the spin-two mode.
+
+No identification is made here between the refinement parameter $A^{-1}$ in the ultraviolet expansion, the lattice spacing $a^2$ in the Area Regge continuum expansion, a curvature scalar, or a compatibility residual. They belong to distinct constructions until an explicit dynamical map relates them.
+
+\section{Conclusion}
+
+A four-dimensional gravitational continuum requires more than convergence. Local descriptions must glue, the gravitational constraints must select the correct physical sector, refinement must descend to a physical quotient, and the continuum observable algebra must retain the massless transverse-traceless spin-two mode.
+
+The compatibility construction introduced here isolates the first requirement without consuming the others. Non-Abelian cocycle defects test the frame atlas; transported bivector and induced-geometry residuals test shared-face agreement; their simultaneous zero locus defines exact gluing. This closure does not impose physical flatness. The physical connection may retain nontrivial holonomy and curvature, and the physical continuum must retain nonzero spin-two residue.
+
+Under the stated refinement and physical-state hypotheses, these conditions compose into a non-erasing continuum criterion,
+\begin{equation}
+\mathcal F_{\mathrm{comp}}=0,
+\qquad
+\mathcal W_2[\mathcal G_{\phys}]\neq0,
+\end{equation}
+followed by the exact compatibility closure
+\begin{equation}
+\boxed{
+\overrightarrow{\prod_{e\subset\partial f}}G_e=I.
+}
+\end{equation}
+The unresolved ultraviolet step is then conditional and model-specific: determine whether the complete covariant amplitude admits the distributional physical-state construction and whether at least one relevant physical deformation has nonzero spin-two residue. The compatibility theorem itself does not require that calculation to be assumed in advance.
+
+\begin{acknowledgments}
+The author used generative language-model tools for editorial assistance, source organization, and algebraic cross-checking. Every mathematical statement, citation, interpretation, and conclusion was reviewed by the author, who accepts full responsibility for the manuscript.
+\end{acknowledgments}
+
+\begin{thebibliography}{99}
+
+\bibitem{AshtekarLewandowski2004}
+A. Ashtekar and J. Lewandowski,
+``Background independent quantum gravity: A status report,''
+Class. Quantum Grav. \textbf{21}, R53 (2004),
+doi:10.1088/0264-9381/21/15/R01.
+
+\bibitem{AshtekarBianchi2021}
+A. Ashtekar and E. Bianchi,
+``A short review of loop quantum gravity,''
+Rep. Prog. Phys. \textbf{84}, 042001 (2021),
+doi:10.1088/1361-6633/abed91.
+
+\bibitem{EnglePereiraRovelli2007}
+J. Engle, R. Pereira, and C. Rovelli,
+``The loop-quantum-gravity vertex amplitude,''
+Phys. Rev. Lett. \textbf{99}, 161301 (2007),
+doi:10.1103/PhysRevLett.99.161301.
+
+\bibitem{Perez2013}
+A. Perez,
+``The spin-foam approach to quantum gravity,''
+Living Rev. Relativ. \textbf{16}, 3 (2013),
+doi:10.12942/lrr-2013-3.
+
+\bibitem{FreidelSpeziale2010}
+L. Freidel and S. Speziale,
+``Twisted geometries: A geometric parametrization of $\SU(2)$ phase space,''
+Phys. Rev. D \textbf{82}, 084040 (2010),
+doi:10.1103/PhysRevD.82.084040.
+
+\bibitem{HanEtAl2022}
+M. Han, Z. Huang, H. Liu, and D. Qu,
+``Complex critical points and curved geometries in four-dimensional Lorentzian spinfoam quantum gravity,''
+Phys. Rev. D \textbf{106}, 044005 (2022),
+doi:10.1103/PhysRevD.106.044005.
+
+\bibitem{DittrichKogios2023}
+B. Dittrich and A. Kogios,
+``From spin foams to area metric dynamics to gravitons,''
+Class. Quantum Grav. \textbf{40}, 095011 (2023),
+doi:10.1088/1361-6382/acc5d9.
+
+\bibitem{BianchiMagliaroPerini2009}
+E. Bianchi, E. Magliaro, and C. Perini,
+``LQG propagator from the new spin foams,''
+Nucl. Phys. B \textbf{822}, 245 (2009),
+doi:10.1016/j.nuclphysb.2009.07.016.
+
+\bibitem{BrunoEtAl2026}
+M. Bruno, E. Colafranceschi, F. M. Mele, and C. Rovelli,
+``Structure of the continuum limit of spin foams,''
+Phys. Rev. D, accepted 5 August 2026,
+doi:10.1103/7493-9nb7; arXiv:2603.16999 [gr-qc].
+
+\bibitem{Han2026}
+M. Han,
+``Ultraviolet fixed point in covariant loop quantum gravity,''
+Phys. Rev. D \textbf{114}, 044040 (2026),
+doi:10.1103/d8s7-jqfl.
+
+\bibitem{CoppaMotionDifference2026}
+A. V. Coppa,
+``Motion and Difference,''
+Coppalini Architecture preprint (2026).
+
+\end{thebibliography}
+
+\end{document}

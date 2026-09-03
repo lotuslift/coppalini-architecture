@@ -1,0 +1,21 @@
+name: core-checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-and-cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: MIRROR_CUT regression
+        run: make test-python
+      - name: C++20 compile-time kernels
+        run: make test-cpp
+      - name: Verify pinned MoneyRoot source hash
+        run: |
+          echo "97795336a5156fe7301609649967a0d2f35fa18f6eb906f4aba8bbe095284f47  tools/moneyroot/MoneyRoot_v0_2.lean" | sha256sum -c -

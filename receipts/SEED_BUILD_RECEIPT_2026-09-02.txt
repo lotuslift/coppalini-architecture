@@ -1,0 +1,62 @@
+COPPALINI ARCHITECTURE — PUBLIC REPOSITORY SEED BUILD RECEIPT
+Date: 2026-09-02 (author local date)
+Scope: local repository assembly and executable regression checks
+
+TOOLS OBSERVED
+Python: 3.13.5
+GCC:    g++ (Debian 14.2.0-19) 14.2.0
+Clang:  clang 17.0.0
+Git:    2.47.3
+Lean:   not present in this build container; no new Lean elaboration claim is made here.
+
+CHECK 1 — MIRROR_CUT
+Command:
+  cd tools/mirror-cut && python3 test_mirror_cut.py
+Result:
+  PASS: 12 protocol checks + 64 D4 transport pairs
+Status:
+  COMPUTED / regression PASS in the encoded finite test domain.
+
+CHECK 2 — C++20 ATOMIC REFERENCE KERNEL / GCC
+Command:
+  g++ -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Werror \
+    tools/cpp/atomic_reference_kernel.cpp -o build/atomic_reference_kernel
+  build/atomic_reference_kernel
+Result:
+  exit 0; no compiler diagnostics
+Status:
+  COMPUTED / compile-time witnesses accepted by GCC 14.2.0.
+
+CHECK 3 — C++20 CLAIM MOTION GATE / GCC
+Command:
+  g++ -std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Werror \
+    tools/cpp/claim_motion_gate.cpp -o build/claim_motion_gate
+  build/claim_motion_gate
+Result:
+  exit 0; no compiler diagnostics
+Status:
+  COMPUTED / compile-time witnesses accepted by GCC 14.2.0.
+
+CHECK 4 — C++20 KERNELS / CLANG
+Both sources were compiled and executed with the same warning-as-error discipline under Clang 17.0.0.
+Result:
+  exit 0; no compiler diagnostics
+Status:
+  COMPUTED / independent compiler pass.
+
+CHECK 5 — MONEYROOT v0.2 SOURCE IDENTITY
+Repository source SHA-256:
+  97795336a5156fe7301609649967a0d2f35fa18f6eb906f4aba8bbe095284f47  MoneyRoot_v0_2.lean
+Pinned toolchain SHA-256:
+  302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b  lean-toolchain
+
+The independent retained v0.2 Lean receipt is included at:
+  tools/moneyroot/receipts/LEAN_RECEIPT_SUMMARY_v0_2.txt
+
+That prior receipt records Lean 4.33.0 elaboration exit code 0, source hash identity before/after the run, empty stdout/stderr, no sorry/admit/user-written axiom matches, and an explicit axiom-dependency review.
+
+IMPORTANT BOUNDARY
+This seed build did not rerun Lean because Lean is not installed in this container. The repository therefore preserves the prior exact receipt rather than fabricating a new one.
+
+REPOSITORY HASH LEDGER
+See receipts/SHA256SUMS for the current source/document hashes.

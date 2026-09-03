@@ -1,0 +1,214 @@
+\documentclass[aps,prd,reprint,nofootinbib,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\Iplus}{\mathscr I^+}
+\newcommand{\BH}{\mathrm{BH}}
+\newcommand{\ext}{\mathrm{ext}}
+
+\begin{document}
+
+\title{Coarse-Grained Entropy and Exterior Records:\\Compatible Microstates and a Reconstruction Boundary for Semiclassical Black Holes}
+
+\author{A. V. Coppa}
+\affiliation{Coppalini Architecture}
+\date{2 September 2026}
+
+\begin{abstract}
+Let $\pi:\Gamma\to M$ be a declared coarse-graining from microscopic states to macrostates. For a macrostate $m$, the compatible-state fiber $\mathcal E(m)=\pi^{-1}(m)$ retains the microscopic distinctions unresolved by that read, and a supplied measure $\mu$ gives the Boltzmann multiplicity $\Omega(m)=\mu(\mathcal E(m))$ and entropy $S_B(m)=k_B\ln\Omega(m)$. We isolate the corresponding reconstruction boundary: if an upstream record map identifies two histories, every downstream reader of that record identifies them as well. Applied to a black-hole exterior record, this gives a limited statement about record resolution only. Hawking temperature and Bekenstein-Hawking entropy are taken as semiclassical inputs; no microscopic state count, evaporation model, or quantum-gravity dynamics is derived. We close by locating the result relative to the loop-quantum-gravity black-hole entropy program, whose quantum-geometric microstate constructions address a strictly deeper input problem than the record theorem considered here.
+\end{abstract}
+
+\maketitle
+
+\section{Coarse-graining and compatible microstates}
+
+Let $\Gamma$ be a microscopic state space and $M$ a macroscopic state space. A coarse-graining is a declared map
+\begin{equation}
+\pi:\Gamma\longrightarrow M.
+\label{eq:coarse}
+\end{equation}
+For $\gamma\in\Gamma$, write $m=\pi(\gamma)$. The states compatible with the same macro-read form the fiber
+\begin{equation}
+\boxed{\mathcal E(m):=\pi^{-1}(m).}
+\label{eq:fiber}
+\end{equation}
+Thus $\pi(\gamma_1)=\pi(\gamma_2)$ places $\gamma_1$ and $\gamma_2$ in one macrostate class. It leaves their microscopic equality as a separate question.
+
+Let $\mu$ be the physical counting measure, phase-space measure, or other measure appropriate to the admitted statistical model. When
+\begin{equation}
+0<\Omega(m):=\mu(\mathcal E(m))<\infty,
+\end{equation}
+the Boltzmann entropy is
+\begin{equation}
+\boxed{S_B(m)=k_B\ln\Omega(m).}
+\label{eq:boltzmann}
+\end{equation}
+The logical order is therefore
+\begin{equation}
+\begin{aligned}
+\text{microstate carrier}
+&\xrightarrow{\ \pi\ }
+\text{macrostate}
+\longrightarrow
+\text{compatible fiber}\\
+&\longrightarrow
+\text{multiplicity}
+\longrightarrow
+\text{entropy}.
+\end{aligned}
+\label{eq:chain}
+\end{equation}
+Equation \eqref{eq:boltzmann} is a numerical read of the multiplicity left compatible with the declared macrostate. The map $\pi$, the fiber $\mathcal E(m)$, the measure $\mu$, and the number $S_B(m)$ occupy distinct roles.
+
+\paragraph{Proposition 1 (macrostate resolution).}
+If $\pi(\gamma_1)=\pi(\gamma_2)$, every quantity that factors only through $\pi$ assigns the same value to $\gamma_1$ and $\gamma_2$.
+
+\emph{Proof.}
+For any $r:M\to Y$,
+\begin{equation}
+r(\pi(\gamma_1))=r(\pi(\gamma_2)).
+\end{equation}
+The statement is simply functoriality of equality through the downstream map $r$. \hfill$\square$
+
+This elementary point becomes load-bearing whenever a coarse description is promoted into a claim about the microscopic history that produced it.
+
+\section{The record-reconstruction boundary}
+
+Let $\mathcal X$ be a class of states or histories, let $\Sigma$ be a record space, and let
+\begin{equation}
+P:\mathcal X\longrightarrow\Sigma
+\label{eq:recordmap}
+\end{equation}
+be the map that writes the record available to a downstream observer or procedure.
+
+\paragraph{Theorem 2 (record no-reconstruction).}
+Suppose $x_1,x_2\in\mathcal X$ satisfy
+\begin{equation}
+P(x_1)=P(x_2).
+\label{eq:samerecord}
+\end{equation}
+Then every downstream reader $R:\Sigma\to Y$ satisfies
+\begin{equation}
+\boxed{R(P(x_1))=R(P(x_2)).}
+\label{eq:downstream}
+\end{equation}
+Consequently, if a promised target read $\tau:\mathcal X\to Z$ distinguishes the pair,
+\begin{equation}
+\tau(x_1)\neq\tau(x_2),
+\end{equation}
+there is no map $R:\Sigma\to Z$ such that $R\circ P=\tau$ on both $x_1$ and $x_2$.
+
+\emph{Proof.}
+Equation \eqref{eq:samerecord} and functionality of $R$ give Eq.~\eqref{eq:downstream}. If $R\circ P=\tau$ held on both inputs, Eq.~\eqref{eq:downstream} would imply $\tau(x_1)=\tau(x_2)$, contradicting the stated target distinction. \hfill$\square$
+
+The theorem concerns the resolving power of a specified record. It says nothing about distinctions retained elsewhere in the full dynamics, nor about whether a richer record map exists.
+
+\section{Semiclassical black-hole specialization}
+
+For an asymptotically appropriate spacetime, write the black-hole region and future event horizon as
+\begin{equation}
+\mathcal B_{\BH}=M_{\rm spacetime}\setminus J^-(\Iplus),
+\qquad
+\mathcal H^+_{\BH}=\partial J^-(\Iplus).
+\label{eq:horizon}
+\end{equation}
+Classical black-hole mechanics supplies the horizon first-law structure \cite{BardeenCarterHawking1973}; quantum field theory on the black-hole background supplies the Hawking temperature \cite{Hawking1975}, and the semiclassical entropy law reads \cite{Bekenstein1973,Hawking1975}
+\begin{equation}
+T_H=\frac{\kappa_H}{2\pi},
+\qquad
+\boxed{S_{\BH}=\frac{A_H}{4}}
+\label{eq:BHlaw}
+\end{equation}
+in natural units $G=\hbar=c=k_B=1$.
+
+Equation \eqref{eq:BHlaw} is used here as an input relation. It assigns an entropy to the semiclassical horizon area. Complete recovery of an interior history is a different problem because it requires a record map and a decoder with the corresponding resolution.
+
+Let
+\begin{equation}
+P_{\ext}:\mathcal X_{\rm full}\longrightarrow\Sigma_{\ext}
+\label{eq:extrecord}
+\end{equation}
+be any explicitly specified exterior-record map. If
+\begin{equation}
+P_{\ext}(h_1)=P_{\ext}(h_2),
+\end{equation}
+then Theorem 2 gives, for every reader $R_{\ext}:\Sigma_{\ext}\to Y$,
+\begin{equation}
+R_{\ext}P_{\ext}(h_1)=R_{\ext}P_{\ext}(h_2).
+\label{eq:exttheorem}
+\end{equation}
+Thus the specified exterior record cannot by itself reconstruct a distinction already identified by its own upstream map.
+
+This conclusion is deliberately narrower than a statement about fundamental information loss. Unitary evolution, tracing over inaccessible degrees of freedom, evaporation, Page-curve behavior, and microscopic horizon dynamics are different physical questions. The theorem fixes only the information available from the declared record $P_{\ext}$.
+
+\section{Microscopic boundary: loop quantum gravity}
+
+Loop quantum gravity addresses an upstream problem that the preceding argument leaves supplied: what quantum-geometric microscopic degrees of freedom account for black-hole entropy? Early LQG state-counting constructions identify horizon degrees of freedom and recover an entropy proportional to area \cite{Rovelli1996,AshtekarEtAl1998}; subsequent work sharpened the counting of horizon states \cite{DomagalaLewandowski2004}. Han's analytic-continuation construction instead defines a black-hole partition function in LQG and recovers the Bekenstein-Hawking leading term from the quantum-geometric framework \cite{Han2014}.
+
+The relation between the two layers can therefore be stated positively:
+\begin{align}
+\boxed{\text{QG microstates}\longrightarrow\text{state count}\longrightarrow S_{\BH}},
+\label{eq:boundaryA}\\
+\boxed{\text{exterior record}\longrightarrow\text{record-limited reconstruction}}.
+\label{eq:boundaryB}
+\end{align}
+The first line is the microscopic construction problem. The second is the record-resolution theorem proved here. A complete black-hole information theory requires additional dynamical structure connecting these layers; no such completion is asserted in this note.
+
+\section{Conclusion}
+
+A coarse-graining map determines a fiber of compatible microscopic states. Boltzmann entropy reads the measured multiplicity of that fiber. A record map determines which distinctions remain available to every downstream reader of that record. At a semiclassical black-hole horizon, these facts supply a precise bookkeeping boundary while leaving the microscopic origin of $S_{\BH}$ and the dynamics of quantum information to the quantum-gravity theory that carries them.
+
+\begin{acknowledgments}
+The author used generative language-model tools for editorial consolidation, source organization, and algebraic cross-checking. Every mathematical statement, citation, boundary, and conclusion was reviewed by the author, who accepts full responsibility for the manuscript.
+\end{acknowledgments}
+
+\begin{thebibliography}{99}
+
+\bibitem{BardeenCarterHawking1973}
+J. M. Bardeen, B. Carter, and S. W. Hawking,
+``The four laws of black hole mechanics,''
+Commun. Math. Phys. \textbf{31}, 161--170 (1973),
+doi:10.1007/BF01645742.
+
+\bibitem{Bekenstein1973}
+J. D. Bekenstein,
+``Black holes and entropy,''
+Phys. Rev. D \textbf{7}, 2333--2346 (1973),
+doi:10.1103/PhysRevD.7.2333.
+
+\bibitem{Hawking1975}
+S. W. Hawking,
+``Particle creation by black holes,''
+Commun. Math. Phys. \textbf{43}, 199--220 (1975),
+doi:10.1007/BF02345020.
+
+\bibitem{Rovelli1996}
+C. Rovelli,
+``Black hole entropy from loop quantum gravity,''
+Phys. Rev. Lett. \textbf{77}, 3288--3291 (1996),
+doi:10.1103/PhysRevLett.77.3288.
+
+\bibitem{AshtekarEtAl1998}
+A. Ashtekar, J. Baez, A. Corichi, and K. Krasnov,
+``Quantum geometry and black hole entropy,''
+Phys. Rev. Lett. \textbf{80}, 904--907 (1998),
+doi:10.1103/PhysRevLett.80.904.
+
+\bibitem{DomagalaLewandowski2004}
+M. Domagala and J. Lewandowski,
+``Black hole entropy from quantum geometry,''
+Class. Quantum Grav. \textbf{21}, 5233--5244 (2004),
+doi:10.1088/0264-9381/21/22/014.
+
+\bibitem{Han2014}
+M. Han,
+``Black hole entropy in loop quantum gravity, analytic continuation, and dual holography,''
+arXiv:1402.2084 [gr-qc] (2014).
+
+\end{thebibliography}
+
+\end{document}

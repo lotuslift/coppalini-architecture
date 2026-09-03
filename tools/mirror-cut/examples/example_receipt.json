@@ -1,0 +1,13 @@
+{
+  "tool": "MIRROR_CUT",
+  "version": "0.1.0",
+  "tolerance_stage": 1,
+  "reference_digest": "ebb6ff3075e00f49a5389d6333615971fd231b4b24b2b1a8d53802f99b333275",
+  "candidate_digest": "eac16883e5b6a3b8fcf8e5c2ec8453258733b63ccd698f0da8ae87682b32ad66",
+  "prior_receipt_digest": null,
+  "classification": "Exact",
+  "gate": "can",
+  "findings": [],
+  "proposed_reference_digest": null,
+  "receipt_digest": "5f7eb53a179eb426db5b8850f966f5bbe9f231f8cd52cc78fbdfcc0a5db21cbc"
+}

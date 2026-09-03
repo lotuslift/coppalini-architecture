@@ -1,0 +1,120 @@
+MoneyRoot v0.2 — Lean Elaboration Receipt (human-readable)
+============================================================
+
+MANIFEST CHECK (sha256sum -c HANDOFF_MANIFEST.sha256):
+  MoneyRoot_v0_2.lean:          OK
+  lean-toolchain:                OK
+  LEAN_RECEIPT_SUMMARY_v0_1.txt: OK
+  CLAUDE_V0_2_HANDOFF.md:        OK
+
+SOURCE FILE:         MoneyRoot_v0_2.lean
+SOURCE SHA-256:       97795336a5156fe7301609649967a0d2f35fa18f6eb906f4aba8bbe095284f47   (matches manifest)
+
+TOOLCHAIN FILE:       lean-toolchain
+TOOLCHAIN SHA-256:     302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b   (identical to v0.1 — no re-download needed)
+TOOLCHAIN SELECTOR:   leanprover/lean4:v4.33.0
+
+LEAN VERSION (exact):
+  Lean (version 4.33.0, x86_64-unknown-linux-gnu,
+  commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+
+COMMAND RUN:          lean MoneyRoot_v0_2.lean
+EXIT CODE:            0
+
+STDOUT:               <empty — 0 bytes — sha256 e3b0c442...b855, the hash of the empty string>
+STDERR:               <empty — 0 bytes — sha256 e3b0c442...b855, the hash of the empty string>
+  (Empty output on exit 0 is the correct signature of a fully clean
+   elaboration with zero errors, warnings, or 'sorry' notices.)
+
+POST-RUN INTEGRITY CHECK:
+  MoneyRoot_v0_2.lean re-hashed after the run: 97795336a5156fe7301609649967a0d2f35fa18f6eb906f4aba8bbe095284f47
+  -> identical to the pre-run hash above. Source was not modified.
+
+GREP FOR sorry / admit / axiom IN SOURCE:
+  0 matches.
+
+AXIOM DEPENDENCY CHECK (empirical, via `#print axioms`, run on a separate
+scratch copy — the certified MoneyRoot_v0_2.lean above was never edited):
+  T1_injective_iff_read_equality_reflects_state ............ no axioms
+  T2_factorization_iff_fiber_refinement ..................... Quot.sound only
+  T2_eqkernel_inclusion_iff_fiber_refinement ................ no axioms
+  T4_left_inverse_implies_injective ......................... no axioms
+  T6_supplement_sufficient_iff_joint_equalities ............. no axioms
+  T6_sufficient_supplement_separates_residual_pair .......... no axioms
+  T6_decision_read_is_sufficient_supplement ................. no axioms
+  T6_trivial_supplement_iff_base_sufficient ................. no axioms
+  T6_info_trans .............................................. no axioms
+  PriceSchema.collision ...................................... no axioms
+
+  Quot.sound is one of Lean's three built-in kernel primitives for
+  quotient types (the others being propext and Classical.choice) — it is
+  not an optional or "smuggled" axiom, and every theorem that goes through
+  ReadQuot/Quot.lift needs it. No theorem anywhere in the file — T1-T6 or
+  the schema witnesses — depends on propext or Classical.choice. All of
+  T6 specifically is axiom-free: SupplementSufficient is defined directly
+  via FiberRefines/JointRead, without routing through the Quot apparatus
+  at all.
+
+STATUS:               LEAN_ELABORATION = CERTIFIED  (v0.2, T6 included)
+SCOPE:                 Certifies only elaboration of the supplied pure
+                       theorem kernel under the pinned toolchain. Does not
+                       certify any empirical economic or legal adapter, and
+                       does not certify existence of a canonical minimum
+                       supplement (that remains an open, separately-typed
+                       question — see semantic review below).
+
+
+SEMANTIC REVIEW OF T6 (as requested)
+============================================================
+
+1. Direction of SupplementSufficient's fiber refinement — CORRECT.
+   SupplementSufficient R S D := FiberRefines (JointRead R S) D means:
+   whenever R x = R y AND S x = S y, then D x = D y. That's exactly
+   "the joint read is fine enough to determine D," which is what
+   "S is a sufficient supplement to R for D" should mean. The unpacked
+   form (T6_supplement_sufficient_iff_joint_equalities) confirms this via
+   Prod.ext / congrArg Prod.fst / congrArg Prod.snd in both directions —
+   checked, both directions are valid.
+
+2. Orientation of ReadNoMoreInformative S T — CORRECT, and the stated
+   equivalence in the doc comment is accurate. The definition
+   (∀ x y, T x = T y → S x = S y) does mean "every equality T preserves,
+   S also preserves" — and by contraposition, "every distinction S makes,
+   T also makes," i.e. T is at least as informative as S. Reflexivity and
+   transitivity are both proved and both actually preserve that direction
+   under inspection (T6_info_trans correctly chains h23 then h12, not the
+   reverse) — this is a genuine, correctly-oriented preorder.
+
+3. Classical choice / decidable equality / stronger structure — NONE
+   found in T1-T6. Confirmed by direct axiom inspection (table above), not
+   just by reading: only Quot.sound appears, only in the one theorem that
+   needs it, and it's a Lean kernel primitive, not Mathlib or classical
+   logic. `DecidableEq`/`decide` appear only inside the four schema
+   witness namespaces, confined to concrete finite illustrations, never
+   inside T1-T6 themselves.
+
+4. "Decision is its own sufficient supplement" — CORRECTLY labeled as an
+   existence upper bound. T6_decision_read_is_sufficient_supplement shows
+   SupplementSufficient R D D holds trivially (D trivially determines D),
+   and the doc comment explicitly disclaims that this says nothing about
+   D being an appropriate observable or policy input. That's accurate: the
+   result is real but circular in the practical sense, and the source
+   doesn't oversell it as anything more.
+
+5. No-canonical-minimum stop line — MATHEMATICALLY WARRANTED, not just a
+   cautious hedge. ReadNoMoreInformative is proved reflexive and
+   transitive, i.e. a genuine preorder — but a preorder alone does not
+   generally have a least element among "sufficient supplements" without
+   more structure: you'd need a specific candidate class (e.g. a fixed
+   type of allowed supplements) and a proof that class has meets/infima
+   under this order. Two sufficient supplements can be incomparable, and
+   nothing in T6 constructs a canonical "meet" of two reads. Stopping
+   here rather than asserting a minimizer is the correct call, not an
+   understatement.
+
+Net read: v0.2 does what the handoff says it does. T1-T5 unchanged and
+still standard function/fiber facts, not novel to money. T6 is a real,
+correctly-typed, axiom-light (mostly axiom-free) formalization of "what
+must a supplement preserve to fix an insufficiency," and it stops exactly
+where a canonical-minimum claim would have required unjustified extra
+structure. No naming, direction, or strength issues found.

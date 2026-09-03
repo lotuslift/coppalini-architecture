@@ -1,0 +1,73 @@
+CONTINUUM CLOSURE IN COVARIANT LOOP QUANTUM GRAVITY
+CANONICAL v1.1 — FINAL POLISH RECEIPT
+Date: 2 September 2026
+Affiliation: Coppalini Architecture
+
+PARENT SNAPSHOT
+---------------
+CONTINUUM_CLOSURE_COVARIANT_LQG_CANONICAL_v1_0.pdf
+SHA-256: f72805f17ee1c09d6248c93e35ac25b422ca0540bd915d00543bcf0a2664f126
+
+CONTINUUM_CLOSURE_COVARIANT_LQG_CANONICAL_v1_0.tex
+SHA-256: f429343135abc5bbd3e7c1a79e1e5f352837e7fa35234a15826a64ed8fd3da47
+
+FINAL POLISH SCOPE
+------------------
+No theorem, hypothesis set, cited physical result, compatibility functional,
+spin-two criterion, ultraviolet matching test, or terminal compatibility
+product was structurally changed.
+
+The pass was restricted to external-facing precision and local notation:
+
+1. Replaced the remaining "declared physical reader/read" language with
+   conventional observable-readout terminology.
+2. Renamed the refinement readout map q_Delta -> r_Delta and the local label
+   eq:readercommute -> eq:readoutcommute, avoiding collision with q_phys.
+3. Replaced "physical-state closure" with the more precise "passage to the
+   physical quotient" where that is the operation actually used.
+4. Tightened the interpretation of W_2 != 0 from generic "gravitational
+   dynamics survives" to the exact claim that the target massless spin-two
+   sector survives.
+5. Replaced "contractible compatibility face" with "compatibility two-cell"
+   / its boundary, matching the sparse two-complex theorem actually proved.
+6. Replaced "compatibility holonomy" with "compatibility transport" in the
+   post-Lemma explanation, reserving holonomy language for the physical
+   connection where appropriate.
+7. Specified that the prior continuum witness uses an SO(2) gauge curvature
+   F=dA, avoiding a generic non-Abelian reading of that equation.
+8. Tightened the independent-tunability sentence to the exact construction:
+   global holonomy varies while nonzero curvature is held fixed, with the
+   proper-time difference controlled independently by the endpoint-sharing
+   path data.
+9. Replaced "simplicity operation" with "simplicity map" and clarified the
+   Discussion sentence as gravitational-sector selection plus gauge/constraint
+   reduction.
+10. Added a nonbreaking Section-reference space and made no other stylistic
+    changes beyond local precision.
+
+BUILD / RENDER VERIFICATION
+---------------------------
+- Compiled with REVTeX 4.2 using three consecutive pdflatex passes.
+- Final PDF length: 7 pages.
+- Undefined references/citations in final log: 0.
+- Overfull boxes in final log: 0.
+- Rendered all 7 pages at 180 dpi and visually inspected the full contact sheet,
+  including theorem/closure page 6 and conclusion/bibliography page 7.
+- No clipping, overlap, broken glyphs, or missing content observed.
+- Render-diff against v1.0 confirms only expected text/reflow changes.
+- Rendered PDF text contains zero occurrences of:
+  "office", "Office", "declared", "physical reader", "physical read",
+  "P_phys", or "contractible compatibility face".
+- "Coppalini Architecture" remains present as the sole affiliation.
+
+FINAL SNAPSHOT
+--------------
+CONTINUUM_CLOSURE_COVARIANT_LQG_CANONICAL_v1_1.pdf
+SHA-256: 1b07643fd1bf2879be406af1db65bb2c603813b4e933a228ff13ee840f9e093f
+
+CONTINUUM_CLOSURE_COVARIANT_LQG_CANONICAL_v1_1.tex
+SHA-256: f819b77bdccf074c24c7d5cae6dbd3d13a07b91318ba4484b604d6909c79df49
+
+STATUS
+------
+CANONICAL v1.1 — FINAL POLISH COMPLETE.

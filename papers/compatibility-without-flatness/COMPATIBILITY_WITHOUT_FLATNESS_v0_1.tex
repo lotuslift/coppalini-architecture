@@ -1,0 +1,244 @@
+\documentclass[aps,prd,reprint,nofootinbib,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\R}{\mathbb R}
+
+\begin{document}
+
+\title{Compatibility Without Flatness:\\Exact Gluing with Nonzero Curvature, Holonomy, and Proper-Time Difference}
+
+\author{A. V. Coppa}
+\affiliation{Coppalini Architecture}
+\date{2 September 2026}
+
+\begin{abstract}
+We give an explicit Lorentzian $\SO(2)$ gauge-field witness in which local bundle descriptions glue exactly while physical curvature, global holonomy, and proper-time difference remain independently readable. A nonnegative gluing functional is built from section, connection, and transition-map defects; its zero locus is exactly the simultaneous gluing condition. On $\R_t\times S^1\times\R_x\times\R_y$, the connection $A_a=a\eta+f(t-x/c)\,dy$ has nonzero source-free Maxwell curvature independent of $a$, while its holonomy around the circle is freely tunable by $a$. Two timelike paths with common endpoints have unequal proper time independently of both. The construction isolates one point: exact closure of local descriptions is a compatibility statement and need not be a flatness condition on the physical connection.
+\end{abstract}
+
+\maketitle
+
+\section{Local bundle data and the compatibility functional}
+
+Let $(M,g)$ be a time-oriented Lorentzian four-manifold and let $h$ be an auxiliary Riemannian metric used only to form positive norms. Let $E\to M$ be an oriented rank-two real vector bundle with structure group $\SO(2)$ and positive fiber metric $h_E$. On a finite trivializing cover $\{U_\alpha\}$, choose local section representatives $q_\alpha$, transition maps
+\begin{equation}
+U_{\alpha\beta}=e^{\chi_{\alpha\beta}C_1}\in\SO(2),
+\qquad
+C_1=
+\begin{pmatrix}
+0&-1\\
+1&0
+\end{pmatrix},
+\label{eq:transitions}
+\end{equation}
+and local scalar connection one-forms $A_\alpha\in\Omega^1(U_\alpha)$. The standard connection transformation law is
+\begin{equation}
+A_\beta=A_\alpha-d\chi_{\alpha\beta}.
+\label{eq:connlaw}
+\end{equation}
+Define the local compatibility defects
+\begin{align}
+\Delta^q_{\alpha\beta}
+&:=q_\beta-U_{\alpha\beta}q_\alpha,
+\\
+\Delta^A_{\alpha\beta}
+&:=A_\beta-A_\alpha+d\chi_{\alpha\beta},
+\\
+\Delta^U_{\alpha\beta\gamma}
+&:=U_{\alpha\beta}U_{\beta\gamma}U_{\gamma\alpha}-I.
+\label{eq:defects}
+\end{align}
+Assume continuity and square-integrability on the relevant overlaps. For fixed $\kappa_A,\kappa_U>0$, set
+\begin{align}
+\mathcal F_q
+&:=\sum_{\alpha<\beta}\int_{U_{\alpha\beta}}
+\|\Delta^q_{\alpha\beta}\|_{h_E}^2\,d\mathrm{vol}_h,
+\\
+\mathcal F_A
+&:=\sum_{\alpha<\beta}\int_{U_{\alpha\beta}}
+\|\Delta^A_{\alpha\beta}\|_{h}^2\,d\mathrm{vol}_h,
+\\
+\mathcal F_U
+&:=\sum_{\alpha<\beta<\gamma}\int_{U_{\alpha\beta\gamma}}
+\|\Delta^U_{\alpha\beta\gamma}\|^2\,d\mathrm{vol}_h,
+\\
+\mathcal F_{\Lambda}
+&:=\mathcal F_q+\kappa_A\mathcal F_A+\kappa_U\mathcal F_U.
+\label{eq:functional}
+\end{align}
+
+\paragraph{Proposition 1 (exact gluing).}
+Under the stated regularity assumptions,
+\begin{equation}
+\boxed{
+\mathcal F_{\Lambda}=0
+\iff
+\Delta^q_{\alpha\beta}=0,
+\quad
+\Delta^A_{\alpha\beta}=0,
+\quad
+\Delta^U_{\alpha\beta\gamma}=0
+}
+\label{eq:zero}
+\end{equation}
+on every relevant overlap.
+
+\emph{Proof.}
+Each term in Eq.~\eqref{eq:functional} is nonnegative. Vanishing defects give $\mathcal F_{\Lambda}=0$. Conversely, a zero finite sum with positive coefficients forces every integral to vanish. Continuity then forces each squared norm to vanish pointwise on its overlap. \hfill$\square$
+
+The auxiliary metric affects numerical values away from zero but does not alter the common zero locus used as the gluing criterion.
+
+\section{Explicit Lorentzian witness}
+
+Take
+\begin{equation}
+M=\R_t\times S^1_\vartheta\times\R_x\times\R_y
+\label{eq:manifold}
+\end{equation}
+and let $\eta$ be the global closed one-form on the circle normalized by
+\begin{equation}
+d\eta=0,
+\qquad
+\oint_{S^1}\eta=2\pi.
+\end{equation}
+For constants $c,\rho>0$, define
+\begin{equation}
+g=-c^2dt^2+\rho^2\eta^2+dx^2+dy^2.
+\label{eq:metric}
+\end{equation}
+Use the trivial bundle $E=M\times\R^2$. Let $f\in C^2(\R)$ with $f'\not\equiv0$, set
+\begin{equation}
+u=t-\frac{x}{c},
+\end{equation}
+and define the scalar connection family
+\begin{equation}
+\boxed{A_a=a\eta+f(u)\,dy,\qquad a\in\R.}
+\label{eq:connection}
+\end{equation}
+The corresponding matrix connection is $\widehat A_a=A_aC_1$.
+
+Its curvature is
+\begin{equation}
+\boxed{F=dA_a=f'(u)\,du\wedge dy,}
+\label{eq:curvature}
+\end{equation}
+which is independent of $a$ and nonzero whenever $f'\neq0$. The nonzero coordinate components are
+\begin{equation}
+F_{ty}=f'(u),
+\qquad
+F_{xy}=-\frac1c f'(u).
+\end{equation}
+Because the coefficients of Eq.~\eqref{eq:metric} are constant,
+\begin{equation}
+\nabla_\mu F^{\mu y}
+=-\frac1{c^2}f''(u)+\frac1{c^2}f''(u)=0,
+\end{equation}
+and the other divergences vanish. Thus
+\begin{equation}
+dF=0,
+\qquad
+d\star_gF=0,
+\qquad
+F\neq0,
+\label{eq:maxwell}
+\end{equation}
+so the witness is a nonzero source-free Maxwell field.
+
+Because Eq.~\eqref{eq:connection} is globally defined, restrict it and any global section to a finite trivializing cover using identity transition maps. Every defect in Eq.~\eqref{eq:defects} vanishes, and therefore
+\begin{equation}
+\boxed{\mathcal F_{\Lambda}=0}
+\label{eq:glued}
+\end{equation}
+while Eq.~\eqref{eq:curvature} remains nonzero.
+
+\section{Holonomy and proper time remain independent}
+
+For a loop $\ell$ winding once around $S^1$ with $dy=0$, Abelian parallel transport gives
+\begin{equation}
+\boxed{
+\Hol_{A_a}(\ell)
+=
+\exp(-2\pi a C_1).
+}
+\label{eq:holonomy}
+\end{equation}
+Varying $a$ spans $\SO(2)$ while the curvature Eq.~\eqref{eq:curvature} remains fixed. Local curvature and global loop holonomy are therefore independently tunable in this family.
+
+Now fix
+\begin{equation}
+p=(0,[0],0,0),
+\qquad
+q=(T,[0],0,0),
+\qquad
+T>\frac{2\pi\rho}{c},
+\end{equation}
+and define
+\begin{align}
+\gamma_0(t)&=(t,[0],0,0),\\
+\gamma_1(t)&=\left(t,\left[\frac{2\pi t}{T}\right],0,0\right),
+\qquad 0\le t\le T.
+\end{align}
+Both paths are timelike and have the same endpoints. Their proper times are
+\begin{equation}
+\tau[\gamma_0]=T,
+\qquad
+\tau[\gamma_1]
+=T\sqrt{1-\left(\frac{2\pi\rho}{cT}\right)^2},
+\end{equation}
+so
+\begin{equation}
+\boxed{\Delta\tau:=\tau[\gamma_0]-\tau[\gamma_1]>0.}
+\label{eq:proper}
+\end{equation}
+The proper-time difference depends on $(\rho,T)$, the holonomy on $a$, and the local Maxwell profile on $f$. These data can be varied independently within the explicit construction.
+
+\section{Compatibility theorem and boundary}
+
+Combining Eqs.~\eqref{eq:curvature}, \eqref{eq:glued}, \eqref{eq:holonomy}, and \eqref{eq:proper} gives the advertised witness:
+\begin{equation}
+\boxed{
+\begin{gathered}
+\mathcal F_{\Lambda}=0,
+\qquad
+F\neq0,\\
+\Hol_{A_a}(\ell)\ \text{arbitrary in }\SO(2),
+\qquad
+\Delta\tau>0.
+\end{gathered}}
+\label{eq:master}
+\end{equation}
+The four quantities have different codomains and different physical or geometric duties. Equation \eqref{eq:master} proves coexistence and independent tunability in one model. It supplies a direct witness that exact gluing of local descriptions can close while curvature-bearing physical transport remains nontrivial.
+
+\section{Conclusion}
+
+Compatibility closure is a statement about agreement among local descriptions after the required transition maps are applied. Curvature and holonomy are properties of the physical connection, and proper time is a path functional of the Lorentzian metric. The explicit family above keeps those offices separate by construction. This is the precise sense in which exact gluing can close without imposing flatness.
+
+\begin{acknowledgments}
+The author used generative language-model tools for editorial consolidation and algebraic cross-checking. Every definition, computation, boundary, and conclusion was reviewed by the author, who accepts full responsibility for the manuscript.
+\end{acknowledgments}
+
+\begin{thebibliography}{9}
+
+\bibitem{KobayashiNomizu1963}
+S. Kobayashi and K. Nomizu,
+\emph{Foundations of Differential Geometry}, Vol. I
+(Wiley, New York, 1963).
+
+\bibitem{Nakahara2003}
+M. Nakahara,
+\emph{Geometry, Topology and Physics}, 2nd ed.
+(Institute of Physics Publishing, Bristol, 2003).
+
+\bibitem{Wald1984}
+R. M. Wald,
+\emph{General Relativity}
+(University of Chicago Press, Chicago, 1984).
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,31 @@
+{
+  "tolerance_stage": 1,
+  "host_safety": "can",
+  "reference": {
+    "id": "R0",
+    "locks": {
+      "active_reference": "recognized current address",
+      "source_authority": "native source remains authoritative"
+    },
+    "known_unknowns": {
+      "external_adapter": "OPEN"
+    }
+  },
+  "candidate": {
+    "base_reference_digest": "ebb6ff3075e00f49a5389d6333615971fd231b4b24b2b1a8d53802f99b333275",
+    "moves": [
+      {
+        "id": "m1",
+        "action": "preserve",
+        "key": "source_authority",
+        "value": "native source remains authoritative"
+      },
+      {
+        "id": "m2",
+        "action": "observe",
+        "key": "note",
+        "value": "candidate adds a non-protected observation"
+      }
+    ]
+  }
+}
