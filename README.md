@@ -22,31 +22,29 @@ The repository is not intended to be the complete research corpus.
 
 ## Core question
 
-Let a source state be read through
+When does a reduced read retain enough information for a downstream decision?
 
-\[
-R:X\to C
-\]
+Let $R : X \to C$ be a read of a source state, and let $D : X \to A$ be a downstream decision or property.
 
-and let a downstream decision or property be
+The exact criterion is:
 
-\[
-D:X\to A.
-\]
+$$
+R(x)=R(y) \;\Longrightarrow\; D(x)=D(y).
+$$
 
-A necessary and sufficient condition for `D` to be determined by the information retained in `R` is that `D` be constant on every fiber of `R`:
+In words: whenever the read treats two source states as the same, the downstream decision must also treat them as the same.
 
-\[
-R(x)=R(y)\Longrightarrow D(x)=D(y).
-\]
+Equivalently, `D` factors through the quotient induced by equality under `R`.
 
-One witness
+A single **decision collision**
 
-\[
-R(x)=R(y),\qquad D(x)\neq D(y)
-\]
+$$
+R(x)=R(y), \qquad D(x)\neq D(y)
+$$
 
-is therefore an obstruction certificate: the read is insufficient for that declared decision. The Lean implementation is in [`tools/moneyroot`](tools/moneyroot/).
+is therefore an obstruction certificate: the information retained by $R$ is insufficient to determine $D$.
+
+The machine-checked Lean implementation is in [`tools/moneyroot`](tools/moneyroot).
 
 ## Tools
 
