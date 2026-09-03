@@ -93,33 +93,23 @@ What observable failure would defeat the claim?
 
 ## 5. Reader sufficiency
 
-Let
+Let $R : X \to C$ be a **read**, and let $D : X \to A$ be a downstream **decision or property**.
 
-\[
-R:X\to C
-\]
+The read is sufficient for $D$ exactly when it never merges two source states that $D$ must distinguish:
 
-be a read and
+$$
+R(x)=R(y) \;\Longrightarrow\; D(x)=D(y).
+$$
 
-\[
-D:X\to A
-\]
+Equivalently, `D` factors through the quotient induced by equality under `R`.
 
-be a downstream decision/property. The generic sufficiency condition is
+A **decision collision** is an explicit witness of insufficiency:
 
-\[
-R(x)=R(y)\Longrightarrow D(x)=D(y).
-\]
+$$
+R(x)=R(y), \qquad D(x)\neq D(y).
+$$
 
-Equivalently, `D` factors through the quotient induced by equality at `R`.
-
-A **decision collision** is an explicit pair
-
-\[
-R(x)=R(y),\qquad D(x)\neq D(y).
-\]
-
-One such pair refutes every rule that attempts to determine `D` from `R` alone.
+One such collision is enough to prove that no rule using only the information retained by $R$ can determine $D$.
 
 This theorem is implemented in `tools/moneyroot` and deliberately contains no economic, legal, or physical premise.
 
