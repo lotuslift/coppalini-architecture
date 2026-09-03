@@ -5,7 +5,7 @@ This list is intentionally nonbinding. Each item enters only after its source, s
 ## Near-term Coppalini Architecture additions
 
 - **Exact Constraint Certificates in Standard-Model Gauge Structure** — paper plus exact verifier, once the canonical public artifact and receipt are assembled.
-- **Motion & Difference** — broader provenance/result paper; useful as a flagship application, but not required for the first Han/Zenodo release because `Compatibility Without Flatness` now carries the relevant gauge witness more directly.
+- **Motion & Difference** — MOVED INTO THE PUBLIC SEED as the broader provenance/result paper. Zenodo DOI is pending; CCLQG receives a bibliography-only revision when that DOI is known.
 - **Mirror_Audit v1.0** — publish as a domain-general first-obstruction protocol after separating the generic instrument from application-specific historical receipts.
 - **MoneyRoot v0.3 / T7** — add only after the exact v0.3 Lean source receives an elaboration/axiom receipt comparable to v0.2.
 - **Architecture Receipt schema** — machine-readable source -> reader -> operation -> decision -> status -> open-edge record.

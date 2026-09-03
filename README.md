@@ -16,7 +16,7 @@ This repository begins deliberately small. Version 0.1 contains three layers:
 
 1. **Method** — minimum public definitions, audit order, status law, and receipt discipline.
 2. **Executable kernels** — a read-only reference auditor, a Lean reader-sufficiency kernel, and C++20 compile-time reference/claim-motion checks.
-3. **Selected research applications** — three compact papers chosen because they expose the same interface problem in distinct mathematical settings.
+3. **Selected research applications** — compact papers chosen because they expose the same interface problem in distinct mathematical settings, plus one broader provenance/result paper retained as an archival witness.
 
 The repository is not intended to be the complete research corpus.
 
@@ -68,6 +68,12 @@ is therefore an obstruction certificate: the read is insufficient for that decla
 These files do not infer semantics from raw natural language. They check relations after an external reader or adapter has typed them.
 
 ## Selected papers
+
+### Motion and Difference
+
+[`papers/motion-and-difference`](papers/motion-and-difference/)
+
+A broader compatibility construction spanning projective dynamics, Fibonacci structure, hyperbolic geometry, and a Lorentzian `SO(2)` gauge field. Its gauge sector supplies the exact-gluing/nonflatness witness cited by the continuum-closure paper. A Zenodo archival DOI is now a near-term release target.
 
 ### Continuum Closure in Covariant Loop Quantum Gravity
 
@@ -129,7 +135,7 @@ Planned additions are listed in [`roadmap/PLANNED_ADDITIONS.md`](roadmap/PLANNED
 
 Repository-level citation metadata is in [`CITATION.cff`](CITATION.cff). Research use should cite the specific paper/result whenever possible.
 
-The immediate DOI target is **Compatibility Without Flatness**. Its Zenodo preparation files are in [`zenodo/compatibility-without-flatness-v0.1`](zenodo/compatibility-without-flatness-v0.1/). Once a DOI is assigned, the continuum-closure paper can receive a citation-only revision without changing its mathematical content.
+Two immediate archival targets are **Compatibility Without Flatness** and **Motion and Difference**. Preparation files live under [`zenodo/`](zenodo/). CCLQG v1.1 already cites *Motion and Difference*; once that record receives a DOI, `scripts/apply_motion_difference_doi.py` generates a bibliography-only v1.1.1 source without changing the mathematical content.
 
 ## Licensing
 

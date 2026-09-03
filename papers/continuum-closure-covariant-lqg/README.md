@@ -15,9 +15,9 @@ The paper deliberately stops at a concrete ultraviolet test: whether a relevant 
 
 That calculation is `OPEN`; the criterion specifies the target rather than claiming its outcome.
 
-## Supporting witness
+## Supporting witness and archival citation
 
-`Compatibility Without Flatness` is the compact supporting construction for the separation between exact local gluing and physical flatness. A citation-only v1.1.1 revision is reserved for the point at which that note has a stable archival DOI.
+CCLQG v1.1 currently cites *Motion and Difference* for the explicit continuum witness separating exact gluing from physical flatness. `Compatibility Without Flatness` is the later compact extraction of that same gauge seam. The immediate v1.1.1 revision is reserved for adding the Zenodo DOI of *Motion and Difference* to its existing bibliography entry; no body text or mathematics changes. See `DOI_PATCH_PROTOCOL.md`.
 
 ## Files
 

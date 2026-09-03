@@ -1,0 +1,17 @@
+MOTION AND DIFFERENCE - ZENODO UPLOAD SEQUENCE
+
+1. Create a new Zenodo upload.
+2. Upload 012_MOTION_AND_DIFFERENCE_2026-07-17.pdf.
+3. Fill the form from METADATA_DRAFT.txt.
+4. Choose the license explicitly before publishing.
+5. Recommended: while still in draft, click "Get a DOI now!" to reserve the DOI.
+6. Copy the reserved DOI exactly.
+7. Use that DOI to generate the CCLQG citation-only revision with:
+
+   python scripts/apply_motion_difference_doi.py 10.5281/zenodo.XXXXXXX
+
+8. Verify that the source diff changes only the Motion and Difference bibliography entry.
+9. Compile CCLQG v1.1.1 and verify that only page 7 changes visually.
+10. Publish the Zenodo record. The reserved DOI is registered on publication.
+
+Do not delete the Zenodo draft after reserving the DOI unless you intend to abandon that DOI.
