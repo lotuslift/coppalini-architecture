@@ -93,6 +93,8 @@ What observable failure would defeat the claim?
 
 ## 5. Reader sufficiency
 
+A reader is sufficient only if it preserves every distinction required by the downstream decision.
+
 Let $R : X \to C$ be a **read**, and let $D : X \to A$ be a downstream **decision or property**.
 
 The read is sufficient for $D$ exactly when it never merges two source states that $D$ must distinguish:
