@@ -1,0 +1,324 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.25em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=0.25em,topsep=0.25em}
+\renewcommand{\arraystretch}{1.18}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\scshape Language Mechanics}
+\fancyhead[R]{\footnotesize\scshape Occurrence and the Twenty-Eight-Seam Reader v0.2}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\setlength{\headheight}{14pt}
+\fancypagestyle{first}{\fancyhf{}\fancyfoot[C]{\footnotesize\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\definecolor{LMblue}{HTML}{304B63}
+\definecolor{LMgray}{HTML}{F2F3F4}
+\newcommand{\lawbox}[1]{\begin{center}\fcolorbox{LMblue}{LMgray}{\parbox{0.91\linewidth}{#1}}\end{center}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+
+\begin{document}
+\thispagestyle{first}
+
+\begin{center}
+{\Large\bfseries 011 Occurrence and the Twenty-Eight-Seam Reader}\par
+\vspace{0.08in}
+{\large Finite Addressing, Pairwise Difference, and a Complete $7\times4$ Scan}\par
+\vspace{0.16in}
+{Anthony Vito Coppa}\par
+\vspace{0.05in}
+{\small Language Mechanics -- Formal Form 011}\par
+{\small Standalone edition v0.2 -- 29 August 2026}\par
+\end{center}
+\vspace{0.08in}
+\hrule
+\vspace{0.12in}
+
+\textbf{Status.} The carrier choices, occurrence addressing, seam reader, scanner choice, and optional circular display are \textsc{Declared}. The four-phase non-erasing return, the twenty-eight-dimensional seam count, the orientation-reversal consequences, the triangle/potential criterion, the $K_8$ one-factorization, and the resulting $\Z_{28}$ scanner bijection are \textsc{Derived} from the displayed construction. Independent re-audit of this standalone edition remains \textsc{Open}.
+
+\textbf{Scope.} This paper is finite arithmetic, linear algebra, and graph combinatorics. It distinguishes visible phase from occurrence address, occurrence address from pairwise comparison, and the set of comparisons from any chosen scan order. It does not define metric duration, physical time, a field equation, cognition, or semantics.
+
+\textbf{Question.} If a visible four-phase read returns, what finite addressed construction keeps the later occurrence distinct and makes every pairwise difference addressable exactly once?
+
+\section{Four phases and one unbounded address}
+Let
+\[
+P_4:=\Z/4\Z.
+\]
+For $n\in\N$, define
+\[
+\operatorname{Phase}_4(n):=n\bmod4,
+\qquad
+\operatorname{Cycle}_4(n):=\left\lfloor\frac n4\right\rfloor,
+\]
+and
+\[
+\operatorname{Read}_4(n):=\bigl(\operatorname{Phase}_4(n),\operatorname{Cycle}_4(n)\bigr).
+\]
+Euclidean division gives a bijection
+\[
+\boxed{\N\cong P_4\times\N},
+\qquad
+n=4c+p,
+\quad p\in\{0,1,2,3\}.
+\]
+The successor with carry is
+\[
+S_4(p,c)=
+\begin{cases}
+(p+1,c),&p<3,\\
+(0,c+1),&p=3.
+\end{cases}
+\]
+Then
+\[
+\operatorname{Read}_4(n+1)=S_4(\operatorname{Read}_4(n)).
+\]
+This is ordinal counting. No duration unit has entered.
+
+Fix an opaque run identifier $u$ and define the occurrence
+\[
+o_n:=(u,n).
+\]
+Let
+\[
+\tau_n:=(o_n,o_{n+1}),
+\qquad
+\mathcal H_n:=(\tau_0,\ldots,\tau_{n-1}),
+\]
+and write $\mathcal H_m\prec\mathcal H_n$ when the first is a proper ordered prefix of the second.
+
+\textbf{Theorem 1.1 (four-phase non-erasing return).} For every $n\in\N$,
+\[
+\operatorname{Phase}_4(n+4)=\operatorname{Phase}_4(n),
+\]
+while
+\[
+\operatorname{Cycle}_4(n+4)=\operatorname{Cycle}_4(n)+1,
+\qquad
+o_{n+4}\neq o_n,
+\qquad
+\mathcal H_n\prec\mathcal H_{n+4}.
+\]
+
+\textit{Proof.} The phase and cycle identities are Euclidean division. The occurrence addresses differ because $n+4\neq n$, and the later history contains four additional ordered transitions. \hfill$\square$
+
+\lawbox{\textbf{First type cut.}\[
+\boxed{\text{phase return}\;\neq\;\text{occurrence return}.}
+\]
+A repeated visible residue does not identify the event that carries it.}
+
+\section{Two successive turns give eight occurrence addresses}
+Fix one cycle $c$. Take the four phases in cycle $c$ and the same four phases in cycle $c+1$:
+\[
+o_{c,p}:=o_{4c+p},\qquad p\in P_4.
+\]
+The two-turn window is
+\[
+W_c:=\{o_{c,p},o_{c+1,p}:p\in P_4\},
+\qquad |W_c|=8.
+\]
+Index the window by
+\[
+i=4\ell+p,
+\qquad
+\ell\in\{0,1\},\quad p\in P_4,
+\]
+so $i\in\{0,\ldots,7\}$.
+
+The lift bit $\ell$ records earlier/later occurrence. It is not a ninth occurrence and it is not recoverable from phase $p$ alone.
+
+\section{Twenty-eight pairwise seams}
+Let $E=\R^8$ with ordered basis $e_0,\ldots,e_7$. An alternating two-form has the unique coordinate expansion
+\[
+\Omega_8
+=\sum_{0\le i<j\le7}d_{ij}\,e^i\wedge e^j.
+\]
+Since
+\[
+\dim\Lambda^2(E^*)=\binom82=28,
+\]
+there is one independent signed coordinate for every unordered pair of occurrence addresses.
+
+Define the addressed difference read
+\[
+\zeta_{\Omega}(i,j):=\Omega_8(e_i,e_j).
+\]
+Then
+\[
+\zeta_{\Omega}(j,i)=-\zeta_{\Omega}(i,j),
+\qquad
+\zeta_{\Omega}(i,i)=0.
+\]
+There are therefore
+\[
+\boxed{28\ \text{unordered seams}\qquad 56\ \text{oriented seams}.}
+\]
+
+The diagonal zero is the alternating self-pairing value. It is not an empty type, an absent occurrence, or an unmade comparison.
+
+\section{Orientation reversal requires the address}
+For an unordered seam $\{a,b\}$ and orientation $\sigma\in\{+1,-1\}$, define
+\[
+\operatorname{Ret}(\{a,b\},\sigma):=(\{a,b\},-\sigma).
+\]
+Then
+\[
+\operatorname{Ret}^2=\operatorname{Id}.
+\]
+If the signed read is
+\[
+d=\sigma\,\Omega_8(e_a,e_b),
+\]
+then reversal changes $d$ to $-d$ while retaining the seam address.
+
+The scalar $d$ alone generally does not determine which seam produced it. Thus no scalar inverse
+$\zeta_{\Omega}^{-1}(d)$ is licensed without additional address data.
+
+\lawbox{\textbf{Second type cut.}\[
+\boxed{\text{seam address}\;\neq\;\text{orientation}\;\neq\;\text{scalar read}.}
+\]
+The full envelope can be invertible even when the scalar reader is not.}
+
+\section{Triangle compatibility}
+Regard $d_{ij}$ as an antisymmetric edge field on the complete graph $K_8$:
+\[
+d_{ji}:=-d_{ij},\qquad d_{ii}:=0.
+\]
+For an oriented triangle $(i,j,k)$ define
+\[
+h_{ijk}:=d_{ij}+d_{jk}+d_{ki}.
+\]
+
+\textbf{Theorem 5.1 (potential/triangle criterion).} The following are equivalent:
+\begin{enumerate}
+\item $h_{ijk}=0$ for every oriented triangle;
+\item there exist vertex values $s_i$, unique up to one common additive constant, such that
+\[
+d_{ij}=s_j-s_i
+\]
+for every pair $i,j$.
+\end{enumerate}
+
+\textit{Proof.} A vertex potential telescopes around every triangle. Conversely, fix $s_0=0$ and set $s_i=d_{0i}$. The triangle relation on $(0,i,j)$ gives $d_{ij}=d_{0j}-d_{0i}=s_j-s_i$. Any two such potentials differ by a common constant. \hfill$\square$
+
+This is a finite compatibility residue. It is not spacetime curvature and it is not the exterior derivative of the constant continuum form $\Omega_8$.
+
+\section{A complete seven-by-four scan}
+The twenty-eight seams possess no intrinsic temporal order. A scanner must therefore be declared.
+
+Relabel the eight vertices by
+\[
+V:=\{\infty\}\cup\Z_7.
+\]
+For each $a\in\Z_7$, define
+\[
+M_a:=\{\{\infty,a\}\}
+\cup
+\{\{a+j,a-j\}:j=1,2,3\},
+\]
+with arithmetic in $\Z_7$.
+
+\textbf{Theorem 6.1 (one-factorization of $K_8$).} Each $M_a$ is a perfect matching containing four disjoint edges. The seven matchings are pairwise edge-disjoint and
+\[
+\boxed{\bigsqcup_{a\in\Z_7}M_a=E(K_8).}
+\]
+
+\textit{Proof.} In $M_a$, the finite endpoints are
+$a,a\pm1,a\pm2,a\pm3$, which are all seven elements of $\Z_7$, and $\infty$ occurs once. For any finite edge $\{x,y\}$, division by $2$ in $\Z_7$ gives the unique midpoint
+$a=(x+y)/2$ and a unique unsigned displacement in $\{1,2,3\}$. The edge $\{\infty,x\}$ occurs only in $M_x$. Hence every edge occurs exactly once. \hfill$\square$
+
+A convenient $7\times4$ table is therefore:
+\[
+\begin{array}{c|cccc}
+a&b=0&b=1&b=2&b=3\\\hline
+0&\infty0&16&25&34\\
+1&\infty1&20&36&45\\
+2&\infty2&31&40&56\\
+3&\infty3&42&51&60\\
+4&\infty4&53&62&01\\
+5&\infty5&64&03&12\\
+6&\infty6&05&14&23
+\end{array}
+\]
+where $xy$ abbreviates the unordered edge $\{x,y\}$.
+
+Because $4$ and $7$ are coprime,
+\[
+\Z_{28}\cong\Z_7\times\Z_4.
+\]
+Let
+\[
+\kappa(a,0)=\{\infty,a\},
+\qquad
+\kappa(a,b)=\{a+b,a-b\},\quad b=1,2,3.
+\]
+Composing the Chinese-remainder coordinate with $\kappa$ gives a bijection
+\[
+\boxed{\operatorname{Scan}_{28}:\Z_{28}\xrightarrow{\sim}E(K_8).}
+\]
+The scan is exact but chosen. A different one-factorization may order the same twenty-eight seams differently.
+
+\section{Optional circular display}
+A circular display may be declared by
+\[
+\Theta_q:=\Theta_0+q\frac{\pi}{14},
+\qquad
+\theta_q:=\Theta_q\bmod2\pi.
+\]
+Here $q\in\Z_{28}$ is the scanner coordinate, $\Theta_q$ is unwrapped orientation, and $\theta_q$ is wrapped phase. This supplies angle only. It does not supply duration.
+
+The occurrence index $n$ and scanner coordinate $q$ are independent unless a synchronization witness is separately provided.
+
+\section{Exact boundary}
+This paper proves only:
+\begin{itemize}
+\item four-phase return with nonreturning occurrence and growing history;
+\item an eight-address window from two successive four-phase turns;
+\item twenty-eight unordered and fifty-six oriented pairwise seams;
+\item an alternating signed reader with typed diagonal zero;
+\item the triangle potential criterion;
+\item a complete seven-by-four one-factorization of $K_8$;
+\item an explicit bijective $\Z_{28}$ scanner after a declared coordinate choice.
+\end{itemize}
+It does not infer metric time, physical fields, biological or psychological meaning, a ninth occurrence, or an intrinsic scan order. It does not identify this eight-address carrier with any other eight-dimensional carrier by dimension alone.
+
+\lawbox{\textbf{Final form.}\[
+\boxed{
+\text{phase return}
+\;|\;
+\text{occurrence advance}
+\;\longrightarrow\;
+8\ \text{addresses}
+\;\longrightarrow\;
+28\ \text{pairwise seams}
+\;\longrightarrow\;
+7\times4\ \text{complete scan}
+}
+\]
+The visible residue may repeat. The occurrence remains addressed. Every pair can be read exactly once.}
+
+\section*{Source record}
+The finite occurrence clock, eight-address window, alternating seam reader, triangle criterion, and $K_8$ one-factorization were first composed in the \emph{Twenty-Eight-Seam Mirror Wheel} working manuscript dated 24 July 2026. That manuscript is provenance only for the present form. Every mathematical claim used here is stated and proved or directly calculated locally. Later physical, semantic, and global office placements from the working manuscript are not imported into this paper.
+
+\end{document}

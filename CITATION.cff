@@ -1,22 +1,22 @@
 cff-version: 1.2.0
-message: "For research claims, please cite the specific paper/result when possible; cite this repository for the Coppalini Architecture software and method collection."
-title: "Coppalini Architecture"
-type: software
+message: "Please cite the specific paper whenever possible; cite this record when referring to the collection as a whole."
+title: "Coppalini Architecture: Paper Archive"
+type: dataset
 authors:
   - family-names: "Coppa"
     given-names: "Anthony Vito"
-version: 0.1.0
-date-released: 2026-09-02
+version: 1.0.0
+date-released: 2026-09-15
+repository-code: "https://github.com/lotuslift/coppalini-architecture"
 abstract: >-
-  Formal interface-audit tools, proof kernels, methodology, and selected research
-  applications for preserving definitions, constraints, evidence, and claim
-  boundaries across transformations and representations.
+  A curated public archive of the Language Mechanics 000-011 formal basis and
+  selected Coppalini Architecture papers on reference-preserving formal
+  systems, mirror symmetry, exact reading, and mathematical physics.
 keywords:
-  - formal methods
-  - interface audit
+  - Language Mechanics
+  - formal architecture
   - reference preservation
-  - reader sufficiency
-  - proof receipts
-  - C++20
-  - Lean
   - mathematical physics
+  - mirror symmetry
+  - continuum closure
+  - exact reader

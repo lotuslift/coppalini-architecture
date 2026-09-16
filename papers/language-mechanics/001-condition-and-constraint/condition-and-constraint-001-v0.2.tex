@@ -1,0 +1,282 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,longtable}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{LANGUAGE MECHANICS}
+\rhead{CONDITION \& CONSTRAINT v0.2}
+\cfoot{\thepage}
+\newtcolorbox{lawbox}{colback=black!3,colframe=black!65,boxrule=0.45pt,arc=0pt,left=8pt,right=8pt,top=7pt,bottom=7pt}
+\newcommand{\can}{\mathsf{can}}
+\newcommand{\Refuse}{\varnothing}
+\newcommand{\RR}{\mathbb{R}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries CONDITION \& CONSTRAINT}\\[3pt]
+{\large Structure Without Foundation}\\[8pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original proof composition: 22 January 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+
+\begin{lawbox}
+\textbf{Abstract.}
+This paper isolates a minimum grammar of condition and constraint before truth, interpretation, quantity, or ontology is assigned. A condition declares an office in which a candidate can be addressed. A constraint declares what must continue to hold for that address to remain admissible under re-posing. Admission is local to a declared contract; non-vacuity requires at least one retained distinction; recognizability under reuse is typed by an equivalence relation at the declared resolution; and no downstream reader can reconstruct a distinction erased by an upstream chart. An inscriptional witness separates exact coincidence, nontrivial extension, and recognition without coincidence. A final conditional example proves the unique positive whole-remainder fixed point only after its additional chart contract is stated. The construction supplies no universal foundation. It supplies a discipline for saying where a rule applies, what it must preserve, and where continuation stops.
+\end{lawbox}
+
+\section{Position}
+
+What follows is a constraint walk. Each step removes a form of statement that cannot survive its own declared use.
+
+The paper does not ask what exists. It asks the prior and smaller question:
+
+\begin{lawbox}
+\centering
+Under what declared conditions can a candidate be posed, retained, and posed again without the rule of admission silently changing?
+\end{lawbox}
+
+Existence, truth, reference, measurement, and meaning may become lawful downstream offices. None is required to draw the first boundary. The grammar therefore begins neither from a thing nor from a theory of things. It begins from a candidate address and a declared rule governing whether that address remains available.
+
+\section{Condition and constraint}
+
+\textbf{Definition 2.1 (Condition).}
+A condition is a declared office of address
+\[
+D=(\Sigma,R,\rho),
+\]
+where:
+\begin{itemize}
+\item $\Sigma$ is a class of candidate determinations;
+\item $R$ specifies the allowed relation of re-posing;
+\item $\rho$ states the resolution at which retained distinctions are read.
+\end{itemize}
+No internal structure on $\Sigma$ is presumed.
+
+\textbf{Definition 2.2 (Constraint).}
+A constraint is a declared restriction on continuation in $D$. Equivalently, it specifies an admissible subclass
+\[
+A\subseteq\Sigma,
+\]
+together with whatever evidence the office requires for membership in $A$.
+
+The condition fixes \emph{where} a term may lawfully apply. The constraint fixes \emph{what must continue to hold there}. Neither supplies content merely by being named.
+
+Changing $\Sigma$, $R$, or $\rho$ creates a new version of the office. It does not retroactively alter the old one.
+
+\textbf{Definition 2.3 (Admissibility).}
+For $\sigma\in\Sigma$, write
+\[
+\can_D(\sigma)
+\]
+when $\sigma$ satisfies the declared constraint and remains available under the permitted re-posing relation.
+
+When continuation fails, write $\Refuse$ at the metalevel. The mark $\Refuse$ is not an additional element of $\Sigma$.
+
+Thus the first cut is binary only after the office has been fixed:
+\[
+\boxed{\text{continuation admitted}\quad|\quad\text{continuation refused}.}
+\]
+This is not a claim that the world is binary and it is not a valuation of the candidate. It is the yes-no output of one declared gate.
+
+\section{Re-posing, recognition, and non-vacuity}
+
+Let $R(\sigma,\tau)$ mean that $\tau$ is an allowed re-posing of $\sigma$ under $R$. The relation $R$ need not be temporal, causal, total, or deterministic. It may describe another inscription, another coordinate presentation, another run of a procedure, or another lawful use.
+
+At the declared resolution $\rho$, let $\sim_\rho$ denote the equivalence relation induced by that resolution. Thus
+\[
+\sigma\sim_\rho\tau
+\]
+means that $\sigma$ and $\tau$ remain recognizable as belonging to the same declared class at resolution $\rho$.
+
+This is not exact equality. It is not reference to an object outside the office. It is the minimum relation needed to say that re-posing has not become indistinguishable from replacement.
+
+\textbf{Definition 3.1 (Non-vacuity).}
+The office $D$ is non-vacuous at $\rho$ when there exist $\sigma,\tau\in\Sigma$ such that
+\[
+\can_D(\sigma),\qquad \can_D(\tau),\qquad R(\sigma,\tau),\qquad \sigma\not\sim_\rho\tau,
+\]
+while both addresses remain legible in the office.
+
+This rules out the one-class quotient as a free victory. A constant gate certifies nothing about a distinction that the office promises to preserve. The floor is fixed by the promise, not loosened after the read.
+
+\section{An inscriptional witness}
+
+The abstract cut can be witnessed without introducing number or measure. Let $M$ be a class of legible marks and let $\oplus$ be a partial operation of re-inscription. Use:
+\[
+\equiv\ \text{for exact coincidence},\qquad
+\neq\ \text{for non-coincidence},\qquad
+\sim_\rho\ \text{for recognition at resolution }\rho.
+\]
+
+For a mark $x\in M$, exact closure may have the form
+\[
+x\oplus x\equiv x.
+\]
+Re-inscription has left no legible remainder at the declared resolution.
+
+Nontrivial extension may have the form
+\[
+x\oplus x\neq x,
+\qquad
+x\sim_\rho(x\oplus x).
+\]
+The first relation retains difference; the second retains continuity of read. Together they witness extension without replacement.
+
+\textbf{Proposition 4.1 (Witness triad).}
+In this inscriptional chart, the three roles
+\[
+ x\equiv x,
+ \qquad
+ x\oplus x\neq x,
+ \qquad
+ x\sim_\rho(x\oplus x)
+\]
+are jointly sufficient to display coincidence, nontrivial reuse, and recognizability without coincidence.
+
+\textit{Proof.}
+The first expression supplies a stable coincidence test. The second supplies a pair distinguished at the declared resolution. The third prevents that pair from being read merely as unrelated replacement. No stronger classification is inferred. \hfill$\square$
+
+The proposition is a witness, not an exhaustive ontology of persistence. It introduces no arithmetic law for $\oplus$, no identity element, and no claim that every admissible office has this presentation.
+
+\section{The chart cannot restore what it erases}
+
+A chart is not innocent merely because it is readable. Once a chart is used as the public carrier of an audit, its information loss bounds every later reader.
+
+Let $H$ be a history class, let $\sim_\rho$ be the equivalence relation on $H$ induced by the declared resolution, and let
+\[
+\pi_\rho:H\to H/{\sim_\rho}
+\]
+be the quotient map. Let
+\[
+W:H\to\Sigma_W
+\]
+be a chart or writer. A reader is any function
+\[
+C:\Sigma_W\to H/{\sim_\rho}.
+\]
+
+\textbf{Lemma 5.1 (Erasure).}
+If
+\[
+h_1\not\sim_\rho h_2
+\qquad\text{but}\qquad
+W(h_1)=W(h_2),
+\]
+then no reader $C$ can satisfy
+\[
+C\circ W=\pi_\rho
+\]
+on both $h_1$ and $h_2$.
+
+\textit{Proof.}
+Because $W(h_1)=W(h_2)$, functionality gives
+\[
+C(W(h_1))=C(W(h_2)).
+\]
+But $h_1\not\sim_\rho h_2$ implies
+\[
+\pi_\rho(h_1)\neq\pi_\rho(h_2).
+\]
+The two requirements are incompatible. \hfill$\square$
+
+\begin{lawbox}
+\centering
+If a promised distinction is collapsed into one public mark, later interpretation cannot reconstruct it.
+\end{lawbox}
+
+The converse is equally important: preserving every raw difference is not automatically useful. The office must still declare which differences matter and how they are read. An admissible chart therefore needs both a non-degenerate resolution floor and a legible rule of return.
+
+\section{Structure without foundation}
+
+The word \emph{structure} names the relations that remain once a condition and its constraints have been declared. It does not name an absolute substrate beneath every possible office.
+
+There is no required view from outside all conditions by which every condition must be ranked. That absence is a versioning rule rather than a missing hidden foundation.
+
+Every assertion therefore carries its office:
+\[
+(\Sigma,R,\rho,A;\ \text{rule},\text{evidence},\text{result}).
+\]
+
+Two results may be compared only after a typed map between their offices has been supplied. Repeated vocabulary is not such a map.
+
+The consequence is conservative:
+\begin{itemize}
+\item a result may be exact inside its declared condition without becoming universal;
+\item a failed condition may be refused without converting that refusal into a claim about everything outside its domain;
+\item a later construction may reuse a result only with its office and promised resolution intact.
+\end{itemize}
+
+\section{A conditional whole-remainder chart}
+
+The preceding admissibility calculus does not select a special numerical coordinate. A numerical witness enters only after its own chart contract is stated.
+
+Assume a positive coordinate $r$ is required to reproduce its own whole-remainder decomposition:
+\[
+r=1+\frac1r.
+\]
+This is a self-similar two-part chart. It is an additional condition, not a consequence of admissibility alone.
+
+\textbf{Proposition 7.1 (Whole-remainder fixed point).}
+Under the stated chart contract, the unique positive fixed point is
+\[
+\boxed{r=\frac{1+\sqrt5}{2}}.
+\]
+
+\textit{Proof.}
+Multiplication by $r>0$ gives
+\[
+r^2-r-1=0.
+\]
+The quadratic formula gives
+\[
+r=\frac{1\pm\sqrt5}{2},
+\]
+of which exactly one root is positive. \hfill$\square$
+
+Here $\sqrt5$ is the discriminant of this particular fixed-point equation. It does not follow from the bare admissibility cut, and this coordinate is not asserted to govern every non-closing traversal.
+
+\section{Exact boundary}
+
+The construction establishes only the following.
+
+\begin{enumerate}
+\item Admission is meaningful only relative to a declared condition.
+\item A constraint states what must survive for continuation to remain admissible.
+\item A non-vacuous office must preserve at least one distinction promised by its reader.
+\item Reuse may retain recognizability without requiring exact coincidence.
+\item No downstream reader can reconstruct a promised distinction erased by the chart that carries it.
+\item Numerical or geometric witnesses enter only through separately stated chart contracts.
+\item Comparison between offices requires an explicitly typed map; repeated words do not supply one.
+\end{enumerate}
+
+The paper establishes no theory of truth, semantics, ontology, dynamics, or universal geometry. It derives no physical law from admission.
+
+The stopping point is exact:
+
+\begin{lawbox}
+\centering
+A rule must say where it applies, what distinction it preserves, and what would count as failure.\\[3pt]
+A reference may then orient a later use. Neither the rule nor the reference may supply missing content by implication.
+\end{lawbox}
+
+\section*{Provenance}
+
+The formal argument was first composed on \textbf{22 January 2026}. This canonical standalone edition restates the argument as a self-contained Language Mechanics form. It introduces no external textual dependency and does not use later corpus results as premises.
+
+\end{document}

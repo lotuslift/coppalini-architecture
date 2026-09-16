@@ -1,0 +1,281 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.2pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=3pt}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{definition}[proposition]{Definition}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small LANGUAGE MECHANICS}
+\rhead{\small MINIMUM FORMAL / MECHANICAL REFERENCE v0.2}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\newcommand{\status}[1]{\textbf{Status.} #1}
+\newcommand{\lawbox}[1]{\begin{center}\fcolorbox{black!60}{black!2}{\parbox{0.88\linewidth}{\centering #1}}\end{center}}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries 006 Minimum Formal / Mechanical Reference}\\[3pt]
+{\large A Page-Zero Deck for Typed Mathematical Use}\\[10pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original reference constructions: 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+\vspace{3pt}
+\hrule
+\vspace{8pt}
+
+\status{\textsc{Declared} as a Language Mechanics reference instrument. Definitions are constitutive declarations of this deck; propositions and corollaries below are \textsc{Derived} from those declarations.}
+
+\textbf{Abstract.} This deck fixes the minimum typing required to carry a formal reference through an operation without silently exchanging reader equality, carrier equality, history, lift, or refusal. It isolates a reference packet, typed return, receipt adequacy, recognition, the admission gate, and the distinction between \emph{minimal} and \emph{minimum}. A finite mechanical witness is included only after the operations it uses are declared: the seal carrier is a join-semilattice and the residue carrier is a monoid. The deck is locally complete and imports no physical, semantic, numerical, or cross-domain identification.
+
+\section{Position}
+This is a reference deck, not a replacement foundation for mathematics. It asks one operational question:
+
+\lawbox{When a formal expression carries a referent through an operation, what must be declared so that the result can be compared with its reference without type loss?}
+
+The deck begins from ordinary formal objects, operations, equality relations, and maps. It adds only explicit typing of reference, return, readable difference, lift, receipt, recognition, minimum, and refusal.
+
+\section{The minimum reference packet}
+Fix a jurisdiction
+\[
+D=(\Sigma,R,\rho),
+\]
+where \(\Sigma\) is the candidate class, \(R\) is the permitted re-posing relation, and \(\rho:\Sigma\to Y\) is the declared reader.
+
+\begin{definition}[Reference packet]
+A formal reference packet is
+\[
+\mathfrak R=(D,x_0,T,\rho),
+\]
+where \(x_0\in\Sigma\) is the addressed referent and \(T:\operatorname{Dom}(T)\subseteq\Sigma\to\Sigma\) is a declared partial operation.
+\end{definition}
+
+The elementary transport is
+\[
+x_0\xrightarrow{\,T\,}T(x_0),
+\]
+and the first return question is
+\[
+\rho(Tx_0)\stackrel{?}{=}\rho(x_0).
+\]
+No statement about identity, memory, meaning, or mechanism follows until its own office is declared.
+
+\section{Holding-through and typed equality}
+\begin{definition}[Reference survives operation]
+The reference survives \(T\) at \(x_0\) under reader \(\rho\) when
+\[
+\rho(Tx_0)=\rho(x_0).
+\]
+If the full carrier is the reader, \(\rho=\operatorname{id}_\Sigma\), this reduces to exact carrier return \(Tx_0=x_0\).
+\end{definition}
+
+\begin{proposition}[Typed equality]\label{prop:typed-equality}
+From
+\[
+\rho(Tx)=\rho(x)
+\]
+one may conclude only that \(Tx\) and \(x\) lie in the same fiber of \(\rho\). Carrier equality \(Tx=x\) follows only when the declared hypotheses make that fiber a singleton for the compared pair---for example, when \(\rho\) is injective there.
+\end{proposition}
+\begin{proof}
+Equality of the reads says \(Tx\in\rho^{-1}(\rho(x))\). Without injectivity, a fiber may contain distinct points, so equality in \(Y\) does not force equality in \(\Sigma\). If \(\rho\) is injective on the relevant domain, the implication follows by definition of injectivity.
+\end{proof}
+
+\status{Proposition~\ref{prop:typed-equality} is \textsc{Derived}.}
+
+\section{Minimum office register}
+The following table is an entrance index. Any stronger use of a term requires the stronger structure to be declared where it is used.
+
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.88in}X X@{}}
+\toprule
+Office & Exact minimum use & Boundary\\
+\midrule
+Jurisdiction & \(D=(\Sigma,R,\rho)\): where a claim is posed & does not supply content\\
+Reference & addressed comparison baseline & does not explain why selected\\
+Condition & entry requirement & does not guarantee continuation\\
+Constraint & relation preserved by admitted continuation & distinct from condition\\
+\(\mathsf{can}\) & lawful continuation in the declared jurisdiction & gate verdict, not truth\\
+\(\varnothing\) & refused / undefined continuation here & not scalar zero\\
+Operation & typed map or partial map & no semantics supplied by the map alone\\
+Difference & distinguishable departure under shared reference & requires a comparison frame\\
+Return & equality at a declared reader & not automatically carrier reset\\
+Lift & finer carrier/address above a quotient or read & requires an explicit map\\
+Receipt & recoverable evidence of occurrence at promised resolution & not the state itself\\
+Recognition & warranted present comparison under a declared reader & not unrestricted identity\\
+Minimum & least admitted construction under a declared order & stronger than mere minimality\\
+Fit & witnessed compatibility preserving the required relation & resemblance is insufficient\\
+Function & operation lawfully carried through admitted Fit & does not create Fit\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+\section{Exact return, reader return, and lift}
+Two predicates must remain separate:
+\[
+\text{exact carrier return:}\qquad Tx=x,
+\]
+\[
+\text{reader return with retained carrier difference:}\qquad
+\rho(Tx)=\rho(x),\quad Tx\neq x.
+\]
+The second form is the minimum opening for a lift: the declared read closes while a finer carrier distinction remains.
+
+\begin{definition}[Lift datum]
+Given a quotient or reader \(p:\widetilde X\to X\), a lift datum for a returned action consists of a lifted action \(\widetilde T\) and a witness
+\[
+p(\widetilde T\widetilde x)=p(\widetilde x),
+\]
+with, whenever nontriviality is claimed,
+\[
+\widetilde T\widetilde x\neq\widetilde x.
+\]
+\end{definition}
+The quotient return and the lifted difference are separate reads of one declared construction.
+
+\section{Receipt and recognition}
+A return may erase information from its displayed state. Receipt therefore occupies a separate office.
+
+\begin{definition}[Receipt adequacy]\label{def:receipt}
+Let \(H\) be a history class and let \(\sim_\delta\) be the equivalence relation induced by the promised history resolution \(\delta\), with quotient map
+\[
+\pi_\delta:H\to H/{\sim_\delta}.
+\]
+Let \(\Sigma_\delta\) be a receipt space and
+\[
+\sigma_\delta:H\to\Sigma_\delta
+\]
+a receipt map. The receipt is adequate at resolution \(\delta\) when the promised quotient remains recoverable. A sufficient exact condition is a decoder
+\[
+\operatorname{Dec}_\delta:\operatorname{im}(\sigma_\delta)\to H/{\sim_\delta}
+\]
+satisfying
+\[
+\boxed{\operatorname{Dec}_\delta\circ\sigma_\delta=\pi_\delta.}
+\]
+\end{definition}
+The two sides now have the same domain \(H\); the equation states exactly that the receipt retains every history distinction promised by the quotient.
+
+\begin{definition}[Recognition]
+Recognition at reader \(\rho\) is a warranted present comparison
+\[
+\operatorname{Rec}_\rho(x;x_0)=1
+\]
+only when the declared comparison is defined, the stated equality or bounded relation holds, and the evidence required by the claim is present.
+\end{definition}
+Recognition returns only what its reader and receipt can carry.
+
+\section{The gate and refusal}
+For a candidate move \(T\) at \(x\), let \(C(x)\) be its entry condition and let \(\mathcal Q(x,Tx)\) be the continuation constraint. Define
+\[
+\operatorname{Adm}(T,x)
+\iff
+C(x)\wedge (T\text{ is typed at }x)\wedge\mathcal Q(x,Tx),
+\]
+and
+\[
+\operatorname{Gate}(T,x)=
+\begin{cases}
+\mathsf{can},&\operatorname{Adm}(T,x),\\
+\varnothing,&\text{otherwise}.
+\end{cases}
+\]
+The namespace is locked:
+\[
+\boxed{\varnothing\neq0.}
+\]
+A refused continuation is not a scalar, zero vector, empty history, false proposition, or absent physical object.
+
+\section{Minimal and minimum}
+The word \emph{minimum} carries a stronger burden than \emph{minimal}.
+
+\begin{definition}[Minimal and minimum admitted constructions]
+Let \((\mathcal A,\preceq)\) be a declared partially ordered class of admitted constructions, with strict part \(\prec\).
+A construction \(m\in\mathcal A\) is \emph{minimal} when
+\[
+\nexists c\in\mathcal A\text{ such that }c\prec m.
+\]
+It is a \emph{minimum} when
+\[
+\boxed{m\preceq c\qquad\text{for every }c\in\mathcal A.}
+\]
+\end{definition}
+
+\begin{proposition}[Minimum implies minimal]
+Every minimum is minimal. A minimal element need not be a minimum.
+\end{proposition}
+\begin{proof}
+If \(m\preceq c\) for every \(c\in\mathcal A\), no \(c\prec m\) can exist. Conversely, two incomparable minimal elements supply a class with minimal elements but no minimum.
+\end{proof}
+
+Therefore every formal use of \emph{minimum} must declare at least:
+\begin{itemize}
+\item the admitted candidate class;
+\item the admission conditions;
+\item the comparison/reduction order;
+\item the relations that must be preserved;
+\item the proof that the selected construction lies below every admitted competitor when a true minimum is claimed.
+\end{itemize}
+Without those declarations, ``minimum'' is not yet a formal result.
+
+\section{Mechanical seal/residue witness}
+A finite witness can separate cumulative reference from carried non-closing difference, but its operations must be typed before use.
+
+Let \((\mathsf S,\vee)\) be a finite join-semilattice with its induced order \(\leq\). Let \((A,\oplus_A,0_A)\) be a monoid. Define
+\[
+\Gamma=\mathsf S\times A.
+\]
+For a declared turn \(k\), choose \(e_k\in\mathsf S\) and \(\epsilon_k\in A\), and define
+\[
+U_k(\lambda,\eta)=\bigl(\lambda\vee e_k,\;\eta\oplus_A\epsilon_k\bigr).
+\]
+
+\begin{corollary}[Well-defined monotone seal update]
+Each \(U_k:\Gamma\to\Gamma\) is well defined, and its seal coordinate is monotone:
+\[
+\lambda\leq\lambda\vee e_k.
+\]
+\end{corollary}
+\begin{proof}
+The join exists by the join-semilattice law, and \(\oplus_A\) is closed on \(A\) by the monoid law. The defining property of a join makes \(\lambda\vee e_k\) an upper bound of \(\lambda\).
+\end{proof}
+
+The coordinates have different jobs:
+\[
+\boxed{\text{seal records admitted cumulative structure}}
+\qquad
+\boxed{\text{residue carries non-closing difference}}.
+\]
+This witness imposes no historical twelve-coordinate semantic map, spectral/color read, distinguished numerical constant, calendar, or physical realization.
+
+\section{Page-zero rule and boundary}
+\lawbox{\textbf{A formal term must survive the operation under which it is reused.}}
+
+Expanded:
+\[
+\text{reference}\to\text{typed operation}\to\text{return test}\to\text{receipt}\to\text{recognition}\to\text{reuse}.
+\]
+This is a discipline of formal use. It does not claim that mathematics, physics, language, or cognition are one mechanism. It does not import certification from a neighboring paper or from repeated vocabulary. Any stronger construction must state its own carrier, operations, reader, preserved relation, witness, and falsifier.
+
+\section*{Source record}
+The following sources are provenance only; no theorem above depends on an unquoted result from them.
+\begin{itemize}
+\item A. V. Coppa, \emph{Rule \& Reference: Page Zero}, 10 June 2026.
+\item A. V. Coppa, \emph{Classical Reference: A Return Typing of Classical Mathematics}, working paper, 2026.
+\item A. V. Coppa, \emph{Minimum Mechanical Reference: Seal / Residue Form}, working paper, 2026.
+\end{itemize}
+
+\end{document}

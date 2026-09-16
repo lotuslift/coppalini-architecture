@@ -1,0 +1,280 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,longtable}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{LANGUAGE MECHANICS}
+\rhead{FORM \& FIT v0.2}
+\cfoot{\thepage}
+\newtcolorbox{lawbox}{colback=black!3,colframe=black!65,boxrule=0.45pt,arc=0pt,left=8pt,right=8pt,top=7pt,bottom=7pt}
+\newcommand{\Fit}{\operatorname{Fit}}
+\newcommand{\Pass}{\mathsf{Pass}}
+\newcommand{\Refuse}{\mathsf{Refuse}}
+\newcommand{\Defer}{\mathsf{Defer}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries FORM \& FIT}\\[3pt]
+{\large Confidence Cohered}\\[8pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original composition: 23 January 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+
+\begin{lawbox}
+\textbf{Abstract.}
+Craft begins when a declared condition is given form and that form is tested at the joint where it must work. This paper separates the two offices. Form is the organized readable state of a workpiece under a declared description. Fit is a relation among workpiece, mate or receiving condition, intended use, interface read, perturbation class, tolerance, and resolution. A workpiece can therefore be well formed and fail to fit. The minimum craft cycle is Declare, Make, Read, Compare, Refuse/Pass/Defer, Adjust, Return, with a receipt retaining the differences required by the claim. A fit certificate is non-vacuous only when its admitted perturbation class is non-empty and its acceptance region can actually distinguish pass from failure at the promised resolution. Terminal form cannot recover history that the terminal map has collapsed. Confidence and working trust enter only downstream, as economical permissions earned by retained successful tests. The method applies to material, geometric, symbolic, and computational craft whenever its carrier, read, tolerance, perturbation, verdict, and failure condition are declared.
+\end{lawbox}
+
+\section{Position}
+
+Form and fit are often spoken of as qualities of a finished workpiece. Craft encounters them earlier and more severely:
+
+\begin{lawbox}
+\centering
+\textbf{Form is made. Fit is tried.}
+\end{lawbox}
+
+Form can be inspected on a carrier. Fit appears only where that carrier meets another part, a body, an environment, an interface, or an intended use.
+
+The distinction is deliberately modest. This paper does not reduce craft to calculation. It states what calculation, touch, sight, sound, trained judgment, or automated inspection must preserve if a result is to be checked, repaired, taught, transferred, or repeated.
+
+\section{The craft office}
+
+Fix a declared craft office
+\[
+\mathcal C=(X,Z,U,Y,E,K,\rho),
+\]
+where:
+\begin{itemize}
+\item $X$ is a class of workpieces or candidate carriers;
+\item $Z$ is a class of mates, receiving conditions, or interfaces;
+\item $U$ is a class of intended uses;
+\item $Y$ is a space of readable interface observations;
+\item $E$ is an admitted perturbation class;
+\item $K\subseteq Y$ is the acceptance region;
+\item $\rho$ is the resolution at which the verdict is promised.
+\end{itemize}
+
+The office must declare the types relevant to its claim. Its carriers may be finite, geometric, mechanical, symbolic, computational, or another explicitly stated kind.
+
+For every $\eta\in E$, let
+\[
+I_\eta:X\times Z\times U\longrightarrow Y
+\]
+be the declared interface read. It may return clearance, alignment, phase, force, residual error, a vector of measurements, a Boolean test packet, or another observation required by the use contract.
+
+\textbf{Definition 2.1 (Form).}
+The form of $x\in X$ is its organized readable state under a declared description
+\[
+F:X\longrightarrow\mathcal F.
+\]
+Form may include dimensions, material, orientation, surface, sequence, syntax, or internal relation. It is not an untyped synonym for shape.
+
+\textbf{Definition 2.2 (Fit).}
+Assume
+\[
+E\neq\varnothing.
+\]
+For $x\in X$, $z\in Z$, and $u\in U$, a uniform fit certificate is
+\[
+\Fit_{\mathcal C}(x,z;u)
+\quad\Longleftrightarrow\quad
+I_\eta(x,z,u)\in K\qquad\text{for every }\eta\in E.
+\]
+
+If no external perturbation is intended, the office may declare a singleton class $E=\{\eta_0\}$ containing its specified null or nominal perturbation. An empty perturbation class certifies nothing: the universal clause may not earn fit vacuously.
+
+If the certificate is statistical, the universal clause is replaced by the explicitly declared sampling rule, error model, confidence rule, and positive sample obligation. Uniform and statistical certificates are distinct types.
+
+The acceptance region must also be non-degenerate at $\rho$. It may not be chosen so coarsely that every readable outcome passes. Nor may $K$, $E$, or $\rho$ be silently changed after the observation is seen. Such a change creates a new version of the test.
+
+\section{Form is not fit}
+
+Form is unary after its description is fixed. Fit is relational. The distinction is elementary and load-bearing.
+
+\textbf{Proposition 3.1 (Relationality of fit).}
+Let a workpiece $x\in X$ be fixed. Suppose one declared context passes uniformly,
+\[
+\Fit_{\mathcal C}(x,z_1;u_1),
+\]
+while another declared context fails, so that for some $\eta_*\in E$,
+\[
+I_{\eta_*}(x,z_2,u_2)\notin K.
+\]
+Then fit cannot be a property of $F(x)$ alone.
+
+\textit{Proof.}
+The workpiece is unchanged, hence $F(x)$ is unchanged, while the fit verdict differs between the two declared contexts. Any predicate determined by $F(x)$ alone would return the same verdict in both. Therefore mate, use, perturbation, or interface relation is essential. \hfill$\square$
+
+A key may be accurately cut and belong to the wrong lock. A mortise may be square and lie on the wrong datum. A proof artifact may be internally valid while failing to establish the proposition actually claimed. A program may compile and violate its interface contract. In each case form can remain coherent while fit fails at the joint.
+
+\section{Datum, tolerance, and readable difference}
+
+A craft comparison requires a reference that can be returned to. A \emph{datum} is that declared reference inside the office. It may be an edge, axis, plane, gauge block, calibration state, fixture, source version, baseline state, or formal theory index. It is not absolute. It is retained to the resolution required by the comparison.
+
+Let
+\[
+y=I_\eta(x,z,u)
+\]
+and let $y_0$ be the nominal interface record. When $Y$ carries subtraction, one residual may be written
+\[
+\Delta=y-y_0.
+\]
+Nothing requires a scalar residual. A signed vector, interval, logical packet, or structured error record may preserve more useful difference than a prematurely weighted score.
+
+Tolerance is the accepted region $K$. It is not a declaration that all points of $K$ are identical. It says that the remaining distinctions do not alter the promised use at resolution $\rho$.
+
+A tighter tolerance is not automatically better: it may raise cost, destroy repairability, or resolve differences irrelevant to use. A looser tolerance is not automatically safer: it may erase the very distinction the joint is required to carry.
+
+\textbf{Definition 4.1 (Misfit record).}
+A misfit record retains the observation and its boundary data,
+\[
+m=(y,K,\rho,\eta),
+\]
+not merely the verdict $y\notin K$. The retained difference supplies a lawful basis for adjustment.
+
+\section{The minimum craft cycle}
+
+The method is cyclic without requiring the workpiece to return to its former state. What returns is the comparison.
+
+\begin{enumerate}[label=\roman*.]
+\item \textbf{DECLARE.} Name the workpiece, mate, intended use, datum, acceptance region, non-empty perturbation class, and promised resolution.
+\item \textbf{MAKE.} Apply a versioned operation to the workpiece.
+\item \textbf{READ.} Produce the interface observation using a declared tool, protocol, or trained sensory procedure.
+\item \textbf{COMPARE.} Apply the retained rule to the retained observation.
+\item \textbf{REFUSE / PASS / DEFER.} Return $\Refuse$, $\Pass$, or, when the protocol is invalid or evidence is insufficient, $\Defer$.
+\item \textbf{ADJUST.} If refused, change the workpiece or explicitly version the declared use; do not rewrite the old record.
+\item \textbf{RETURN.} Re-establish the datum and repeat the comparison.
+\end{enumerate}
+
+This distinguishes revision from correction. Revision creates another formed state. Correction is the claim that the new state fits the retained office more closely. If the office itself changes, the result may remain useful, but it answers a different question.
+
+\section{Receipt and repair}
+
+Let a craft history be
+\[
+h=(x_0,d,K,E,\rho;
+ a_1,y_1,v_1;\ldots;a_n,y_n,v_n),
+\]
+where $a_k$ is an operation, $y_k$ its read, and $v_k$ its verdict. A minimum receipt retains, at least,
+\[
+\sigma(h)=
+(\text{source/version},d,K,E,\rho,
+\text{tool/calibration},y_n,v_n,
+\text{operation ledger}).
+\]
+
+The receipt need not preserve every physical event. It must preserve every distinction required by the claim. If two histories differ on a promised fact, the receipt may not identify them.
+
+Let $\sim^H_\rho$ be the equivalence relation on histories induced by the claim's declared history resolution, with quotient
+\[
+\pi^H_\rho:H\longrightarrow H/{\sim^H_\rho}.
+\]
+Let
+\[
+T:H\longrightarrow X
+\]
+return the terminal workpiece.
+
+\textbf{Lemma 6.1 (Terminal-form insufficiency).}
+If
+\[
+h_1\not\sim^H_\rho h_2
+\qquad\text{but}\qquad
+T(h_1)=T(h_2),
+\]
+then no reader
+\[
+R:X\longrightarrow H/{\sim^H_\rho}
+\]
+can satisfy
+\[
+R\circ T=\pi^H_\rho
+\]
+on both $h_1$ and $h_2$.
+
+\textit{Proof.}
+Since $T(h_1)=T(h_2)$, functionality gives
+\[
+R(T(h_1))=R(T(h_2)).
+\]
+But $h_1\not\sim^H_\rho h_2$ gives
+\[
+\pi^H_\rho(h_1)\neq\pi^H_\rho(h_2).
+\]
+The requirements are incompatible. \hfill$\square$
+
+\begin{lawbox}
+\textbf{Placement.} Lemma 6.1 is the craft-history specialization of the erasure obstruction in Form 001, with the terminal map $T$ occupying the writer/chart office. The proof is repeated here, so the present paper remains locally complete.
+\end{lawbox}
+
+Repair therefore has two distinct carriers: the altered workpiece and the retained reason for alteration. The first restores use. The second makes the repair inspectable and repeatable. Neither substitutes for the other.
+
+\section{Judgment, measurement, and the hand}
+
+Measurement enters craft as disciplined comparison, not as a replacement for the operator. A ruler requires placement; a gauge requires contact; an image requires framing; a statistical test requires a protocol. Trained sight, touch, and hearing may themselves be calibrated readers when task, resolution, error, and write-out are declared. Private experience is not by itself the public certificate; the retained read, mark, adjustment, or verdict is.
+
+Craft judgment appears in selecting the datum, deciding which differences matter to use, arranging the sequence of operations, and noticing failure before it propagates. Formalization makes those decisions auditable where possible. It does not pretend that an unspecified judgment has thereby been measured.
+
+The hand is therefore neither romantic residue nor infallible authority. It is one possible actuator in a read-compare-adjust loop. A machine may occupy the same actuator office. What matters is whether the declared difference survives the operation and returns in a form adequate to the next comparison.
+
+\section{Confidence cohered}
+
+Confidence enters only after fit has survived retained testing.
+
+\textbf{Definition 8.1 (Working confidence).}
+Working confidence is the versioned permission to rely on a fit without repeating every prior comparison, earned from retained successful tests under a declared non-empty perturbation class.
+
+Confidence is neither truth nor a feeling required of the maker. It is local to the office, conditional on the receipt, and revisable when workpiece, mate, use, calibration, perturbation class, or environment changes. Redundant reads, transport across relevant contexts, and low correction cost may strengthen it. A forced pass, suppressed refusal, vacuous perturbation class, or discarded failure record cannot.
+
+\textbf{Definition 8.2 (Working trust).}
+Working trust is the economical act of carrying warranted confidence into the next declared operation without rerunning its entire retained history.
+
+Trust is therefore use-facing and conditional. A trustworthy craft preserves the means of reopening the comparison when conditions change.
+
+\section{Exact boundary}
+
+This paper establishes a craft method, not a universal aesthetics.
+
+\begin{enumerate}
+\item Form is an organized readable state under a declared description.
+\item Fit is a relation among form, mate, use, interface, perturbation, tolerance, and resolution.
+\item A uniform fit certificate requires a non-empty perturbation class; an empty class certifies nothing.
+\item Tolerance is an explicit resolution contract, not erased difference.
+\item A craft result requires a datum, a read, a comparison rule, and a versioned verdict.
+\item Repair changes the carrier while preserving the receipt needed to explain and reproduce the change.
+\item Terminal form alone cannot recover a promised history distinction erased by the terminal map.
+\item Confidence is a downstream economy of retained successful fit, never a substitute for fit.
+\item Trust carries warranted confidence forward under a declared use; it does not make reopening impossible.
+\end{enumerate}
+
+No claim is made that every craft reduces to one metric, that every judgment can be externalized without loss, or that a passing fit exhausts the value of the made work. Form may exceed use. Use may expose another required form. The method governs only the joint at which a declared purpose is asked to hold.
+
+\begin{lawbox}
+\centering
+Good form makes a relation available.\\
+Good fit lets the relation carry.\\
+Craft is the disciplined return between them.
+\end{lawbox}
+
+\section*{Provenance}
+
+The original composition of \emph{Form \& Fit: Confidence Cohered} is dated 23 January 2026. This standalone edition preserves that construction date while removing later-corpus commentary and dead forward references. Form 001 is named only to register the exact theorem lineage of Lemma 6.1; the proof required here is reproduced in full.
+
+\end{document}

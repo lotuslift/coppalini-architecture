@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.2pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=3pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small LANGUAGE MECHANICS}
+\rhead{\small MEMORY RETURN v0.2}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\newcommand{\status}[1]{\textbf{Status.} #1}
+\newcommand{\lawbox}[1]{\begin{center}\fcolorbox{black!60}{black!2}{\parbox{0.88\linewidth}{\centering #1}}\end{center}}
+\newcommand{\MR}{\mathsf{MR}}
+\newcommand{\Ret}{\mathsf{Ret}}
+\newcommand{\Lift}{\mathsf{Lift}}
+\newcommand{\Diff}{\mathsf{Diff}}
+\newcommand{\Rec}{\mathsf{Rec}}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries 007 Memory Return}\\[3pt]
+{\large Return, Lift, Difference, and Recoverable Occurrence}\\[10pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original construction: 20 July 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+\vspace{3pt}
+\hrule
+\vspace{8pt}
+
+\status{Definitions are \textsc{Declared}. The algebraic, covering, archive, and non-erasure results proved below are \textsc{Derived} under their displayed hypotheses. The standard rotation double cover is used only as an explicit mathematical witness.}
+
+\textbf{Abstract.} A return can close at one reader while a lifted endpoint, a representation read, or a retained history remains different. This paper types those offices separately and then states the minimum bridge required to place them in one construction. The bridge is explicit: a declared coupling map sends the returned path to the based loop whose lift carries the endpoint defect. Receipt symbols are separated from receipt spaces and archives; recoverability is stated by a left inverse at a declared resolution. A standard $SU(2)\to SO(3)$ witness then proves both non-silent and silent return with retained occurrence. The construction is called \emph{Memory Return}; it is not a definition of memory in general.
+
+\section{Return at a declared reader}
+Let $X$ be a state space and let
+\[
+q:X\to Y
+\]
+be a declared reader.
+
+\begin{definition}[Reader return]
+A path $x:[0,1]\to X$ is a $q$-return when
+\[
+q(x(1))=q(x(0)).
+\]
+The equality is in $Y$ only.
+\end{definition}
+Hence reader return does not by itself imply carrier return:
+\[
+q(x(1))=q(x(0))\not\Rightarrow x(1)=x(0).
+\]
+The reader fixes what has returned and at what resolution.
+
+\section{Representation difference}
+Let $G$ be a group, let $V$ be a vector space over an arbitrary field $\mathbb F$, and let
+\[
+\varrho:G\to GL(V)
+\]
+be a representation.
+
+\begin{definition}[Difference observable]
+For $g\in G$, define
+\[
+\Psi_{\varrho}(g):=\varrho(g)-I_V\in\operatorname{End}(V).
+\]
+\end{definition}
+
+\begin{theorem}[Difference composition]\label{thm:difference}
+For all $g,h\in G$,
+\[
+\Psi_{\varrho}(gh)
+=
+\Psi_{\varrho}(g)+\Psi_{\varrho}(h)+\Psi_{\varrho}(g)\Psi_{\varrho}(h).
+\]
+Equivalently, with
+\[
+A\star B:=A+B+AB,
+\]
+one has
+\[
+\Psi_{\varrho}(gh)=\Psi_{\varrho}(g)\star\Psi_{\varrho}(h).
+\]
+\end{theorem}
+\begin{proof}
+Since $\varrho$ is multiplicative,
+\[
+\varrho(gh)-I_V
+=
+(I_V+\Psi_{\varrho}(g))(I_V+\Psi_{\varrho}(h))-I_V.
+\]
+Expanding gives the formula. Moreover,
+\[
+I_V+(A\star B)=(I_V+A)(I_V+B),
+\]
+so associativity of composition implies associativity of $\star$, and $0$ is its identity.
+\end{proof}
+
+\begin{theorem}[Silent locus]\label{thm:silent-locus}
+\[
+\Psi_{\varrho}(g)=0
+\iff
+g\in\ker\varrho.
+\]
+Hence a zero represented difference forces $g=e$ only when $\varrho$ is faithful.
+\end{theorem}
+\begin{proof}
+$\Psi_{\varrho}(g)=0$ is exactly $\varrho(g)=I_V$, which is the definition of membership in $\ker\varrho$.
+\end{proof}
+
+\section{Lifted endpoint defect}
+Let
+\[
+p:\widetilde B\to B
+\]
+be a connected regular covering. Let its deck group $\Gamma$ act on $\widetilde B$, and assume the usual regular-cover property that $\Gamma$ acts transitively on each fiber. Let $\gamma:[0,1]\to B$ be a based loop and $\widetilde\gamma$ the chosen lift beginning at $\widetilde b_0$.
+
+\begin{definition}[Endpoint defect]
+The endpoint defect is the unique $\varepsilon\in\Gamma$ satisfying
+\[
+\widetilde\gamma(1)=\varepsilon\cdot\widetilde\gamma(0).
+\]
+\end{definition}
+Existence follows because the two endpoints lie in the same fiber and the deck action is transitive there; uniqueness follows from freeness of the deck action. Base closure and lifted closure are distinct predicates:
+\[
+\gamma(1)=\gamma(0)
+\quad\text{while possibly}\quad
+\widetilde\gamma(1)\neq\widetilde\gamma(0).
+\]
+
+\section{Receipt, archive, and resolution-bounded recovery}
+Let $\mathcal R$ be a receipt universe. Define the length-$m$ archive by
+\[
+\operatorname{Archive}_m(\mathcal R):=\mathcal R^m.
+\]
+For $M\in\operatorname{Archive}_m(\mathcal R)$ and $r\in\mathcal R$, write $\operatorname{snoc}(M,r)$ for append.
+
+\begin{theorem}[Split append]\label{thm:split-append}
+\[
+\operatorname{dropLast}(\operatorname{snoc}(M,r))=M,
+\qquad
+\operatorname{last}(\operatorname{snoc}(M,r))=r.
+\]
+Thus append is injective in its archive argument, and equal payloads appended at different addresses remain distinct occurrences.
+\end{theorem}
+\begin{proof}
+Both identities are the defining projection laws of finite sequence append. If $\operatorname{snoc}(M,r)=\operatorname{snoc}(M',r)$, applying $\operatorname{dropLast}$ gives $M=M'$.
+\end{proof}
+
+\begin{theorem}[Persistent indexed retention]\label{thm:indexed-retention}
+Let $S$ be any later suffix and let
+\[
+A=M\mathbin{\|}[r]\mathbin{\|}S,
+\]
+where $M$ has length $m$. Then
+\[
+\operatorname{entry}_m(A)=r.
+\]
+Later appends do not erase the earlier receipt.
+\end{theorem}
+\begin{proof}
+Concatenation preserves the first $m+1$ addresses. The element appended immediately after the length-$m$ prefix therefore remains at address $m$ under zero-based indexing.
+\end{proof}
+
+Fix a promised history resolution $\delta$. Let $W_\delta$ be the admitted history classes at that resolution and let $\mathcal R_\delta$ be the corresponding receipt-code space.
+
+\begin{definition}[Lossless ingress at resolution $\delta$]\label{def:ingress}
+A lossless ingress pair is
+\[
+\operatorname{Enc}_\delta:W_\delta\to\mathcal R_\delta,
+\qquad
+\operatorname{Dec}_\delta:\mathcal R_\delta\rightharpoonup W_\delta
+\]
+with
+\[
+\operatorname{Dec}_\delta\circ\operatorname{Enc}_\delta
+=
+\operatorname{id}_{W_\delta}.
+\]
+The decoder may be partial outside the image of the encoder.
+\end{definition}
+
+\begin{theorem}[Archive-ingress composition]\label{thm:archive-ingress}
+Fix a prefix archive $M$ of length $m$ and define
+\[
+A_M(w):=M\mathbin{\|}[\operatorname{Enc}_\delta(w)].
+\]
+After any later suffix $S$ is appended,
+\[
+\operatorname{Dec}_\delta\!\left(
+\operatorname{entry}_m(A_M(w)\mathbin{\|}S)
+\right)=w.
+\]
+Hence history-to-receipt-to-archive ingress is split at the declared resolution.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:indexed-retention} gives
+\[
+\operatorname{entry}_m(A_M(w)\mathbin{\|}S)=\operatorname{Enc}_\delta(w).
+\]
+Apply $\operatorname{Dec}_\delta$ and use Definition~\ref{def:ingress}.
+\end{proof}
+The theorem recovers exactly the distinctions represented by $W_\delta$ and encoded by $\operatorname{Enc}_\delta$. It cannot recover a distinction that was never encoded.
+
+\section{The Memory Return datum}
+The return path and the lifted loop must be connected by an explicit map; co-residence in a tuple is not enough.
+
+\begin{definition}[Memory Return datum]\label{def:MR}
+A Memory Return datum at resolution $\delta$ is the four-office record
+\[
+\boxed{
+\MR_\delta=(\Ret,\Lift,\Diff,\Rec)
+}
+\]
+with
+\[
+\Ret=(q,x),
+\]
+where $x:[0,1]\to X$ is a $q$-return;
+\[
+\Lift=(\alpha,p,\gamma,\widetilde\gamma,\varepsilon),
+\]
+where $\alpha:X\to B$ is a declared continuous coupling map satisfying
+\[
+\boxed{\gamma=\alpha\circ x}
+\]
+and $\gamma$ is a based loop, $p:\widetilde B\to B$ is the declared regular cover, $\widetilde\gamma$ is the chosen lift, and $\varepsilon$ is its endpoint defect;
+\[
+\Diff=(\varrho,\Psi_{\varrho}(\varepsilon)),
+\]
+where $\varrho:\Gamma\to GL(V)$ is a declared representation; and
+\[
+\Rec=(w,r,m),
+\qquad
+r=\operatorname{Enc}_\delta(w)\in\mathcal R_\delta,
+\]
+where $w\in W_\delta$ is the admitted traversal-history class and $r$ is retained at archive address $m$.
+\end{definition}
+
+The coupling equation $\gamma=\alpha\circ x$ is load-bearing. It is the typed bridge that the earlier phrase ``action witness'' left unspecified. Without such a map or an equivalent explicit relation, a reader-return path and an unrelated lifted loop do not constitute one Memory Return datum.
+
+No equality of numerical representatives licenses type collapse. A scalar $-1$, a central element $-I$, and an operator $-I_V$ may correspond under declared maps; they are not one object.
+
+\section{Standard double-cover witness}
+Take
+\[
+B=X=SO(3),
+\qquad
+q=\operatorname{id}_{SO(3)},
+\qquad
+\alpha=\operatorname{id}_{SO(3)},
+\]
+and use the standard connected regular cover
+\[
+p:SU(2)\to SO(3)
+\]
+with deck group $\Gamma=\{\pm I_2\}$. Let $\varrho:\Gamma\to GL_2(\mathbb C)$ be the defining inclusion.
+
+For a generator loop corresponding to a $2\pi$ rotation, the chosen lift beginning at $I_2$ ends at $-I_2$. Thus
+\[
+\varepsilon_{2\pi}=-I_2,
+\qquad
+\Psi_{\varrho}(\varepsilon_{2\pi})=-2I_2.
+\]
+The base loop is a $q$-return because it is based, while the lifted endpoint and represented difference remain nontrivial.
+
+For the concatenated $4\pi$ loop,
+\[
+\varepsilon_{4\pi}=(-I_2)^2=I_2.
+\]
+Using Theorem~\ref{thm:difference},
+\[
+\Psi_{4\pi}
+=(-2I_2)\star(-2I_2)
+=-4I_2+4I_2
+=0.
+\]
+The same result follows from Theorem~\ref{thm:silent-locus} because $\varepsilon_{4\pi}=e$.
+
+If $W_\delta$ distinguishes either traversed loop from the null history and the receipt ingress is lossless, Theorem~\ref{thm:archive-ingress} preserves that distinction after later appends.
+
+\section{Non-erasure and silence}
+\begin{theorem}[Memory Return non-erasure]\label{thm:nonerasure}
+Within the class of Memory Return data, reader closure does not determine lifted defect, represented difference, or traversal occurrence. In particular, none of the following implications is valid without an additional hypothesis:
+\[
+q(x(1))=q(x(0))\Longrightarrow\varepsilon=e,
+\]
+\[
+q(x(1))=q(x(0))\Longrightarrow\Psi_{\varrho}(\varepsilon)=0,
+\]
+\[
+q(x(1))=q(x(0))\Longrightarrow w=w_{\varnothing}.
+\]
+\end{theorem}
+\begin{proof}
+The $2\pi$ double-cover witness above is a reader return with $\varepsilon=-I_2\neq e$ and $\Psi_{\varrho}(\varepsilon)=-2I_2\neq0$. Hence the first two conclusions do not follow from reader closure. The $4\pi$ witness is a reader return with represented difference $0$ while, at any history resolution that distinguishes the traversed loop from the null history, lossless ingress gives a receipt recovering $w_{4\pi}\neq w_{\varnothing}$. Hence reader closure, including represented silence, does not imply empty occurrence.
+\end{proof}
+
+\begin{definition}[Silent Memory Return]
+A Silent Memory Return is a Memory Return datum satisfying
+\[
+q(x(1))=q(x(0)),
+\qquad
+\Psi_{\varrho}(\varepsilon)=0,
+\]
+while its adequate receipt distinguishes the admitted traversal history from the null history:
+\[
+w\neq w_{\varnothing}.
+\]
+Silence here means closure at the selected representation/read, not absence of occurrence.
+\end{definition}
+
+\section{Office separation}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.95in}p{1.85in}X@{}}
+\toprule
+Office & Carrier & Question\\
+\midrule
+Return & reader codomain $Y$ & did the declared read close?\\
+Lift & cover / deck group $\Gamma$ & what finer endpoint distinction remains?\\
+Difference & $\operatorname{End}(V)$ & what does the representation distinguish?\\
+Receipt & $W_\delta$, $\mathcal R_\delta$, archive address & which occurrence can be recovered?\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+These offices are coupled only by the maps explicitly declared in Definition~\ref{def:MR}. None may be silently substituted for another.
+
+\section{Boundary}
+This paper establishes:
+\begin{itemize}
+\item typed return relative to a reader;
+\item the exact representation-difference composition law and silent locus;
+\item lifted endpoint defect under a declared regular cover;
+\item split append and persistent indexed retention;
+\item left-invertible resolution-bounded ingress;
+\item an explicit coupling map joining a returned path to the lifted loop used by the Memory Return datum;
+\item concrete $2\pi/4\pi$ witnesses showing that reader closure, lifted defect, represented difference, and occurrence are different predicates;
+\item Silent Memory Return as a defined special case of represented closure with non-null recoverable occurrence.
+\end{itemize}
+It does not establish:
+\begin{itemize}
+\item that all memory is return;
+\item that storage requires recurrence, curvature, or holonomy;
+\item that a deck element contains semantic content;
+\item that equal numerical representatives identify independently typed objects;
+\item that a return architecture is automatically a physical, biological, or cognitive mechanism;
+\item that endpoint recurrence supplies a Berry phase without the required native transport data.
+\end{itemize}
+
+\section*{Source record}
+The following entries are provenance or standard mathematical background only. Every theorem needed by the present Language Mechanics construction is stated and proved locally above.
+\begin{itemize}
+\item A. V. Coppa, \emph{Memory Return: Observable Difference, Central Lift, Lossless Bookkeeping}, Draft 0.1, 20 July 2026.
+\item A. V. Coppa, \emph{Memory Return Closure Certificate: Persistent Lossless Ingress and an Exact Paraxial Realization of $Q^2$}, 21 August 2026. Only the receipt/ingress construction is retained here; the optical realization remains outside this form.
+\item A. Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002, Chapter 1, for standard covering-space background.
+\end{itemize}
+
+\end{document}

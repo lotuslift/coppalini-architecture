@@ -1,140 +1,60 @@
 # Coppalini Architecture
 
-**Formal interface audit, reference preservation, and evidence-bearing closure.**
+**Papers on Language Mechanics, reference-preserving formal architecture, and selected mathematical-physics applications.**
 
-Coppalini Architecture is a formal systems architecture developed by **Anthony Vito Coppa** for preserving definitions, constraints, evidence, and claim boundaries as they move across representations and domains.
+This repository is the public paper shelf for work by Anthony Vito Coppa / Coppalini Architecture. Each entry retains a stable display PDF and the best available authoring source. The collection is intentionally narrow: publication-ready papers are included; working conversations, roadmaps, duplicate bundles, unfinished nodes, build products, and experimental programs are not.
 
-The working rule is simple:
+## Language Mechanics formal basis
 
-> **No required relation is dropped; no unsupported relation is added.**
+The complete 000-011 sequence is under [`papers/language-mechanics`](papers/language-mechanics/). Every numbered paper has a LaTeX source and a PDF display copy.
 
-That sentence is a method-level compression, not a replacement for domain mathematics. Native mathematics, physics, law, engineering, and evidence retain native authority. The architecture supplies a typed interface for asking what survives a transformation, what does not, and what remains open.
+| No. | Paper | Version | PDF | Source |
+|---:|---|---|---|---|
+| 000 | Language Mechanics | v0.2.1 | [PDF](papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.pdf) | [LaTeX](papers/language-mechanics/000-language-mechanics/language-mechanics-000-v0.2.1.tex) |
+| 001 | Condition & Constraint | v0.2 | [PDF](papers/language-mechanics/001-condition-and-constraint/condition-and-constraint-001-v0.2.pdf) | [LaTeX](papers/language-mechanics/001-condition-and-constraint/condition-and-constraint-001-v0.2.tex) |
+| 002 | Form & Fit | v0.2 | [PDF](papers/language-mechanics/002-form-and-fit/form-and-fit-002-v0.2.pdf) | [LaTeX](papers/language-mechanics/002-form-and-fit/form-and-fit-002-v0.2.tex) |
+| 003 | Form Λ Fit Δ Function | v0.2 | [PDF](papers/language-mechanics/003-form-lambda-fit-delta-function/form-lambda-fit-delta-function-003-v0.2.pdf) | [LaTeX](papers/language-mechanics/003-form-lambda-fit-delta-function/form-lambda-fit-delta-function-003-v0.2.tex) |
+| 004 | Identity & Reference | v0.2 | [PDF](papers/language-mechanics/004-identity-and-reference/identity-and-reference-004-v0.2.pdf) | [LaTeX](papers/language-mechanics/004-identity-and-reference/identity-and-reference-004-v0.2.tex) |
+| 005 | Matrix Admissibility | v0.2 | [PDF](papers/language-mechanics/005-matrix-admissibility/matrix-admissibility-005-v0.2.pdf) | [LaTeX](papers/language-mechanics/005-matrix-admissibility/matrix-admissibility-005-v0.2.tex) |
+| 006 | Minimum Formal & Mechanical Reference | v0.2 | [PDF](papers/language-mechanics/006-minimum-formal-mechanical-reference/minimum-formal-mechanical-reference-006-v0.2.pdf) | [LaTeX](papers/language-mechanics/006-minimum-formal-mechanical-reference/minimum-formal-mechanical-reference-006-v0.2.tex) |
+| 007 | Memory Return | v0.2 | [PDF](papers/language-mechanics/007-memory-return/memory-return-007-v0.2.pdf) | [LaTeX](papers/language-mechanics/007-memory-return/memory-return-007-v0.2.tex) |
+| 008 | Persistence & Endurance | v0.2 | [PDF](papers/language-mechanics/008-persistence-and-endurance/persistence-and-endurance-008-v0.2.pdf) | [LaTeX](papers/language-mechanics/008-persistence-and-endurance/persistence-and-endurance-008-v0.2.tex) |
+| 009 | The Dihedral Phase Constraint | v0.2 | [PDF](papers/language-mechanics/009-dihedral-phase-constraint/dihedral-phase-constraint-009-v0.2.pdf) | [LaTeX](papers/language-mechanics/009-dihedral-phase-constraint/dihedral-phase-constraint-009-v0.2.tex) |
+| 010 | Minimum Root Algebra | v0.2 | [PDF](papers/language-mechanics/010-minimum-root-algebra/minimum-root-algebra-010-v0.2.pdf) | [LaTeX](papers/language-mechanics/010-minimum-root-algebra/minimum-root-algebra-010-v0.2.tex) |
+| 011 | Occurrence and the Twenty-Eight-Seam Reader | v0.2 | [PDF](papers/language-mechanics/011-occurrence-twenty-eight-seam-reader/occurrence-twenty-eight-seam-reader-011-v0.2.pdf) | [LaTeX](papers/language-mechanics/011-occurrence-twenty-eight-seam-reader/occurrence-twenty-eight-seam-reader-011-v0.2.tex) |
 
-## What is here
+### Coppalini Architecture extension
 
-This repository begins deliberately small. Version 0.1 contains three layers:
+*Tool & Technique: Stopping Point & The Theory of Enough* is housed with Language Mechanics as the requested CA-03 extension: [PDF](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.pdf) / [LaTeX](papers/language-mechanics/ca-03-tool-and-technique/CA_01_Tool_and_Technique_Stopping_Point_Theory_of_Enough_v0_1.tex). The retained manuscript identifies itself internally as **Coppalini Architecture - Methodology Basis 01**; the repository does not silently rewrite that source-level numbering.
 
-1. **Method** — minimum public definitions, audit order, status law, and receipt discipline.
-2. **Executable kernels** — a read-only reference auditor, a Lean reader-sufficiency kernel, and C++20 compile-time reference/claim-motion checks.
-3. **Selected research applications** — compact papers chosen because they expose the same interface problem in distinct mathematical settings, plus one broader provenance/result paper retained as an archival witness.
+## Principal papers
 
-The repository is not intended to be the complete research corpus.
+| Paper | Edition | PDF | Source |
+|---|---|---|---|
+| Motion and Difference | 17 Jul 2026; DOI-bearing display edition | [PDF](papers/motion-and-difference/motion-and-difference-2026-07-17.pdf) | [LaTeX](papers/motion-and-difference/motion-and-difference-2026-07-17.tex) |
+| Continuum Closure in Covariant Loop Quantum Gravity | canonical v1.1, 2 Sep 2026; DOI citation update only | [PDF](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.pdf) | [LaTeX](papers/continuum-closure-covariant-lqg/continuum-closure-covariant-lqg-v1.1.tex) |
+| Metric Mirror Symmetry / Riemann's i Machine | 9 Sep 2026 canonical edition | [PDF](papers/metric-mirror-symmetry-riemanns-i-machine/metric-mirror-symmetry-riemanns-i-machine-2026-09-09.pdf) | PDF is the retained canonical artifact |
+| Mirror Recognition: The Minimum Symmetric Field Closure | final form v1.0 | [PDF](papers/mirror-recognition/mirror-recognition-v1.0.pdf) | [Markdown audit source](papers/mirror-recognition/mirror-recognition-v1.0.md) |
+| The Exact Reader | v0.1 | [PDF](papers/the-exact-reader/the-exact-reader-v0.1.pdf) | [Markdown](papers/the-exact-reader/the-exact-reader-v0.1.md) |
 
-## Core question
+## Closely related papers
 
-When does a reduced read retain enough information for a downstream decision?
+| Paper | Edition | PDF | Source |
+|---|---|---|---|
+| The Structure of Survival: Minimum Enduring Complexity | corrected adapter edition v0.2 | [PDF](papers/minimum-enduring-complexity/minimum-enduring-complexity-v0.2.pdf) | [LaTeX](papers/minimum-enduring-complexity/minimum-enduring-complexity-v0.2.tex) |
+| Compatibility Without Flatness | v0.1 | [PDF](papers/compatibility-without-flatness/compatibility-without-flatness-v0.1.pdf) | [LaTeX](papers/compatibility-without-flatness/compatibility-without-flatness-v0.1.tex) |
+| Coarse-Grained Entropy and Exterior Records | v0.1 | [PDF](papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.pdf) | [LaTeX](papers/coarse-grained-entropy-and-exterior-records/coarse-grained-entropy-and-exterior-records-v0.1.tex) |
 
-Let $R : X \to C$ be a read of a source state, and let $D : X \to A$ be a downstream decision or property.
+## Citation and integrity
 
-The exact criterion is:
+Use [`CITATION.md`](CITATION.md) for human-readable references and [`CITATION.cff`](CITATION.cff) for repository metadata. [`SHA256SUMS`](SHA256SUMS) records the exact files in this archive.
 
-$$
-R(x)=R(y) \;\Longrightarrow\; D(x)=D(y).
-$$
+The DOI for *Motion and Difference* is [10.5281/zenodo.22780641](https://doi.org/10.5281/zenodo.22780641).
 
-In words: whenever the read treats two source states as the same, the downstream decision must also treat them as the same.
+## Scope
 
-Equivalently, `D` factors through the quotient induced by equality under `R`.
+This repository publishes the papers. Computational models, audit programs, proof kernels, visualization experiments, future-development nodes, and private provenance records are intentionally outside the present public surface. They can be introduced later in separate, clearly versioned directories when they are ready.
 
-A single **decision collision**
+## Rights
 
-$$
-R(x)=R(y), \qquad D(x)\neq D(y)
-$$
-
-is therefore an obstruction certificate: the information retained by $R$ is insufficient to determine $D$.
-
-The machine-checked Lean implementation is in [`tools/moneyroot`](tools/moneyroot).
-
-## Tools
-
-### MIRROR_CUT
-
-[`tools/mirror-cut`](tools/mirror-cut/) is a read-only reference audit sidecar. A candidate declares the exact SHA-256 digest of the reference it was composed against. Silent substitution is refused; an evidence-backed update may be proposed but is never committed by the auditor. The tool emits deterministic receipts and has a finite regression suite.
-
-### MoneyRoot v0.2
-
-[`tools/moneyroot`](tools/moneyroot/) contains the certified Lean 4.33.0 theorem kernel for reader sufficiency, decision collisions, exact recoverability, explicit reader→policy→controller composition, supplemental reads, and residual-distinction necessity. Empirical economic or legal adapters are outside the theorem kernel.
-
-### C++20 atomic kernels
-
-[`tools/cpp`](tools/cpp/) contains two deliberately neutral compile-time witnesses:
-
-- `atomic_reference_kernel.cpp` — admissible transport, nontrivial Difference, exact Return, receipt growth, and refusal of broken/out-of-domain transport;
-- `claim_motion_gate.cpp` — preserve/coarsen/refine/strengthen/scope-extension checks on **already-typed, externally validated** relations.
-
-These files do not infer semantics from raw natural language. They check relations after an external reader or adapter has typed them.
-
-## Selected papers
-
-### Motion and Difference
-
-[`papers/motion-and-difference`](papers/motion-and-difference/)
-
-A broader compatibility construction spanning projective dynamics, Fibonacci structure, hyperbolic geometry, and a Lorentzian `SO(2)` gauge field. Its gauge sector supplies the exact-gluing/nonflatness witness cited by the continuum-closure paper. A Zenodo archival DOI is now a near-term release target.
-
-### Continuum Closure in Covariant Loop Quantum Gravity
-
-[`papers/continuum-closure-covariant-lqg`](papers/continuum-closure-covariant-lqg/)
-
-A compatibility criterion separating exact gluing of local descriptions from physical flatness, then requiring gravitational-sector selection, refinement-compatible physical-state descent, and survival of a nonzero transverse-traceless spin-two residue. The model-specific UV test remains open.
-
-### Compatibility Without Flatness
-
-[`papers/compatibility-without-flatness`](papers/compatibility-without-flatness/)
-
-A compact Lorentzian `SO(2)` witness showing that exact local gluing can coexist with nonzero source-free curvature, nontrivial holonomy, and unequal proper time. This is the immediate archival/DOI target supporting the continuum-closure paper.
-
-### Coarse-Grained Entropy and Exterior Records
-
-[`papers/coarse-grained-entropy-and-exterior-records`](papers/coarse-grained-entropy-and-exterior-records/)
-
-A short companion note moving in the opposite direction: from a many-to-one macroscopic read to the compatible microscopic fiber, Boltzmann multiplicity, and the exact limit on what a downstream exterior record can reconstruct. Its black-hole use is explicitly semiclassical; microscopic quantum-gravity entropy remains outside its claim boundary.
-
-## Method in one line
-
-```text
-type the relation -> audit its transport -> repair the interface -> certify what survives
-```
-
-The full public basis is in [`docs/METHODOLOGY_BASIS.md`](docs/METHODOLOGY_BASIS.md).
-
-## Status discipline
-
-This repository distinguishes at least:
-
-- `DECLARED` — a definition, coordinate, convention, or chosen interface;
-- `DERIVED` — follows from displayed premises;
-- `COMPUTED` — verified by an explicit finite/deterministic computation;
-- `CERTIFIED` — passed the declared proof or audit gate with a retained receipt;
-- `OPEN` — a required map, warrant, calculation, or witness is still missing;
-- `REFUSED` — a required gate fails;
-- `UNAVAILABLE` — the required information is not presently accessible.
-
-An open application does not reopen a closed generic theorem. A generic theorem does not certify an application whose own adapter or evidence is missing.
-
-See [`STATUS.md`](STATUS.md) for the current component ledger.
-
-## Reproduce the executable checks
-
-```bash
-make test
-```
-
-The default test target runs the Python MIRROR_CUT regression suite and compiles/runs both C++20 kernels with the available local compiler. The Lean source is pinned by `lean-toolchain`; its independent v0.2 elaboration receipt is preserved in the repository. `make test-lean` runs it when Lean 4.33.0 is installed.
-
-## Repository boundary
-
-This repository is the **architecture/tooling and selected-application surface**. The broader foundational field **Language Mechanics** is intentionally not folded into it. That field has its own charter, formal basis, root algebra, and proof sequence and is better published as a separate repository when ready.
-
-Planned additions are listed in [`roadmap/PLANNED_ADDITIONS.md`](roadmap/PLANNED_ADDITIONS.md).
-
-## Citation and archival releases
-
-Repository-level citation metadata is in [`CITATION.cff`](CITATION.cff). Research use should cite the specific paper/result whenever possible.
-
-Two immediate archival targets are **Compatibility Without Flatness** and **Motion and Difference**. Preparation files live under [`zenodo/`](zenodo/). CCLQG v1.1 already cites *Motion and Difference*; once that record receives a DOI, `scripts/apply_motion_difference_doi.py` generates a bibliography-only v1.1.1 source without changing the mathematical content.
-
-## Licensing
-
-No public license is silently assumed in this seed. A proposed split—permissive software license for code and CC BY for papers/documentation—is recorded in [`LICENSING.md`](LICENSING.md) for author selection before public release.
+Public visibility does not itself grant a reuse license. See [`LICENSING.md`](LICENSING.md).

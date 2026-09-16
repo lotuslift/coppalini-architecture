@@ -1,0 +1,376 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,booktabs,tabularx,array,enumitem,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.52em}
+\setlist{nosep,leftmargin=1.6em}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Id}{I}
+\newcommand{\Dinf}{D_{\infty}}
+\newcommand{\Dih}[1]{D_{#1}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\snoc}{\operatorname{snoc}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\scshape Language Mechanics}
+\fancyhead[R]{\footnotesize\scshape The Dihedral Phase Constraint v0.2}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\setlength{\headheight}{14pt}
+\newenvironment{statusbox}{\begin{center}\begin{minipage}{0.94\textwidth}\small\hrule\vspace{0.45em}}{\vspace{0.45em}\hrule\end{minipage}\end{center}}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries 009 The Dihedral Phase Constraint}\par
+\vspace{0.18em}
+{\large Inversion, Phase Closure, and the Central Turning Lift}\par
+\vspace{0.5em}
+Anthony Vito Coppa\par
+\textit{Language Mechanics -- Formal Form 009}\par
+\textit{Original proof composition: 28 February 2026}\par
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+
+\begin{statusbox}
+\textbf{Status discipline.} Definitions, carrier choices, and selection jurisdictions are \textbf{DECLARED}. Lemmas 1--4 and Theorems 1--3 are \textbf{DERIVED} under the displayed hypotheses. No result in this paper inherits certification from another corpus or neighboring form.
+\end{statusbox}
+
+\textbf{Abstract.}
+Let $F$ be an invertible continuation and let $\Pi$ be an involution satisfying
+\[
+\Pi F\Pi=F^{-1}.
+\]
+This relation is the \emph{dihedral phase constraint}. It says that conjugation by a declared mirror reverses the orientation of a declared continuation. The constraint itself supplies an inversion grammar, not a universal dynamics. This paper proves its abstract normal form, gives finite and infinite realizations, exhibits the unique nonidentity inversion-fixed phase on $U(1)$, constructs one selected planar infinite-dihedral carriage, and proves that a nontrivial turning symmetry in $SU(2)$ has forced central square $-I$. Projection, lifted parity, represented difference, and occurrence receipt are kept as distinct reads throughout.
+
+\section*{0. Scope}
+The paper concerns only the structures explicitly declared below. It does not assert that every system is dihedral, that the constraint selects a unique recurrence without a selection jurisdiction, or that an exact mathematical realization is automatically a physical mechanism.
+
+\section{The abstract inversion grammar}
+\textbf{Definition 1 (Dihedral phase constraint).}
+Let $G$ be a group. Let $F,\Pi\in G$ satisfy
+\[
+\Pi^2=e.
+\]
+The pair $(F,\Pi)$ satisfies the dihedral phase constraint when
+\[
+\boxed{\Pi F\Pi=F^{-1}.}
+\]
+Here $F$ is continuation, $\Pi$ is inversion, and the displayed conjugacy is their compatibility relation.
+
+\textbf{Lemma 1 (Integer continuation).}
+For every $n\in\Z$,
+\[
+\Pi F^n\Pi=F^{-n}.
+\]
+\textit{Proof.}
+For $n\ge 0$, conjugation is multiplicative because $\Pi^{-1}=\Pi$:
+\[
+\Pi F^n\Pi=(\Pi F\Pi)^n=(F^{-1})^n=F^{-n}.
+\]
+The negative cases follow by inversion and $n=0$ is immediate. \hfill$\square$
+
+\textbf{Theorem 1 (Dihedral normal form).}
+Every word in $F$ and $\Pi$ reduces to one of
+\[
+F^n,\qquad \Pi F^n,
+\qquad n\in\Z.
+\]
+If $F$ has infinite order, then
+\[
+\langle F,\Pi\rangle\cong D_{\infty}.
+\]
+If $F$ has finite order $N\ge 3$ and $\Pi\notin\langle F\rangle$, then
+\[
+\langle F,\Pi\rangle\cong D_N,
+\qquad |D_N|=2N.
+\]
+\textit{Proof.}
+The relation $\Pi F=F^{-1}\Pi$ moves every occurrence of $\Pi$ to the left, and $\Pi^2=e$ removes adjacent pairs. This gives the two normal forms. If $F$ has infinite order, equality $F^m=\Pi F^n$ would put $\Pi$ in the infinite cyclic group $\langle F\rangle$, which has no nonidentity element of order two; $\Pi=e$ would also force $F^2=e$, contradicting infinite order. Hence the two families are distinct and give the standard presentation of $D_\infty$. In the finite case, $F^N=e$ gives the usual $2N$ elements when the declared mirror is not already in the cyclic subgroup. \hfill$\square$
+
+\section{Continuous phase and exact closure}
+Let $V$ be a finite-dimensional real or complex vector space, let $A\in\operatorname{End}(V)$, and define
+\[
+F(t)=e^{tA},\qquad t\in\R.
+\]
+
+\textbf{Lemma 2 (Infinitesimal inversion under conjugation).}
+For any invertible $S\in\GL(V)$,
+\[
+S F(t)S^{-1}=F(-t)\ \text{for all }t
+\quad\Longleftrightarrow\quad
+SAS^{-1}=-A.
+\]
+If $S^2=I$, then $S^{-1}=S$ and this becomes the involutive form $SF(t)S=F(-t)$.
+
+\textit{Proof.}
+Differentiating the first relation at $t=0$ gives $SAS^{-1}=-A$. Conversely,
+\[
+S e^{tA}S^{-1}=e^{tSAS^{-1}}=e^{-tA}.
+\]
+\hfill$\square$
+
+For the phase circle, take $V=\C$, let $R_t z=e^{it}z$, and let $Kz=\overline z$. Then $K$ is a real-linear involution and
+\[
+KR_tK=R_{-t}=R_t^{-1}.
+\]
+Euler's formula records the traversal:
+\[
+e^{it}=\cos t+i\sin t.
+\]
+The points of $U(1)$ fixed by inversion satisfy $z=z^{-1}$, hence $z^2=1$. They are exactly $\{1,-1\}$, so the unique nonidentity inversion-fixed phase is
+\[
+e^{i\pi}=-1.
+\]
+If $R=R_{\pi/2}$ is the quarter-turn, then
+\[
+R^4=I,\qquad K^2=I,\qquad KRK=R^{-1},
+\]
+and therefore
+\[
+\langle R,K\rangle\cong D_4.
+\]
+
+\section{A selected planar carriage}
+The dihedral phase constraint does not select a Fibonacci recurrence by itself. To obtain one specific planar carrier, declare
+\[
+\mathcal D_{\mathrm{tr}}
+=
+\left\{
+A=\begin{pmatrix}a&b\\b&c\end{pmatrix}:
+ a,b,c\in\Z_{\ge0},\ \det A=-1,\ A\text{ has infinite projective order}
+\right\}.
+\]
+Let
+\[
+P=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+
+\textbf{Theorem 2 (Minimum-trace transporter in the declared class).}
+The minimum trace in $\mathcal D_{\mathrm{tr}}$ is $1$. Its minimizing orbit under coordinate exchange is
+\[
+\left\{Q,PQP\right\},
+\qquad
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix}.
+\]
+A fixed ordered chart selects $Q$.
+
+\textit{Proof.}
+Write $A=\left(\begin{smallmatrix}a&b\\b&c\end{smallmatrix}\right)$ with $a,b,c\in\Z_{\ge0}$ and $ac-b^2=-1$. If $\tr A=0$, then $a=c=0$ and $b=1$, so $A=P$, which has finite order and is excluded. Thus $\tr A\ge1$. If $\tr A=1$, then $(a,c)$ is $(1,0)$ or $(0,1)$ and the determinant condition forces $b=1$. These are exactly $Q$ and $PQP$. \hfill$\square$
+
+Direct multiplication gives
+\[
+Q^2=Q+I.
+\]
+Its eigenvalues are
+\[
+\Phi=\frac{1+\sqrt5}{2},\qquad
+\Psi=\frac{1-\sqrt5}{2}=-\Phi^{-1},
+\]
+with separation $\Phi-\Psi=\sqrt5$. By Cayley--Hamilton,
+\[
+Q^n=F_nQ+F_{n-1}I\qquad(n\ge1),
+\]
+where $F_0=0,F_1=1$.
+
+Define
+\[
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},
+\qquad
+G=[Q,\Omega]=Q\Omega-\Omega Q
+=\begin{pmatrix}-2&1\\1&2\end{pmatrix},
+\qquad
+H=\frac{G}{\sqrt5}.
+\]
+Then direct multiplication gives
+\[
+G^2=5I,\qquad H^2=I,\qquad HQH=-Q^{-1}.
+\]
+In projective space the scalar sign disappears, so $h=[H]$ and $q=[Q]$ satisfy
+\[
+h^2=1,\qquad hqh=q^{-1}.
+\]
+
+For an exact linear realization use the even carriage
+\[
+B:=Q^2=\begin{pmatrix}2&1\\1&1\end{pmatrix}.
+\]
+Then
+\[
+HBH=B^{-1}.
+\]
+The eigenvalues of $B$ are $\Phi^2$ and $\Phi^{-2}$, so $B$ has infinite order. Moreover
+\[
+\det B=1,\qquad \det H=-1,
+\]
+so $H\notin\langle B\rangle$. Theorem 1 therefore applies and gives
+\[
+\boxed{\langle B,H\rangle\cong D_{\infty}.}
+\]
+
+\section{The central turning lift}
+The phase and planar realizations use involutive mirrors. The standard rotation cover admits a stricter lift: the projected reversal may have order two while its lift has order four.
+
+Let
+\[
+SU(2)=\{U\in M_2(\C):U^\dagger U=I,\ \det U=1\},
+\qquad Z(SU(2))=\{\pm I\}.
+\]
+Choose $X\in\mathfrak{su}(2)$ with $X^2=-I$ and define
+\[
+U(t)=e^{tX}=\cos t\,I+\sin t\,X,
+\qquad T=U(\R)\cong U(1).
+\]
+Then $U(\pi)=-I$ and $U(2\pi)=I$.
+
+\textbf{Turning hypothesis.}
+Let $g\in SU(2)$ satisfy
+\[
+gU(t)g^{-1}=U(-t)\qquad\text{for all }t\in\R.
+\]
+By Lemma 2, equivalently
+\[
+gXg^{-1}=-X.
+\]
+
+\textbf{Lemma 3 (Centralizer lock).}
+The centralizer of the nontrivial circle $T$ in $SU(2)$ is $T$ itself.
+
+\textit{Proof.}
+Conjugate $T$ to
+\[
+T_0=\left\{
+\begin{pmatrix}e^{it}&0\\0&e^{-it}\end{pmatrix}:t\in\R
+\right\}.
+\]
+A matrix commuting with every element of $T_0$ has zero off-diagonal entries and, inside $SU(2)$, lies in $T_0$. Undo the conjugation. \hfill$\square$
+
+\textbf{Lemma 4 (Forced central square).}
+Under the turning hypothesis,
+\[
+g^2\in\{\pm I\}.
+\]
+\textit{Proof.}
+Applying the turning relation twice gives $g^2U(t)g^{-2}=U(t)$, hence Lemma 3 gives $g^2\in T$. Conjugation by $g$ inverts every element of $T$, while $g$ commutes with its own square, so
+\[
+g^2=g(g^2)g^{-1}=(g^2)^{-1}.
+\]
+Thus $(g^2)^2=I$, and the only elements of $T$ with square $I$ are $\pm I$. \hfill$\square$
+
+\textbf{Theorem 3 (Turning symmetry forces the central half-turn).}
+If $T$ is nontrivial and $g$ satisfies the turning hypothesis, then
+\[
+\boxed{g^2=-I=U(\pi),\qquad g^4=I.}
+\]
+\textit{Proof.}
+Lemma 4 gives $g^2=\pm I$. If $g^2=I$, then the unitary matrix $g$ has eigenvalues in $\{\pm1\}$. The determinant-one condition forces both eigenvalues equal, so normality gives $g=\pm I$. Such a central element cannot invert a nontrivial circle. Therefore $g^2=-I$. \hfill$\square$
+
+In the diagonal chart, let
+\[
+j=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+\]
+Then $j^2=-I$, $jtj^{-1}=t^{-1}$ for $t\in T_0$, and
+\[
+N_{SU(2)}(T_0)=T_0\sqcup jT_0.
+\]
+Every element outside $T_0$ squares to $-I$. The quotient records an order-two reversal while the lift retains the central square.
+
+\section{Projection, represented difference, and occurrence}
+Let
+\[
+p:SU(2)\to SO(3)
+\]
+be the standard double cover with kernel $\{\pm I\}$. Theorem 3 gives
+\[
+p(g)^2=p(g^2)=p(-I)=I.
+\]
+Downstairs, the turning operation is an involution. Upstairs, its lift has order four.
+
+Along the path $U(t)$, $p(U(t))$ is rotation through angle $2t$ about the selected axis. Define
+\[
+\Delta(U):=U-I.
+\]
+Then the endpoint reads are:
+
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Traversal & Projected endpoint & Lifted endpoint & $\Delta$ & Occurrence \\
+\midrule
+constant path & $I$ & $I$ & $0$ & $0$ \\
+one full $SO(3)$ turn & $I$ & $-I$ & $-2I$ & $1$ \\
+two full $SO(3)$ turns & $I$ & $I$ & $0$ & $2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The projected endpoint forgets both traversals. The central lift retains parity. After two full turns even the lifted endpoint returns to $I$, so neither endpoint contains the number of completed traversals.
+
+For a separate append-only occurrence archive $\mathcal R_n$, define
+\[
+\mathcal R_{n+1}=\snoc(\mathcal R_n,r_n).
+\]
+Then $\mathcal R_n$ is a strict prefix of $\mathcal R_{n+1}$ and
+\[
+|\mathcal R_{n+1}|=|\mathcal R_n|+1.
+\]
+Repeated endpoint values may therefore remain distinct occurrences because their archive addresses differ. The resulting resolution hierarchy is
+\[
+\boxed{\text{projected closure}\;<\;\text{central parity}\;<\;\text{lossless occurrence receipt}.}
+\]
+The order denotes retained resolution, not numerical magnitude.
+
+\section{Mechanical reading}
+A mechanical watch supplies a direct intuition for the same separation. An oscillator supplies recurrence; an escapement converts recurrence into countable steps; a gear train transports phase by fixed ratios; the hands project accumulated phase onto a circle. The dial may return to its starting orientation while a separate counter preserves how many returns occurred.
+
+\begin{center}
+\begin{tabularx}{0.9\textwidth}{@{}>{$}l<{$} X@{}}
+\toprule
+\text{Relation} & \text{Office} \\
+\midrule
+e^{it}=\cos t+i\sin t & phase traversal \\
+\Pi F\Pi=F^{-1} & orientation reversal \\
+g^2=-I & central lift residue \\
+\mathcal R_{n+1}=\snoc(\mathcal R_n,r_n) & occurrence retention \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Exact boundary}
+\begin{enumerate}
+\item \textbf{Conditional schema.} The dihedral phase constraint applies only when an invertible continuation, an involution, and the stated conjugacy are supplied.
+\item \textbf{Selection.} The constraint alone does not select $Q$, the Fibonacci recurrence, or the golden eigenvalues. Those arise only inside the declared class $\mathcal D_{\mathrm{tr}}$ and ordered chart.
+\item \textbf{Lift is not history.} The central element $-I$ retains parity, not a complete path record.
+\item \textbf{Parameter is not yet physical time.} The symbols $t$ and $n$ are a group parameter and occurrence index. Neither is metric, thermodynamic, biological, or experienced time without another construction.
+\item \textbf{No empirical identification.} Mathematical realizations do not certify a particular apparatus or physical system.
+\item \textbf{No imported operator bound.} A CHSH/Tsirelson bound requires its own tensor-product and observable hypotheses and is outside the present theorem.
+\end{enumerate}
+
+\section{Canonical statement}
+The exact root statement is
+\[
+\boxed{\Pi F\Pi=F^{-1}.}
+\]
+Periodic continuation gives a finite dihedral phase wheel. Infinite-order continuation gives an infinite-dihedral carriage when the mirror lies outside the cyclic subgroup. In the standard $SU(2)$ turning lift, the apparent reversal has forced central square
+\[
+\boxed{g^2=-I.}
+\]
+Projection can close while lifted parity remains; lifted parity can close while occurrence remains. A construction that must preserve traversal count therefore requires a receipt beyond endpoint position and beyond central phase.
+
+\begin{center}
+\emph{Continuation turns. The mirror reverses. The projection closes. The lift retains parity. The receipt preserves occurrence.}
+\end{center}
+
+\section*{Source record}
+The originating dihedral-phase proof record and the independent central-square turning proof were composed on 28 February 2026. This standalone edition preserves that composition date while reproducing every hypothesis and proof needed here locally. Earlier project names and corpus placements are provenance only and are not premises of this form.
+
+\end{document}

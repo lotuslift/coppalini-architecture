@@ -1,0 +1,2264 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,tabularx,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The Structure of Survival: Minimum Enduring Complexity - Corrected Adapter Edition 0.2},pdfauthor={Anthony Vito Coppa},pdfsubject={A staged proof from typed zero to an exact non-erasing continuum contract},pdfkeywords={Language Mechanics, minimum root algebra, dihedral phase, typed zero, memory return, continuum contract, loop quantum gravity}}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{caption}
+
+\definecolor{ink}{RGB}{28,31,35}
+\definecolor{rulegray}{RGB}{98,105,113}
+\definecolor{paperblue}{RGB}{236,242,247}
+\definecolor{papergold}{RGB}{249,245,229}
+\definecolor{paperred}{RGB}{249,239,238}
+\definecolor{papergreen}{RGB}{237,246,239}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\setlist[itemize]{leftmargin=1.45em,itemsep=2.2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.75em,itemsep=2.2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.18}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textsc{Minimum Enduring Complexity}}
+\rhead{\small\textsc{Paper I: Staged Root and Exact Aperture}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\Spin}{\operatorname{Spin}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\phys}{\mathrm{phys}}
+\newcommand{\TT}{\mathrm{TT}}
+\newcommand{\Mem}{\operatorname{Mem}}
+\newcommand{\Gate}{\operatorname{Gate}}
+\newcommand{\LMForm}{\mathsf{Form}}
+\newcommand{\LMFit}{\mathsf{Fit}}
+\newcommand{\LMFunction}{\mathsf{Function}}
+\newcommand{\LMReturn}{\mathsf{Return}}
+\newcommand{\LMReceipt}{\mathsf{Receipt}}
+\newcommand{\LMRecognition}{\mathsf{Recognition}}
+\newcommand{\LMSilence}{\mathsf{Silence}}
+\newcommand{\LMScope}{\mathsf{Scope}}
+\newcommand{\LMDifference}{\mathsf{Difference}}
+\newcommand{\LMEndurance}{\mathsf{Endurance}}
+\newcommand{\LMMotion}{\mathsf{Motion}}
+\newcommand{\LMMemory}{\mathsf{Memory}}
+\newcommand{\LMLight}{\mathsf{Light}}
+\newcommand{\LMGravity}{\mathsf{Gravity}}
+\newcommand{\LMTime}{\mathsf{Time}}
+\newcommand{\LMPressure}{\mathsf{Pressure}}
+\newcommand{\LMInfinity}{\mathsf{Infinity}}
+\newcommand{\LMTrust}{\mathsf{Trust}}
+\newcommand{\LMMeaning}{\mathsf{Meaning}}
+\newcommand{\LMcan}{\mathsf{can}}
+\newcommand{\LMRefuse}{\mathsf{Refuse}}
+\newcommand{\SQD}{\mathsf{SQ}_{\Delta}(3)}
+\newcommand{\NEC}{\mathbb T_{\mathrm{NEC}}}
+\newcommand{\NECore}{\mathbb T_{\mathrm{core}}}
+\newcommand{\Dtr}{\mathcal D_{\mathrm{tr}}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\id}{\operatorname{id}}
+
+\newcommand{\boxeq}[1]{%
+\begin{center}\fcolorbox{rulegray}{paperblue}{\parbox{0.91\linewidth}{\centering\vspace{3pt}#1\vspace{3pt}}}\end{center}}
+\newcommand{\goldbox}[1]{%
+\begin{center}\fcolorbox{rulegray}{papergold}{\parbox{0.91\linewidth}{\centering\vspace{3pt}#1\vspace{3pt}}}\end{center}}
+\newcommand{\greenbox}[1]{%
+\begin{center}\fcolorbox{rulegray}{papergreen}{\parbox{0.91\linewidth}{\centering\vspace{3pt}#1\vspace{3pt}}}\end{center}}
+\newcommand{\redbox}[1]{%
+\begin{center}\fcolorbox{rulegray}{paperred}{\parbox{0.91\linewidth}{\centering\vspace{3pt}#1\vspace{3pt}}}\end{center}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+\vspace*{0.55in}
+{\Large\textsc{Paper I of a Two-Paper Dual}\par}\vspace{0.08in}{\large Corrected Adapter Edition 0.2\par}
+\vspace{0.28in}
+{\Huge\bfseries THE STRUCTURE OF SURVIVAL\par}
+\vspace{0.14in}
+{\LARGE\bfseries Minimum Enduring Complexity\par}
+\vspace{0.16in}
+{\Large From Typed Zero to Non-Erasing Continuum Closure\par}
+\vspace{0.36in}
+{\large A strict dependency synthesis and companion to\par}
+{\large\itshape Continuum Closure in Covariant Loop Quantum Gravity\par}
+\vfill
+{\Large Anthony Vito Coppa\par}
+\vspace{0.08in}
+{\large Coppalini Architecture\par}
+\vspace{0.10in}
+{\large 3 September 2026\par}
+\vfill
+\fcolorbox{rulegray}{paperblue}{\parbox{0.82\textwidth}{
+\centering
+\textbf{Minimum carrier:} a nondegenerate alternating relation on $\R^2$.\\[2pt]
+\textbf{Selected transport:} the least-trace member of the declared class $\Dtr$, with $\Phi$-spectrum.\\[2pt]
+\textbf{Constraint:} mirror reversal $\Pi F\Pi=F^{-1}$.\\[4pt]
+\textbf{Question:} what must remain readable for a relation to move, return, and continue without erasing the Difference that makes the return recognizable?
+}}
+\vspace*{0.45in}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+
+\begin{abstract}
+This corrected edition gives the synthesis a single proof order and a single status order. It separates the generic reciprocal-dihedral family from the selected golden minimum, introduces each of four distinct zeros only when its carrier exists, replaces a false linear chain by a branched dependency architecture, and replaces the former correspondence table at the loop-gravity aperture by an explicit non-erasing continuum contract and realization theorem.
+
+Stage 0 proves that two real dimensions are the minimum carrier of a nondegenerate alternating relation. Stage 1 studies the family
+\[
+Q_a=\begin{pmatrix}a&1\\1&0\end{pmatrix},
+\qquad
+G_a=[Q_a,\Omega],
+\qquad
+G_a^2=(a^2+4)I,
+\]
+and then declares the exact selection jurisdiction $\Dtr$ of symmetric, entrywise-nonnegative, integral, determinant-$-1$ transports of infinite projective order. Trace minimization selects $Q=Q_1$ up to coordinate exchange. The golden ratio is therefore not required for the existence of a generic hyperbolic-dihedral carrier; it is the spectrum of the selected least-trace carrier. The remaining root identities, the finite $D_4$ wheel, the infinite $D_\infty$ carriage, the exact quotient $D_\infty/\langle q^4\rangle\cong D_4$, Euler's central Return packet, reciprocal axial carriage, harmonic Memory, and the axial metric adapter are then derived in dependency order.
+
+The finite relational Scope $8\to28\to7$, the arithmetic Scope $m=4\to p_\star=137$, the physical metric completion, and the continuum aperture are parallel branches of the root rather than serial causes. The actual cross-carrier joint is stated explicitly: the complexified root algebra contains a displayed compact $\mathfrak{su}(2)$ frame, which is carried by a bracket- and trace-preserving coordinate isomorphism to the canonical $\mathfrak{su}(2)$ boundary algebra and by complexification to $\mathfrak{sl}(2,\C)$ in the Lorentzian bulk. This adapter does not generate the EPRL simplicity map, amplitudes, coupling data, or spin-two observable.
+
+Finally, the paper defines a finite non-erasing closure core and its continuum extension $\NEC$. Paper II realizes the full contract equation by equation: local compatibility closes, the gravitational sector is selected independently, refinement preserves transport and readout, the distributional physical quotient is formed, compatibility transport closes on simply connected compatibility cells, physical connection transport remains separately typed, and the physical spin-two residue is nonzero. The contribution is the synthesis and the explicit contract. The component mathematics and physics remain owned by their native proofs.
+\end{abstract}
+
+\section*{Revision note}
+Version 0.2 makes six bounded repairs. It distinguishes the generic $a$-family from the selected $a=1$ minimum; branches the finite, arithmetic, metric, and continuum consequences; defines the non-erasing continuum contract; proves the covariant-LQG realization clause by clause; installs the existing local $\mathfrak{su}(2)\to\mathfrak{sl}(2,\C)$ coordinate adapter; and replaces every statement that the root ``determines LQG'' by the exact statement that the translation codex defines a contract which the LQG construction realizes. It also combines proof order and claim status in one ledger so the Stage 7--8 boundary between derivation and supplied physical data is visible where it occurs.
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{The exact contribution}
+
+The paper makes one new move: it places certified results in a staged dependency order, separates the consequences that branch from the common root, and writes the continuum aperture as an explicit contract with a checked realization. It introduces no replacement equation for general relativity, quantum mechanics, thermodynamics, gauge theory, biology, computation, or language. Each theory keeps its native carrier and native proof. The synthesis owns only the dependency, the contract, and the displayed adapters.
+
+The question entered the corpus earlier in two compact forms. \emph{The Condition of Survival} asked what holds identity through transformation and isolated $\Phi=1+1/\Phi$ as the whole--remainder continuation condition. \emph{Return Curvature Memory} then classified return by two independent questions: whether closure is exact and whether a remainder accumulates. Those papers are provenance for the question; the present paper supplies the later exact algebra and the full dependency proof \cite{CoppaConditionSurvival2025,CoppaReturnCurvature2026}.
+
+The root question is elementary:
+
+\boxeq{\Large What must remain readable for a relation to be applied again after it has changed?}
+
+Three errors are excluded at the outset. A returned Reader value is not automatically a returned state. A vanished residual is not an absent event. A common word is not a common mechanism. The discipline is therefore positive and exact:
+\[
+\text{carrier}\to\text{action}\to\text{constraint}\to\text{return}\to\text{lift}\to\text{read}\to\text{receipt}.
+\]
+Every arrow used below is either proved in this paper from displayed algebra or imported from the cited certified source.
+
+\subsection{The two-paper dual}
+
+This paper is Paper I. It defines a finite non-erasing closure core, extends it to a continuum contract, and proves that Paper II, \emph{Continuum Closure in Covariant Loop Quantum Gravity}, realizes that contract in the native language of spin networks, spin foams, gravitational constraints, refinement, physical states, and the spin-two continuum sector \cite{CoppaCCLQG2026}.
+
+The dual is therefore:
+\[
+\boxed{
+\begin{array}{c}
+\textbf{Paper I: minimum enduring-complexity contract}\\[1mm]
+\Downarrow\ \text{exact contract realization}\\[1mm]
+\textbf{Paper II: covariant LQG continuum realization}
+\end{array}}
+\]
+
+Paper I ends where Paper II begins. Paper II need not inherit the private vocabulary of Paper I; it receives only the exact obligations.
+
+\subsection{Status vocabulary}
+
+Five status words suffice.
+
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{@{}>{\bfseries}p{0.18\textwidth}X@{}}
+\toprule
+Certified & The displayed claim has a proof or independently checked exact computation in its stated jurisdiction.\\
+Derived & The claim follows from certified or explicitly declared premises by the displayed argument.\\
+Declared & A notation, coordinate choice, office name, candidate class, or interpretation fixed for this construction.\\
+Open & A required target-side map or physical calculation has not yet been supplied.\\
+Refused & A stated condition fails; the failed continuation is retained as a result.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+An open target-side calculation does not reopen a certified source theorem. A declaration does not borrow the status of the theorem it names. This is the reference discipline of the Language Mechanics charter \cite{CoppaLanguageMechanics2026}.
+
+\section{The minimum contract}
+
+\begin{definition}[Enduring-complexity datum]
+An enduring-complexity datum is a record
+\[
+\mathfrak E=(X,\Delta,\mathcal A,I,q,\widetilde X,\Mem,r,\mathcal R)
+\]
+with the following fields:
+\begin{enumerate}[label=(\roman*)]
+\item a carrier $X$;
+\item a readable Difference $\Delta$;
+\item admitted actions $\mathcal A$;
+\item an invariant or continuation constraint $I$;
+\item a quotient or Return map $q$;
+\item a lift or finer address carrier $\widetilde X$;
+\item a global transport law $\Mem$;
+\item a local Reader $r$;
+\item an occurrence receipt $\mathcal R$ when the claimed distinction includes history.
+\end{enumerate}
+\end{definition}
+
+The datum is not a list of metaphors. It is a checklist for a commuting operation. The minimum survival question is whether another admitted move exists after the present move, under the same declared rule version \cite{CoppaIdentityReference2026,CoppaPersistence2026}.
+
+\begin{definition}[The control triad]
+The archival record $SQ(3)$ stores the three fields $(\LMFunction,\LMForm,\LMFit)$. Its dependency read is
+\[
+\boxed{\LMForm\ \Lambda\ \LMFit\ \Delta\ \LMFunction.}
+\]
+We write
+\[
+\SQD=(\LMForm,\LMFit,\LMFunction)
+\]
+for this dependency-ordered control triad. It is acted on by the exact mirror/carriage symmetries derived below. The group is dihedral; $\SQD$ is the three-office control record.
+\end{definition}
+
+Here $\LMForm$ is the presented structured state, $\LMFit$ is the witnessed compatibility required for continuation, and $\LMFunction$ is the operation admitted after that Fit. The symbol $\Delta$ says that the Difference required by the operation remains readable. The symbol $\Lambda$ says the independent pieces are jointly present. This is the smallest craft sentence that keeps presentation, compatibility, and use from substituting for one another \cite{CoppaFormFit2026,CoppaMethodKernel2026}.
+
+\begin{theorem}[Staged root and branched closure synthesis]
+There is a dependency-ordered root construction with the following certified spine:
+\begin{enumerate}[label=(\roman*)]
+\item the two-dimensional minimum for a nondegenerate alternating relation;
+\item a generic reciprocal family $Q_a$ and a declared discrete selection class $\Dtr$ whose least-trace orbit is represented by $Q=Q_1$;
+\item the selected golden spectrum $\Phi,\Psi$, the oriented seam $\sqrt5$, the generated Difference $G=[Q,\Omega]$, and the complete local algebra $M_2(\R)$;
+\item the exact finite/infinite dihedral lock
+\[
+D_\infty/\langle q^4\rangle\cong D_4;
+\]
+\item reciprocal axial carriage, quotient Return, lifted advance, harmonic Memory, and the central Return packet $(0,-2I,\mathcal R_{n+1})$;
+\item an exact axial coframe whose positive and Lorentzian metric pullbacks are computed directly.
+\end{enumerate}
+From this spine, four consequences branch without becoming serial causes:
+\begin{enumerate}[label=(\alph*)]
+\item the finite relational Scope $8\to28\to7$;
+\item the order-four arithmetic Scope $p_\star=137$ and its finite carriage;
+\item the supplied Bertotti--Robinson Einstein--Maxwell completion of the derived Lorentzian factor;
+\item the non-erasing continuum contract $\NEC$ and its covariant-LQG realization.
+\end{enumerate}
+The seven office names and common-sense readers are declared coordinates on certified operations. They are not premises of the algebra, the metric adapter, or the LQG theorem.
+\end{theorem}
+
+\section{Stage 0: the minimum relation and the first zero}
+
+\subsection{Why the first carrier has two places}
+
+Every alternating bilinear form on a one-dimensional real vector space is identically zero and therefore degenerate. The smallest real carrier admitting a nondegenerate alternating form has dimension two. Fix
+\[
+V=\R^2,
+\qquad
+\Omega=
+\begin{pmatrix}
+0&1\\-1&0
+\end{pmatrix},
+\qquad
+\omega(u,v)=u^{\mathsf T}\Omega v.
+\]
+Then
+\[
+\Omega^{\mathsf T}=-\Omega,
+\qquad
+\det\Omega=1,
+\qquad
+\boxed{\omega(v,v)=0.}
+\]
+
+The first zero is relational. The vector is present. The form is present. The value is zero because an alternating relation compares one input with itself. Zero is therefore a chart coordinate of self-comparison, not a name for nothing.
+
+This is the exact two-form unit-zero floor developed in the minimum root papers \cite{CoppaMinimumEndurance2026,CoppaGLMM2026}.
+
+\subsection{Why zero alone is insufficient}
+
+Two histories may have the same returned Reader value:
+\[
+r(\gamma_1(1))=r(\gamma_1(0)),
+\qquad
+r(\gamma_2(1))=r(\gamma_2(0)),
+\]
+while one is a constant path and the other contains a nontrivial traversal. A zero residual cannot by itself decide whether the carried relation remained admissible through that traversal.
+
+We therefore name the minimum continuation predicate
+\[
+\boxed{
+\theta_\Gamma(x,T)=1
+\iff
+T(x)\ \text{is admitted and remains inside the declared survival region }\Gamma.
+}
+\]
+Lowercase $\theta$ is Survival. It is a predicate, not a scalar coordinate and not a second zero. It answers only whether the relation remains available for lawful continuation.
+
+The first complete center packet is therefore
+\[
+\boxed{(0,\theta).}
+\]
+The zero reports the local read. $\theta$ reports whether the relation survives the move represented by that read.
+
+\subsection{Quarter-turn and center contact}
+
+Use the Euclidean index identification to define the local complex structure
+\[
+i:=-\Omega=
+\begin{pmatrix}
+0&-1\\1&0
+\end{pmatrix}.
+\]
+Then
+\[
+i^2=-I,
+\qquad
+i^4=I,
+\qquad
+U(\alpha):=e^{\alpha i}=I\cos\alpha+i\sin\alpha.
+\]
+At the half-turn,
+\[
+\boxed{U(\pi)=-I.}
+\]
+The phase $-1$ is fixed by inversion:
+\[
+(-1)^{-1}=-1.
+\]
+We use $\pi$ for this central half-turn Contact. The center packet now has an exact finite carrier:
+\[
+\boxed{i^2=\pi=-I,
+\qquad
+I+\pi=0,
+\qquad
+\pi-I=-2I.}
+\]
+The same event has a closed sum read and a nonzero reference-relative Difference.
+
+
+\subsection{The four-zero dependency register}
+The construction will encounter four exact zeros. They are not one object and they are not available at the same stage.
+
+\begin{center}
+\small
+\begin{tabularx}{0.96\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}X>{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
+\toprule
+Zero & Carrier & Exact statement & First admitted\\
+\midrule
+Alternating zero & $\omega\in\Lambda^2V^*$ & $\omega(v,v)=0$ & Stage 0\\
+Signed nullity & $g_G\in\mathrm{Sym}^2V^*$ & $g_G(v,v)=0$ on the two golden null rays & Stage 3\\
+Axial center & projective Fermi chart & $\delta=0$ & Stage 5\\
+Lorentzian null interval & pulled-back signed metric & $ds_L^2=0$ & Stage 7\\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+
+The rule is strict: a zero may be reused only with its carrier and operation intact. No later null condition retroactively changes the meaning of the earlier alternating zero.
+
+\section{Stage 1: the reciprocal family and the selected minimum transport}
+
+\subsection{The generic reciprocal family}
+For $a\in\R$, define
+\[
+Q_a=\begin{pmatrix}a&1\\1&0\end{pmatrix},
+\qquad
+G_a=[Q_a,\Omega]
+=\begin{pmatrix}-2&a\\a&2\end{pmatrix}.
+\]
+Put $d_a=\sqrt{a^2+4}$ and
+\[
+\Phi_a=\frac{a+d_a}{2},
+\qquad
+\Psi_a=\frac{a-d_a}{2}=-\Phi_a^{-1}.
+\]
+
+\begin{proposition}[Generic reciprocal-dihedral family]
+For every real $a$,
+\[
+Q_a^2=aQ_a+I,
+\qquad
+G_a^2=(a^2+4)I,
+\qquad
+\Phi_a+\Psi_a=a,
+\qquad
+\Phi_a\Psi_a=-1.
+\]
+With
+\[
+H_a=\frac{G_a}{d_a},
+\qquad
+S_a=\frac{2Q_a-aI}{d_a},
+\]
+one has
+\[
+H_a^2=S_a^2=I,
+\qquad
+S_aH_a=\Omega,
+\qquad
+H_aS_a=-\Omega,
+\qquad
+H_aQ_aH_a=-Q_a^{-1}.
+\]
+For $a>0$, the projective class $[Q_a]$ has infinite order and, together with $[H_a]$, generates an infinite-dihedral action.
+\end{proposition}
+\begin{proof}
+All polynomial identities follow by direct multiplication. For $a>0$, the projective eigenvalue ratio is $\Phi_a/\Psi_a=-\Phi_a^2$, whose absolute value exceeds one, so it is not a root of unity.
+\end{proof}
+
+This proposition isolates what is generic. Hyperbolic reciprocal carriage, normalized mirror reversal, and infinite-dihedral projective motion do not require the numeral $\sqrt5$ specifically. The number changes with $a$.
+
+\subsection{The declared selection jurisdiction}
+Define
+\[
+\Dtr=
+\left\{
+A=\begin{pmatrix}u&v\\v&w\end{pmatrix}:
+ u,v,w\in\N_0,
+\ \det A=-1,
+\ [A]\in\PGL_2(\R)\text{ has infinite order}
+\right\}.
+\]
+This is the declared class of symmetric, entrywise-nonnegative, integral, orientation-reversing transports with an unbounded projective address. The class is a specification; the minimizer is a theorem inside it.
+
+\begin{theorem}[Selected minimum persistent transport]
+The minimum trace in $\Dtr$ is $1$. Its minimizing orbit under coordinate exchange is
+\[
+\left\{
+Q=\begin{pmatrix}1&1\\1&0\end{pmatrix},
+\quad
+PQP=\begin{pmatrix}0&1\\1&1\end{pmatrix}
+\right\},
+\qquad
+P=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+A fixed ordered chart selects the displayed $Q$.
+\end{theorem}
+\begin{proof}
+Write $A=\bigl(\begin{smallmatrix}u&v\\v&w\end{smallmatrix}\bigr)$. If $\tr A=0$, then $u=w=0$ and $-v^2=-1$, so $v=1$ and $A=P$. But $P^2=I$, so its projective order is finite and it is excluded. Hence $\tr A\ge1$. If $\tr A=1$, then $(u,w)$ is $(1,0)$ or $(0,1)$, and $uw-v^2=-1$ forces $v=1$. These are exactly $Q$ and $PQP$.
+\end{proof}
+
+The selected case is $a=1$. Thus
+\[
+d_1=\sqrt5,
+\qquad
+\Phi_1=\Phi,
+\qquad
+\Psi_1=\Psi.
+\]
+The golden ratio is not decorative inside this jurisdiction: it is the spectral coordinate of the unique least-trace orbit. It is not claimed to be necessary for every reciprocal-dihedral carrier.
+
+\section{Stage 2: the selected golden spectrum and the two-page relation}
+
+\subsection{The selected transport exposes the golden condition}
+
+The selected matrix $Q$ has characteristic polynomial
+\[
+\lambda^2-\lambda-1.
+\]
+Its eigenvalues are
+\[
+\Phi=\frac{1+\sqrt5}{2},
+\qquad
+\Psi=\frac{1-\sqrt5}{2}=-\Phi^{-1}.
+\]
+Hence
+\[
+\boxed{
+\Phi^2=\Phi+1,
+\qquad
+\Phi+\Psi=1,
+\qquad
+\Phi\Psi=-1,
+\qquad
+\Phi-\Psi=\sqrt5.
+}
+\]
+The second page is not an additional premise. It is the conjugate spectral branch of the selected transport.
+
+Conversely, multiplication by $\Phi$ on $\mathbb Q(\Phi)$ in the ordered basis $(\Phi,1)$ has matrix $Q$. The selection-first and condition-first entrances therefore meet after the class and chart have been declared:
+\[
+\boxed{
+\text{least-trace }Q\in\Dtr
+\quad\Longleftrightarrow_{\text{ordered }\Phi\text{-chart}}\quad
+\Phi^2=\Phi+1.
+}
+\]
+This is an equivalence of the displayed coordinate constructions, not a claim that the dihedral constraint alone selects $Q$.
+
+The pair is most informative in center-and-Difference coordinates:
+\[
+\Phi=\frac12+\frac{\sqrt5}{2},
+\qquad
+\Psi=\frac12-\frac{\sqrt5}{2}.
+\]
+The center is held; the two sides remain distinguished.
+
+\subsection{The zeta-book}
+
+Let
+\[
+v_\Phi=
+\begin{pmatrix}\Phi\\1\end{pmatrix},
+\qquad
+v_\Psi=
+\begin{pmatrix}\Psi\\1\end{pmatrix}.
+\]
+Then
+\[
+\omega(v_\Phi,v_\Psi)=v_\Phi^{\mathsf T}\Omega v_\Psi=\Phi-\Psi=\sqrt5.
+\]
+We write the typed seam read as
+\[
+\boxed{\Phi\{+\zeta+\}\Psi=\sqrt5.}
+\]
+The braces name the oriented two-form comparison. They do not introduce another scalar addition law. Reversing the order reverses the sign.
+
+In ordinary language: one book has two pages, one spine, and a measurable opening. Closing the book does not turn the two pages into one page. Opening it does not destroy the spine.
+
+\subsection{The carriage matrix is multiplication by the golden root}
+
+Let $K=\mathbb Q(\Phi)$ and use the ordered basis $(\Phi,1)$. Multiplication by $\Phi$ obeys
+\[
+\Phi\cdot\Phi=\Phi+1,
+\qquad
+\Phi\cdot1=\Phi.
+\]
+Hence its regular representation is
+\[
+\boxed{
+Q=
+\begin{pmatrix}
+1&1\\1&0
+\end{pmatrix}.
+}
+\]
+Cayley--Hamilton gives
+\[
+\boxed{Q^2=Q+I.}
+\]
+Moreover,
+\[
+Q^n=
+\begin{pmatrix}
+F_{n+1}&F_n\\F_n&F_{n-1}
+\end{pmatrix},
+\]
+so the classical Fibonacci coefficients are the exact iterates of the $\Phi$-carriage \cite{CoppaMotionDifference2026,CoppaMinimumRoot2026}.
+
+\section{Stage 3: structure constants and typed geometries}
+
+\subsection{The comma between carriage and orientation}
+
+Freeze the commutator convention $[A,B]=AB-BA$ and define
+\[
+\boxed{
+G=[Q,\Omega]
+=
+\begin{pmatrix}
+-2&1\\1&2
+\end{pmatrix}.
+}
+\]
+The order matters:
+\[
+Q\Omega\neq\Omega Q.
+\]
+The Difference between the two orders is not error added after transport. It is the exact residue of transporting orientation and orienting transport in opposite orders.
+
+Direct calculation gives
+\[
+\boxed{G^{\mathsf T}=G,
+\qquad
+G^2=5I,
+\qquad
+\det G=-5.}
+\]
+Since $(\Phi-\Psi)^2=5$,
+\[
+\boxed{G^2=(\Phi-\Psi)^2I.}
+\]
+The scalar $5$ is the squared separation of the golden pages, now carried by a symmetric operator.
+
+\subsection{Complete local algebra}
+
+The four matrices
+\[
+\{I,Q,\Omega,G\}
+\]
+are linearly independent and therefore form a basis of $M_2(\R)$. The product identities
+\[
+\{Q,\Omega\}=\Omega,
+\qquad
+[Q,\Omega]=G,
+\qquad
+\{Q,G\}=G,
+\qquad
+[Q,G]=5\Omega
+\]
+close the algebra. Thus
+\[
+\boxed{\operatorname{Alg}_{\R}(Q,\Omega)=M_2(\R).}
+\]
+Two generators are also necessary: a unital algebra generated by one real $2\times2$ matrix lies in the commutative Cayley--Hamilton span of that matrix and $I$.
+
+This is the complete minimum local operator block. It does not yet select a physical theory. It supplies every real planar linear operation in a unique four-coordinate normal form \cite{CoppaMinimumRoot2026,CoppaArchitectureSilence2026}.
+
+\subsection{Three exact geometries on one carrier}
+
+The common carrier $V$ supports three distinct structures:
+\[
+\omega(u,v)=u^{\mathsf T}\Omega v
+\quad\text{(alternating orientation)},
+\]
+\[
+g_G(u,v)=u^{\mathsf T}Gv
+\quad\text{(split metric)},
+\]
+and a derived positive phase metric $b$ from the compatible complex structure in the root algebra \cite{CoppaGLMM2026}.
+
+The golden directions are exactly the null rays of $g_G$:
+\[
+\boxed{g_G(v_\Phi,v_\Phi)=g_G(v_\Psi,v_\Psi)=0.}
+\]
+In the golden basis,
+\[
+P=(v_\Phi,v_\Psi),
+\qquad
+P^{\mathsf T}GP=5
+\begin{pmatrix}
+0&1\\1&0
+\end{pmatrix},
+\]
+\[
+P^{\mathsf T}\Omega P=\sqrt5
+\begin{pmatrix}
+0&1\\-1&0
+\end{pmatrix}.
+\]
+Each direction alone is null. Their cross-relation is nonzero. This is the minimum geometry of a relation whose identity lives between its two sides.
+
+\section{Stage 4: finite phase, central Return, and the dihedral lock}
+
+\subsection{The normalized mirror}
+
+Define
+\[
+H=\frac{G}{\sqrt5},
+\qquad
+S=\frac{2Q-I}{\sqrt5}.
+\]
+Then
+\[
+H^2=S^2=I,
+\qquad
+H^{\mathsf T}H=S^{\mathsf T}S=I,
+\qquad
+\det H=\det S=-1.
+\]
+The ordered products satisfy
+\[
+SH=\Omega,
+\qquad
+HS=\Omega^{-1}=-\Omega.
+\]
+Consequently
+\[
+\boxed{H\Omega H=\Omega^{-1}.}
+\]
+The root-generated $H$ therefore inhabits the dihedral phase constraint exactly.
+
+\subsection{The finite wheel}
+
+Since $\Omega^4=I$ and $H^2=I$,
+\[
+\boxed{\langle\Omega,H\rangle\cong D_4.}
+\]
+The square wheel carries four visible orientations and one mirror reversal. The relation is not that forward and inverse turns are identical. It is that mirror conjugation carries one to the other lawfully.
+
+\begin{corollary}[Forced wheel order]
+The order of $\Omega$ is exactly
+\[
+\boxed{m=4.}
+\]
+Indeed, $\Omega^2=-I\neq I$ and $\Omega^4=I$. This arithmetic fact is established before any spacetime, particle, coupling, or empirical constant is introduced.
+\end{corollary}
+
+\subsection{The infinite addressed carriage}
+
+The same mirror reverses Fibonacci transport:
+\[
+HQH=-Q^{-1}.
+\]
+Passing to projective classes $q=[Q]$, $h=[H]$ removes the scalar sign:
+\[
+h^2=1,
+\qquad
+hqh=q^{-1}.
+\]
+The eigenvalue ratio $\Phi/\Psi=-\Phi^2$ is not a root of unity, so $q$ has infinite order. Hence
+\[
+\boxed{\langle q,h\rangle\cong D_\infty.}
+\]
+
+The generator assignment
+\[
+\pi_4(q)=\Omega,
+\qquad
+\pi_4(h)=H
+\]
+is a surjective homomorphism with kernel $\langle q^4\rangle$. Therefore
+\[
+\boxed{D_\infty/\langle q^4\rangle\cong D_4.}
+\]
+This is the lock. The finite wheel is the exact quotient read of the infinitely addressed carriage \cite{CoppaArchitectureSilence2026,CoppaMirrorEscapement2026}.
+
+\subsection{The central turning lift}
+
+The standard $\SU(2)\to\SO(3)$ cover supplies an independent exact realization of the same lift/return distinction. If a nontrivial $g\in\SU(2)$ normalizes a maximal circle by inversion,
+\[
+gU(t)g^{-1}=U(-t),
+\]
+then
+\[
+\boxed{g^2=-I,
+\qquad
+g^4=I.}
+\]
+Its $\SO(3)$ projection is an involution because the central element $-I$ projects to identity. Thus projected Return and lifted central Difference are separately readable \cite{CoppaDihedralPhase2026}.
+
+\section{Euler return, Mercy, and the exact Memory packet}
+
+\subsection{The half-turn factorization}
+
+Euler's phase identity is represented on $V$ by
+\[
+e^{i\pi}=-1,
+\qquad
+U(\pi)=-I.
+\]
+Define two polynomial reads of the same operator:
+\[
+C(U)=U+I,
+\qquad
+D(U)=U-I.
+\]
+Then
+\[
+C(U)D(U)=U^2-I.
+\]
+At the half-turn,
+\[
+\boxed{C(U(\pi))=0,
+\qquad
+D(U(\pi))=-2I\neq0.}
+\]
+
+If $q\neq0$, then
+\[
+U(\pi)q=-q,
+\qquad
+[-q]=[q]
+\]
+in projective space. The vector changes; the projective reference returns. Both the positive form and the split $G$-form survive the antipode. This is the one-page proof called \emph{The Miracle of Mercy}: the form survives, the Difference remains, and Return is recognized without erasure \cite{CoppaMercy2026}.
+
+\subsection{The product-typed Return}
+
+Let $\mathcal R_n$ be an append-only receipt and $o_{n+1}$ the next occurrence. Then
+\[
+\mathcal R_{n+1}=\mathcal R_n\mathbin{\frown}o_{n+1},
+\qquad
+\mathcal R_{n+1}\neq\mathcal R_n.
+\]
+The complete central Return is not a scalar sum. It is the product-typed triple
+\[
+\boxed{
+\LMSilence_\pi
+=
+\left(0,-2I,\mathcal R_{n+1}\right).
+}
+\]
+The first coordinate is closure at the declared Reader. The second is represented Difference. The third is occurrence. None can be substituted for another.
+
+\subsection{Memory as a function}
+
+A record can prove that an event was logged. Memory performs a different job. For a connection on a bundle over a physical or mathematical region, parallel transport defines a functor
+\[
+\boxed{
+\Mem:\mathcal P_1(M)\longrightarrow\operatorname{Iso}(E),
+\qquad
+\gamma\longmapsto P_\gamma,
+}
+\]
+with
+\[
+P_{\gamma_2\circ\gamma_1}=P_{\gamma_2}P_{\gamma_1},
+\qquad
+P_{\gamma^{-1}}=P_\gamma^{-1},
+\qquad
+P_{\mathrm{id}}=I.
+\]
+A loop returns to its base while its holonomy may remain nontrivial. Memory is global because the transport law is defined over the admitted path system; it is locally available because the present value already belongs to that global relation \cite{CoppaGLMM2026}.
+
+In the root carrier, the same office is realized by preservation of the reciprocal $G$-relation through carriage and mirror. Memory therefore has one minimum functional duty:
+
+\goldbox{\Large Memory coheres the symmetry of Difference between onward and reciprocal carriage through global Return.}
+
+The receipt retains which traversal occurred. Memory makes the traversal comparable at the returned Contact.
+
+\section{Stage 5: infinite axial carriage, relaxation, and the third zero}
+
+\subsection{Positive carriage}
+
+Define the positive axial carriage
+\[
+L_t=e^{t(\log\Phi)S}.
+\]
+At $t=1$,
+\[
+L_{\mathrm{ax}}=\frac{Q+2I}{\sqrt5},
+\qquad
+L_{\mathrm{ax}}^2=Q^2.
+\]
+The mirror reverses it:
+\[
+\boxed{HL_tH=L_{-t}=L_t^{-1}.}
+\]
+The split relation is preserved:
+\[
+\boxed{L_t^{\mathsf T}GL_t=G.}
+\]
+In the normalized golden null basis,
+\[
+[L_t]=
+\begin{pmatrix}
+e^\tau&0\\0&e^{-\tau}
+\end{pmatrix},
+\qquad
+\tau=t\log\Phi.
+\]
+The two directional coordinates change reciprocally while their cross-relation remains fixed.
+
+\subsection{Neutral mean Return}
+
+Let $a,b>0$ be the two golden null coordinates. Define
+\[
+m=\sqrt{ab},
+\qquad
+r=\frac12\log\frac{a}{b}.
+\]
+Then
+\[
+a=me^r,
+\qquad
+b=me^{-r}.
+\]
+Under reciprocal carriage,
+\[
+(a,b)\mapsto(e^\tau a,e^{-\tau}b),
+\]
+so
+\[
+m\mapsto m,
+\qquad
+r\mapsto r+\tau.
+\]
+Mirror sends $r$ to $-r$.
+
+\begin{theorem}[Neutral mean Return]
+For every $a,b>0$, there is a unique reciprocal carriage returning the pair to its neutral mean center:
+\[
+\boxed{
+L_{-r}(a,b)=\left(\sqrt{ab},\sqrt{ab}\right),
+\qquad
+r=\frac12\log\frac ab.
+}
+\]
+The product $ab$ is preserved throughout.
+\end{theorem}
+\begin{proof}
+The required parameter $\tau$ satisfies $e^\tau a=e^{-\tau}b$. Thus $e^{2\tau}=b/a$ and $\tau=-r$ uniquely. Substitution gives both coordinates equal to $\sqrt{ab}$.
+\end{proof}
+
+This is relaxation in exact algebraic form: the inverse of accumulated reciprocal shear returns the carrier to the geometric mean without erasing the invariant relation.
+
+Define the normalized center and shear reads
+\[
+G_\rho=\frac{2\sqrt{ab}}{a+b}=\sech r,
+\qquad
+g_\rho=\frac{a-b}{a+b}=\tanh r.
+\]
+Then
+\[
+\boxed{G_\rho^2+g_\rho^2=1.}
+\]
+At neutral Return, $r=0$, hence $G_\rho=1$ and $g_\rho=0$. Large reciprocal shear is compatible with the invariant; collapse occurs only when a reciprocal branch is erased and the bilateral form becomes singular.
+
+\subsection{The cover coordinate}
+
+On the hyperbolic projective realization, let
+\[
+\xi_{\mathrm{ax}}(z)=\frac{\Phi-z}{z-\Psi}
+\]
+and define an unwrapped coordinate $\Lambda$ so that
+\[
+\boxed{
+\Lambda(L_tz)=\Lambda(z)+tT,
+\qquad
+T=2\log\Phi.
+}
+\]
+Let
+\[
+p:\mathbb H^+\to \langle L_{\mathrm{ax}}\rangle\backslash\mathbb H^+
+\]
+be the quotient by one axial period. Then
+\[
+\boxed{p(L_{\mathrm{ax}}z)=p(z),
+\qquad
+\Lambda(L_{\mathrm{ax}}z)=\Lambda(z)+T.}
+\]
+The quotient returns; the lift advances.
+
+The one-form $d\Lambda$ descends to a closed, nonexact harmonic form $\bar\alpha$ with
+\[
+\oint_{\mathrm{core}}\bar\alpha=T.
+\]
+The period is the global Memory of one carriage step. This is Linear Infinity: no finite terminal address is required for exact Return \cite{CoppaMirrorEscapement2026,CoppaGLMM2026}.
+
+\subsection{The third zero: the axial center rail}
+
+In Fermi coordinates $(\delta,\Lambda)$, the positive projective metric is
+\[
+ds_H^2=d\delta^2+\cosh^2\!\delta\,d\Lambda^2,
+\]
+and the invariant center rail is
+\[
+\boxed{\delta=0.}
+\]
+The harmonic Return weight has norm
+\[
+|\bar\alpha|=\sech\delta,
+\]
+which is exactly one at the center. This zero belongs to the transverse coordinate of the projective chart. It is neither the alternating zero nor the signed nullity of $g_G$.
+
+\section{Stage 6: the order-four arithmetic Scope}
+
+The wheel order $m=4$ has already been forced by $\Omega^2=-I$. Define the retained-closure and centered inverse-readable indices
+\[
+s=m+1,
+\qquad
+r=2m+1.
+\]
+At $m=4$, these are $s=5$ and $r=9$. Let $F_n$ and $L_n$ denote the Fibonacci and Lucas sequences, with $L_n=\tr(Q^n)$.
+
+\begin{theorem}[Order-four arithmetic selection]
+For positive integers $m$, each of the identities
+\[
+F_m+F_{2m-1}=m^2,
+\]
+\[
+L_{m+1}^2+m^2=1+mF_{2m+1}
+\]
+holds if and only if $m=4$. At that value,
+\[
+\boxed{
+p_\star:=L_5^2+4^2=1+4F_9=137.
+}
+\]
+\end{theorem}
+\begin{proof}
+For the first identity, direct evaluation at $m=1,2,3,4$ leaves only $m=4$. At $m=5$, $F_9=34>25$. If $F_{2m-1}>m^2$ for $m\ge5$, then
+\[
+F_{2m+1}>2F_{2m-1}>2m^2>(m+1)^2,
+\]
+so induction excludes every larger $m$.
+
+For the second identity, use
+\[
+F_{2m+1}=F_{m+1}^2+F_m^2,
+\qquad
+L_{m+1}^2=5F_{m+1}^2+4(-1)^{m+1}.
+\]
+The right side minus the left side is
+\[
+(m-5)F_{m+1}^2+mF_m^2+1-4(-1)^{m+1}-m^2.
+\]
+Direct evaluation gives nonzero values at $m=1,2,3$ and zero at $m=4$. For $m\ge5$, $F_m\ge m$, so the displayed expression is bounded below by $m^3-m^2-3>0$. Finally, $L_5=11$ and $F_9=34$, giving $121+16=1+136=137$.
+\end{proof}
+
+The finite multiplicative carriage is also exact:
+\[
+4^{17}\equiv-1\pmod{137},
+\qquad
+\operatorname{ord}_{137}(4)=34.
+\]
+The order cannot be $1$, $2$, or $17$, the proper divisors of $34$, because $4^2\not\equiv1$ and $4^{17}\equiv-1$. Hence
+\[
+\boxed{
+\mathbb F_{137}^{\times}/\langle4\rangle\cong C_4,
+\qquad
+\mathbb Z_{548}\cong\mathbb Z_4\times\mathbb Z_{137}.
+}
+\]
+This branch is pure arithmetic. It is not an input to the continuum contract and it does not generate a measured coupling.
+
+\section{Stage 7: the exact metric adapter and the fourth zero}
+
+Let $g_i$ be the positive unit metric on $V$, let
+\[
+\eta_G(u,v)=\frac1{\sqrt5}u^{\mathsf T}Gv=u^{\mathsf T}Hv,
+\]
+and choose a $g_i$-orthonormal $H$-eigenframe $(e_0,e_1)$ with
+\[
+He_0=-e_0,
+\qquad
+He_1=e_1.
+\]
+Define the $V$-valued axial coframe
+\[
+\boldsymbol\Theta_{\mathrm{ax}}
+=e_1\,d\delta+e_0\cosh\delta\,d\Lambda.
+\]
+
+\begin{theorem}[Dual metric pullback]
+The same coframe gives two exact metric reads:
+\[
+\boxed{
+\boldsymbol\Theta_{\mathrm{ax}}^*g_i
+=d\delta^2+\cosh^2\!\delta\,d\Lambda^2,
+}
+\]
+\[
+\boxed{
+\boldsymbol\Theta_{\mathrm{ax}}^*\eta_G
+=d\delta^2-\cosh^2\!\delta\,d\Lambda^2.
+}
+\]
+\end{theorem}
+\begin{proof}
+In the chosen eigenframe, $g_i(e_a,e_b)=\delta_{ab}$, while $\eta_G(e_1,e_1)=1$, $\eta_G(e_0,e_0)=-1$, and the cross terms vanish. Substitution gives both pullbacks.
+\end{proof}
+
+After supplying a length scale $\ell>0$, the signed read becomes
+\[
+ds_{\mathrm{AdS}_2}^2
+=\ell^2\left(d\delta^2-\cosh^2\!\delta\,d\Lambda^2\right).
+\]
+Only now does the fourth zero have its Lorentzian meaning:
+\[
+\boxed{ds_{\mathrm{AdS}_2}^2=0.}
+\]
+This is an actual cross-carrier adapter: its domain, coframe, two target metrics, and preserved quadratic relations are displayed and checked. It is not a correspondence table.
+
+\section{Stage 8: supplied Einstein--Maxwell completion}
+
+The root and the coframe supply a dimensionless Lorentz carrier and an exact $\mathrm{AdS}_2$ factor. A four-dimensional physical solution requires further data. Supply
+\[
+M_{\mathrm{BR}}=\widetilde{\mathrm{AdS}}_2(\ell)\times S^2(\ell)
+\]
+and, in an orthonormal coframe $(\theta^0,\theta^1)$ on the Lorentzian factor, the Maxwell form
+\[
+F=\ell^{-1}\theta^0\wedge\theta^1.
+\]
+With the standard normalization stated in the source, the equal-radius product and this flux satisfy the source-free Einstein--Maxwell equations: the Bertotti--Robinson solution.
+
+\redbox{\textbf{Proof boundary.} The root does not select $S^2$, $\ell$, $c$, $G_N$, the Maxwell normalization, physical boundary conditions, or the general Einstein equation. Stage 7 derives the adapter. Stage 8 supplies the physical completion data and checks the resulting standard solution.}
+
+The three burdens are therefore visible at the point of use:
+\begin{center}
+\small
+\begin{tabularx}{0.95\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth}X>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\toprule
+Layer & Content & Status\\
+\midrule
+Root & $\eta_G$, golden null rays, $S\in\mathfrak{so}(\eta_G)$, $L_{\mathrm{ax}}=e^{(\log\Phi)S}$ & Certified\\
+Metric adapter & $\boldsymbol\Theta_{\mathrm{ax}}^*g_i$ and $\boldsymbol\Theta_{\mathrm{ax}}^*\eta_G$ & Derived\\
+Physical completion & equal-radius $S^2$, scale $\ell$, Maxwell flux, Einstein--Maxwell check & Supplied and checked\\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+
+\section{Stage 9: declared physical candidate reads}
+
+The proof spine ends before this stage. The following are retained only as declared physical candidates from the source corpus; none is a premise of the root algebra, the metric adapter, the continuum contract, or the covariant-LQG realization theorem.
+\begin{enumerate}[label=(\arabic*)]
+\item The arithmetic address $p_\star=137$ may be compared with the infrared read $\alpha^{-1}(0)\approx137.036$ only while the measured residual, uncertainty, and scale dependence remain explicit. The candidate fails if the adapter requires those data to be erased.
+\item The placement $\Phi\leftrightarrow{}^4\mathrm{He}^{2+}$ remains open until nuclear composition, charge, spin, binding, stability, and admitted transformations are preserved by one explicit map.
+\item The placement $\Phi[\pi]\leftrightarrow h$ remains open until the electroweak representation, vacuum orbit, mass relation, couplings, and observed decay structure are preserved by one explicit map.
+\end{enumerate}
+These candidate reads carry break tests rather than borrowed certification. They are outside the two-paper proof.
+
+\section{The finite Scope branch: the seven-fold endurance spiral}
+
+The algebraic dependency and the office cycle are different readings of the same construction. The proof order is fixed by Stages 0--5. The seven-fold spiral is a declared reader that places familiar words on exact operations. It is a finite Scope branch; it does not generate the arithmetic branch, the metric adapter, or the continuum contract.
+
+\subsection{Center structure}
+
+The center is not an eighth band. It is the packet
+\[
+\boxed{\mathcal C_0=(0,\theta,\pi).}
+\]
+Here
+\begin{itemize}
+\item $0$ is the relational or metric closure read;
+\item $\theta$ is the Survival predicate that keeps the selected direction admissible;
+\item $\pi$ is the central half-turn Contact at which closure and retained Difference are read together.
+\end{itemize}
+
+The mirror operation $g$ is likewise a seam rather than a band. It exchanges onward and reciprocal carriage. Return is the successor $+1$ in occurrence address.
+
+\subsection{The seven addressed offices}
+
+The seven-fold cycle is
+\[
+\boxed{
+\Phi
+\longrightarrow
+\Psi
+\longrightarrow
+i
+\longrightarrow
+\Theta
+\longrightarrow
+e
+\xrightarrow{\ g\ }
+G
+\longrightarrow
+\Lambda
+\longrightarrow
+\Phi_{+1}.
+}
+\]
+The inverse face $e^{-1}$ is exposed by the mirror seam $g$ between $e$ and $G$.
+
+\begin{center}
+\small
+\begin{tabularx}{0.98\textwidth}{@{}>{\centering\arraybackslash}p{0.06\textwidth}>{\bfseries\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Mark & Root office & Exact mathematical carrier & Common-sense read\\
+\midrule
+$\Phi$ & Motion & positive golden branch; fixed horizon of Fibonacci refinement & the next move can continue without losing the relation\\
+$\Psi$ & Pressure & reciprocal conjugate branch $-\Phi^{-1}$ & continuation has an opposite-facing load and therefore a real constraint\\
+$i$ & Light & local quarter-turn; orthogonal hinge; Euler phase generator & Difference can turn into view without being erased\\
+$\Theta$ & Time & ordered phase/occurrence read, e.g. $(n\bmod4,\lfloor n/4\rfloor)$ & the hand may return while the count advances\\
+$e$ & Carriage & continuous flow $L_t=e^{t(\log\Phi)S}$ & motion is carried continuously rather than jumped by declaration\\
+$G$ & Gravity / Fit identity & generated split relation $G=[Q,\Omega]$, preserved by $L_t$ & the two directions remain one coherent relation\\
+$\Lambda$ & Infinity / Meaning address & unwrapped cover coordinate with $\Lambda\mapsto\Lambda+T$ & the system can return locally while keeping where it has arrived\\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+
+The project-level sentence is:
+
+\greenbox{\large Motion meets Pressure. Light turns the Difference. Time orders the Return. Carriage advances. Mirror exposes relaxation. Gravity holds the reciprocal Fit. Infinity keeps the address. The next Motion begins at $+1$.}
+
+\subsection{The role of the global form, local turn, Timing, and Survival}
+
+The global alternating form and the local turn share matrix entries in the chosen chart while retaining distinct types:
+\[
+\Omega:V\times V\to\R,
+\qquad
+i:V\to V,
+\qquad
+i=-\Omega\ \text{in coordinates}.
+\]
+$\Omega$ holds global orientation and supplies the upward lift of ordered Difference. $i$ is the local hinge by which that Difference can turn. Uppercase $\Theta$ directs recurrence. Lowercase $\theta$ certifies that the selected direction remains admissible.
+
+At the Euler half-turn, $i$ is read through its completed axial symmetry:
+\[
+e^{i\pi}=-1.
+\]
+The closure value is zero, the Difference is nonzero, and Memory coheres the relation through Return. Light is therefore the non-erasing hinge of the symmetry, not a loose synonym for motion.
+
+\section{The finite relational branch: eight addresses, twenty-eight seams, seven relative bands}
+
+\subsection{Why eight}
+
+The visible wheel has four phase residues
+\[
+p\in\Z/4\Z.
+\]
+The central lift supplies two successive windows or sheets
+\[
+\ell\in\Z/2\Z.
+\]
+The minimum joint address preserving both is
+\[
+\boxed{(\ell,p)\in\Z_2\times\Z_4,\qquad 2\cdot4=8.}
+\]
+A four-phase return does not identify the later occurrence with the earlier one.
+
+\subsection{Why twenty-eight}
+
+Let $A_8=\R^8$ be the occurrence carrier. Its complete alternating relation space is
+\[
+\Delta_{28}:=\Lambda^2(A_8^*),
+\qquad
+\boxed{\dim\Delta_{28}=\binom82=28.}
+\]
+After choosing the standard metric,
+\[
+\Lambda^2(A_8^*)\cong\mathfrak{so}(8)
+\]
+as vector spaces. The identification sends an alternating form to the unique skew-adjoint endomorphism with the same bilinear read. The eight-address carrier, the vector representation of $\SO(8)$, and the half-spin module of $\Spin(8)$ remain separately typed; the latter supplies an independent central Return witness \cite{CoppaArchitectureSilence2026}.
+
+\subsection{The seven-by-four complete scan}
+
+Label the eight vertices by $\{\infty\}\cup\Z_7$. For $a\in\Z_7$, define
+\[
+M_a=\{\{\infty,a\}\}\cup\{\{a+j,a-j\}:j=1,2,3\}.
+\]
+Each $M_a$ is a perfect matching of four disjoint edges. The seven matchings partition all edges of $K_8$:
+\[
+\boxed{E(K_8)=\bigsqcup_{a\in\Z_7}M_a,
+\qquad
+28=7\cdot4.}
+\]
+This scanner visits every pairwise seam exactly once \cite{CoppaMinimumEndurance2026,CoppaArchitectureSilence2026}.
+
+\subsection{Seven relative phase coordinates}
+
+For eight phase addresses $u=(u_0,\ldots,u_7)\in U(1)^8$, a common phase acts diagonally:
+\[
+u_j\mapsto zu_j.
+\]
+Every relative phase $u_j\overline{u_k}$ is invariant. Therefore
+\[
+\boxed{U(1)^8/U(1)_{\mathrm{diag}}\cong U(1)^7.}
+\]
+Eight lifted addresses become seven independent relative coordinates after the common center phase is removed.
+
+The two appearances of seven have different proofs:
+\[
+8-1=7
+\quad\text{at relative-phase dimension},
+\]
+\[
+28/4=7
+\quad\text{at complete seam scanning}.
+\]
+They meet in one finite Scope without being one calculation.
+
+\subsection{The exact seven-band fold}
+
+Let $m,r\in\R^8$ and define the antisymmetric seam field
+\[
+\Delta_{jk}=m_jr_k-m_kr_j.
+\]
+For each matching $M_a$, define the band energy
+\[
+B_a=\sum_{\{j,k\}\in M_a}\Delta_{jk}^2.
+\]
+Because the matchings partition the seam set,
+\[
+\boxed{
+\sum_{a=0}^6B_a
+=
+\sum_{0\le j<k\le7}\Delta_{jk}^2
+=
+\|m\wedge r\|^2.
+}
+\]
+Lagrange's identity gives
+\[
+\|m\wedge r\|^2
+=
+\|m\|^2\|r\|^2-\langle m,r\rangle^2.
+\]
+For unit records,
+\[
+\boxed{
+\langle m,r\rangle^2+\sum_{a=0}^6B_a=1.
+}
+\]
+Thus the seven bands form an exact coarse reader of the total quadratic Difference. They retain every seam in the partition and retain the total squared exterior Difference. They do not reconstruct the signs and individual amplitudes of all twenty-eight seams from seven sums alone.
+
+This is the minimum mathematical sense in which the Rainbow is a projection of the lift: a complete pairwise Difference field is disclosed in seven center-free aggregate bands.
+
+\section{Common sense readers of the same operation}
+
+The following examples do not carry the proof. They make the already-proved operation familiar.
+
+\subsection{A clock hand and an odometer}
+
+A hand returning to twelve answers one question: what is the visible phase? The day count answers another: which turn occurred? The escapement theorem writes this exactly:
+\[
+D(F^{4m}x)=D(x),
+\qquad
+\Lambda(F^{4m}x)=\Lambda(x)+mT.
+\]
+The dial returns; the address advances; the receipt keeps the completed turn \cite{CoppaMirrorEscapement2026}.
+
+\subsection{A hinge, a fold, and a lock}
+
+A fold changes the spatial realization of a panel while preserving intrinsic face lengths. Contact places two edges together. A lock performs the quotient identification and changes the exposed boundary. The weighted boundary theorem is
+\[
+\boxed{
+L(\partial(K\cup_A F))
+=
+L(\partial K)+L(\partial F)-2L(A).
+}
+\]
+This distinction is the discrete geometric precursor of continuum gluing: deformation, contact, compatibility, and identification are different operations \cite{CoppaMahogany2026}.
+
+\subsection{Wood grain and a moving highlight}
+
+A hidden grain axis is projective:
+\[
+P_u=uu^{\mathsf T}=P_{-u}.
+\]
+Rigid fold transports it by $P_u\mapsto RP_uR^{\mathsf T}$. The seam fit residual
+\[
+\delta_e^2=
+\|P_{u_+}-R_eP_{u_-}R_e^{\mathsf T}\|_F^2
+\]
+vanishes exactly when the transported projective axes fit. Illumination and viewpoint can move the visible chatoyant band while the stored grain field remains fixed. The carrier, the fit, and the read are distinct. The seam keeps the measure; the grain keeps the memory; light discloses the fit \cite{CoppaMahogany2026}.
+
+\subsection{A piano temperament}
+
+Let twelve local increments satisfy
+\[
+\sum_{j=0}^{11}w_j=1.
+\]
+The local intervals can be redistributed while the global degree remains one. Pitch class returns after twelve steps while the lifted key address advances. This is a finite, audible example of local retuning under invariant global winding \cite{CoppaPianoforte2026}.
+
+\subsection{A tree and a shell}
+
+A tree can add branch after branch while retaining one root relation. A shell can add a new bead or whorl while the generating seam remains the reference of the whole form. The exact abstract law is
+\[
+p(L^nx)=p(x),
+\qquad
+\Lambda(L^nx)=\Lambda(x)+nT.
+\]
+The crown or shell may grow in the lift while the center Reader remains exactly silent. Complexity accumulates in address and receipt; the closure burden at the root does not grow with every layer.
+
+\subsection{The system of the body}
+
+A living body is not stable because every variable is motionless. It is stable because many local motions remain inside one coupled viability region. Breathing, circulation, temperature regulation, sleep, hydration, immune response, posture, attention, and action are coordinated under constraints that permit another lawful move. The exact abstract office is
+\[
+\theta_\Gamma(x,T)=1.
+\]
+A calm state is therefore compatible with abundant internal motion. Relaxation is not the command that a Reader display zero strain; it is the lawful reciprocal motion that returns the carrier toward its viable center.
+
+\subsection{Higgs Scope and spectral organization}
+
+At electroweak resolution, Scope is the complete vacuum, representation, coupling, and field context in which the quadratic spectrum is formed. The scalar vacuum and couplings organize the gauge-boson mass operator; the photon direction remains a zero mode, while the surviving scalar excitation is the radial mode through which that organization is read. The minimum statement is therefore
+\[
+\boxed{
+\text{vacuum Scope}
+\longrightarrow
+\text{quadratic operator}
+\longrightarrow
+\text{mass spectrum and scalar read}.
+}
+\]
+This is the precise physical content behind the familiar phrase that the Higgs ``gives mass.'' The native theory supplies a field, a vacuum orbit, couplings, and a spectrum; no object is handed a substance called mass. The root contributes the Scope grammar: a returned relation is meaningful only inside the complete carrier and constraint that define the read \cite{Higgs1964,Weinberg1967,CoppaQFTSM2026}.
+
+\subsection{Classical determinism with readable Memory}
+
+Where a native classical theory supplies a deterministic flow, the architecture keeps it. Initial data, governing equations, boundary data, and constraints determine the next state in the ordinary classical sense. The added discipline is that a coarse Reader cannot be promoted into the complete state when it has identified distinctions that the evolution still carries.
+\[
+\boxed{
+\text{deterministic evolution}
++\text{lossless Memory relation}
+\longrightarrow
+\text{lawful classical prediction}.
+}
+\]
+A deterministic carrier viewed through a lossy quotient can look random, ambiguous, or irreversible because the Reader has discarded state information. The cure is not indeterminacy by decree. It is to restore the lift, the constraint, or the receipt required by the next operation.
+
+\section{Construct, verify, and the general Noether rule}
+
+\subsection{Operational type separation}
+
+For a witness relation $R\subseteq X\times W$, construction and verification have different types:
+\[
+C:X\rightharpoonup W,
+\qquad
+V:X\times W\to\{0,1\}.
+\]
+Construction produces a candidate. Verification judges a supplied candidate. Their responsibility domains are different:
+\[
+\operatorname{dom}_{\mathrm{resp}}(C)=\operatorname{Graph}(C),
+\qquad
+\operatorname{dom}_{\mathrm{resp}}(V)=X\times W.
+\]
+A selector $\kappa$ presents the pair to be judged; it is not absorbed into the verifier's correctness condition \cite{CoppaVerifyConstruct2026,CoppaVerifyAddendum2026}.
+
+\subsection{The Noether adapter}
+
+The same operational separation clarifies the general Noether theorem. A candidate infinitesimal generator $(\tau,\xi)$ constructs a local variation. The variational identity verifies whether that variation is a symmetry:
+\[
+L_t\tau+L_{q^i}\xi^i+p_i(D_t\xi^i-\dot q^iD_t\tau)+L D_t\tau=D_tB.
+\]
+Only after this identity is satisfied does the Noether map return the conserved current
+\[
+\boxed{J_\xi=p_i\xi^i-H\tau-B,
+\qquad
+D_tJ_\xi=0.}
+\]
+The dependency is
+\[
+\boxed{
+\kappa
+\to
+\text{candidate generator}
+\to
+\text{universal symmetry test}
+\to
+\text{Noether current}.
+}
+\]
+Generator, verification, and current are three distinct duties of one rule. No conservation law is earned by naming a motion symmetric; the symmetry condition must hold on the admitted action.
+
+For axial rotation under a central potential, the theorem gives
+\[
+L_z=m(q_1\dot q_2-q_2\dot q_1),
+\qquad
+\frac{dL_z}{dt}=0.
+\]
+The phase can advance by $+1$ occurrence while the current endures. This is the minimum endurance-$\Delta$ pattern: symmetry carries the current; successor carries the new address \cite{CoppaMinimumEndurance2026}.
+
+\section{The historical coordinate deck}
+
+The formal chain was not invented in isolation. The minimum coordinate deck records distinct human discoveries of invariance, field, constraint, reconstruction, and refusal. The entries are used as reference coordinates, not compressed into one authorship claim \cite{CoppaCoordinateRegister2026}. This table preserves the source register rather than upgrading it: proof in the present paper does not depend on any historical disposition claim.
+
+\small
+\begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.45\textwidth}@{}}
+\toprule
+Coordinate & Coordinate contribution & Place in the present synthesis\\
+\midrule
+\endfirsthead
+\toprule
+Coordinate & Coordinate contribution & Place in the present synthesis\\
+\midrule
+\endhead
+Euclid & proof by construction; golden division; explicit postulate discipline & construction under rule and the $\Phi$ condition\\
+Galileo & measured decomposition of motion and the $t^2$ law & local motion becomes a checkable relation\\
+Newton & motion under law & an admitted action has a governing equation\\
+Euler & structural invariance and complex phase closure & the half-turn Reader and exact Return certificate\\
+Lagrange & one action written across generalized coordinates & form-invariance before Noether\\
+Faraday & spatial field and induction & physical relation is carried through a field, not action at an isolated object\\
+Maxwell & closed electromagnetic field equations & connection, curvature, null propagation, and phase Return\\
+Darwin: descent & branching genealogical continuity & identity can be lineage relation rather than fixed form\\
+Darwin: selection & differential continuation under inherited variation & survival is constrained continuation, not static sameness\\
+Mendel and population genetics & particulate inheritance and mathematical population dynamics & retained Difference survives generational transport\\
+Boltzmann & macrostate identity through microstate multiplicity & coarse Scope and compatible fibers\\
+Riemann: geometry & intrinsic metric and curvature & geometry becomes a carrier of accumulated transport Difference\\
+Riemann: $\zeta$ & exact functional reflection with an open zero-location problem & one coordinate can have a closed face and an open seam\\
+Einstein & invariant spacetime interval and dynamical metric & the physical mirror interval $ds^2=0$ and lawful gravitational carriage\\
+Noether & continuous symmetry implies conserved current & Endurance of the governing relation through motion\\
+G\"odel & theory-indexed limits of formal proof & a Reader cannot silently promote a stronger rule into the original system\\
+Wittgenstein: \emph{Tractatus} & explicit logical boundary & the cost of brittle total closure\\
+Wittgenstein: \emph{Investigations} & use-governed meaning and rule-following & Meaning is lawful reuse, not a detached label\\
+Dirac: equation & relativistic spinor structure and antimatter prediction & spin, phase, and Lorentz covariance in one typed equation\\
+Dirac: calibrated refusal & retain strange but legible structure; refuse unreadable substitution & interpretation is constrained by formal readability\\
+Shannon & recoverability below channel capacity & a noisy representation may preserve the distinctions needed for reconstruction\\
+Bell & bounded refusal of Bell-local factorization & relational evidence cannot be replaced by an incompatible local decomposition\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+These coordinates are not rungs of a single chronology. They are independent answers to one recurring question: which relation remains invariant when the representation, path, scale, or reader changes?
+
+\section{The translation codex}
+
+The preceding papers already built the translation one burden at a time. The codex is now explicit.
+
+\small
+\begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
+\toprule
+Source construction & Exact lock & Continuum-complexity burden\\
+\midrule
+\endfirsthead
+\toprule
+Source construction & Exact lock & Continuum-complexity burden\\
+\midrule
+\endhead
+Condition and Constraint & an address is admitted only while its continuation rule remains satisfied & define the candidate continuum and its admissibility conditions\\
+Return Curvature Memory & exact/non-exact Return crossed with accumulating/non-accumulating remainder & separate local closure, phase residue, constrained closure, and curvature Memory \cite{CoppaReturnCurvature2026}\\
+Form and Fit & structure does not manufacture compatibility; Fit must be witnessed & neighboring local geometries must agree after transport\\
+Identity and Reference & reapplication remains defined under the same rule & refinement must preserve the rule version and reference\\
+Minimum root algebra & $Q,\Omega$ generate a complete local algebra and a readable order Difference & local transport has an exact oriented algebra\\
+Dihedral phase & mirror reverses continuation and finite Return can be a quotient of infinite carriage & inverse orientation and lifted address remain available\\
+Miracle of Mercy / Silence & closure $0$ coexists with nonzero Difference and receipt & continuum closure must not erase the physical mode\\
+Mahogany Lock Box & fold preserves intrinsic measure; lock changes boundary; projective fit is separately tested & distinguish local deformation, contact, compatibility, and actual gluing\\
+Wheel symmetry & edge transport intertwines with phase; ordered loop product closes & discrete connection and loop holonomy \cite{CoppaWheel2026}\\
+Verify $\perp_\tau$ Construct & construction, selection, and universal verification are distinct & proposed discrete geometry must pass constraints rather than certify itself\\
+Minimum Endurance $\Delta$ & verified variational symmetry produces conserved current & physical Function must survive the closure process\\
+Pianoforte & local increments may vary while global degree survives & refinement may retune local data while preserving global class\\
+Compatibility Without Flatness & exact gluing coexists with nonzero curvature, holonomy, and proper-time Difference & compatibility closure cannot be used as a flatness equation\\
+Mirror Escapement Time Lift & quotient Return coexists with unbounded lifted advance & cylindrical consistency and refinement Memory\\
+Architecture of Silence & central lift, represented Difference, receipt, eight addresses, twenty-eight seams & separate quotient, lift, bivector relation, and occurrence\\
+Coarse-grained entropy & a macrostate is a fiber of compatible microstates; erased record distinctions cannot be reconstructed & distinguish physical quotient, microscopic states, and exterior records \cite{CoppaEntropy2026}\\
+Law & admissibility stabilizes through repeated Return; precedent is Memory under reuse & refinement moves are lawful only when the global relation remains reusable \cite{CoppaLaw2026}\\
+Gravity Light Memory Motion & metric, connection, Cauchy data, phase, measurement, and Memory are separately typed & the native classical and quantum field architecture\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+The codex is a set of preserved distinctions. Its strength lies in refusing six substitutions:
+\[
+\boxed{
+\begin{gathered}
+\text{fold}\neq\text{lock},
+\qquad
+\text{construct}\neq\text{verify},
+\qquad
+\text{gluing}\neq\text{flatness},\\
+\text{return}\neq\text{reset},
+\qquad
+\text{macro read}\neq\text{microstate},
+\qquad
+\text{compatibility}\neq\text{physical-function erasure}.
+\end{gathered}}
+\]
+
+\section{The exact local gauge-algebra joint}
+
+The continuum aperture uses $\SU(2)$ boundary data and $\SL(2,\C)$ bulk data. The root already contains an exact coordinate joint at the Lie-algebra level.
+
+Set
+\[
+K:=\Omega H.
+\]
+Then $K$ is real, symmetric, traceless, and $K^2=I$. After adjoining the ordinary complex scalar $\mathbf i$, define
+\[
+J_1=\Omega,
+\qquad
+J_2=\mathbf i H,
+\qquad
+J_3=\mathbf i K,
+\qquad
+T_a=\frac12J_a.
+\]
+Direct multiplication gives
+\[
+J_aJ_b=-\delta_{ab}I+\varepsilon_{abc}J_c,
+\qquad
+[T_a,T_b]=\varepsilon_{abc}T_c,
+\qquad
+-2\tr(T_aT_b)=\delta_{ab}.
+\]
+Thus the real span of the $J_a$ is a displayed compact $\mathfrak{su}(2)$ real form inside the complexified root algebra.
+
+Let $\sigma_a$ be the Pauli matrices and put
+\[
+S_a=-\frac{\mathbf i}{2}\sigma_a.
+\]
+Define
+\[
+\boxed{
+\beta_{\partial}:\mathfrak{su}(2)_{\mathrm{root}}\longrightarrow
+\mathfrak{su}(2)_{\mathrm{boundary}},
+\qquad
+\beta_{\partial}(T_a)=S_a.
+}
+\]
+Because both bases satisfy the same commutator and trace-pairing relations,
+\[
+\boxed{
+\beta_{\partial}([X,Y])=[\beta_{\partial}(X),\beta_{\partial}(Y)],
+\qquad
+-2\tr(XY)=-2\tr(\beta_{\partial}(X)\beta_{\partial}(Y)).
+}
+\]
+The complexification
+\[
+\boxed{
+\beta_{\mathrm{bulk}}
+=\beta_{\partial}\otimes_{\R}\C:
+\mathfrak{sl}(2,\C)_{\mathrm{root}}
+\overset{\cong}{\longrightarrow}
+\mathfrak{sl}(2,\C)_{\mathrm{bulk}}
+}
+\]
+is therefore an exact complex Lie-algebra coordinate isomorphism.
+
+This joint preserves the local bracket and invariant trace pairing. It does not select the Barbero--Immirzi parameter, the EPRL simplicity map, spin labels, amplitudes, refinement maps, physical inner product, or spin-two observable. Those remain native LQG data \cite{CoppaGaugeSpine2026,CoppaCCLQG2026}.
+
+\section{The non-erasing continuum contract}
+
+\subsection{The finite closure core}
+
+\begin{definition}[Non-erasing closure core]
+A model of $\NECore$ is a tuple
+\[
+\mathfrak M_0=(X,C,W,c,w,x_\star,0_C,0_W)
+\]
+with maps $c:X\to C$ and $w:X\to W$ and a distinguished state $x_\star$ satisfying
+\[
+\boxed{c(x_\star)=0_C,
+\qquad
+w(x_\star)\neq0_W.}
+\]
+The two outputs may have different codomains. The contract says only that a declared closure read vanishes while a separately typed required Difference survives.
+\end{definition}
+
+The central Return theorem supplies an exact root model:
+\[
+X=\{z\},
+\quad
+c(z)=C_\rho(z)=\rho(z)+I=0,
+\quad
+w(z)=D_\rho(z)=\rho(z)-I=-2I\neq0.
+\]
+The receipt $\mathcal R_{n+1}\neq\mathcal R_n$ is an additional occurrence field. Thus the finite core is not inferred from LQG; it is already certified in the root carrier.
+
+\subsection{The continuum extension}
+
+\begin{definition}[Non-erasing continuum contract]
+A realization of $\NEC$ consists of:
+\begin{enumerate}[label=(\roman*)]
+\item a directed refinement set $(\mathcal I,\preceq)$;
+\item local data spaces $X_\Delta$, readout spaces $Y_\Delta$, exact compatibility reads $c_\Delta:X_\Delta\to\R_{\ge0}$, physical readouts $r_\Delta:X_\Delta\to Y_\Delta$, compatibility transports $T_\Delta$, declared physical-sector selectors $\mathcal S_\Delta:X_\Delta\to X_\Delta^{\mathrm{grav}}$, and compatible local witnesses $x_{\Delta,\star}\in X_\Delta$ when closure is asserted;
+\item refinement maps $\iota_{\Delta\Delta'}:X_\Delta\to X_{\Delta'}$ and readout maps $\bar\iota_{\Delta\Delta'}:Y_\Delta\to Y_{\Delta'}$;
+\item a precursor map $P:\mathcal D\to\mathcal D'$ and its physical quotient $q_{\mathrm{phys}}:\mathcal D\to\overline{\mathcal D/\ker P}$, together with a distinguished admitted physical state $\phi_\star\in\mathcal D$;
+\item compatibility edge transports $G_e$ and physical connection transports $U_e$, retained as distinct fields;
+\item a physical survival read $w:\overline{\mathcal D/\ker P}\to Z$.
+\end{enumerate}
+Each $\mathcal S_\Delta$ is part of the declared realization data: it selects the physical sector to which the compatibility and continuum tests are applied; no selector is inferred from $c_\Delta$ alone.
+The realization must satisfy:
+\begin{align}
+ c_\Delta(x)=0
+ &\iff \text{all declared transported compatibility defects of }x\text{ vanish},
+\tag{NEC1}\label{eq:nec1}\\
+\iota_{\Delta\Delta'}\circ T_\Delta
+&=T_{\Delta'}\circ\iota_{\Delta\Delta'},
+\tag{NEC2}\label{eq:nec2}\\
+r_{\Delta'}\circ\iota_{\Delta\Delta'}
+&=\bar\iota_{\Delta\Delta'}\circ r_\Delta,
+\tag{NEC3}\label{eq:nec3}\\
+q_{\mathrm{phys}}
+&:\mathcal D\to\overline{\mathcal D/\ker P},
+\tag{NEC4}\label{eq:nec4}\\
+w(q_{\mathrm{phys}}(\phi_\star))&\neq0_Z.
+\tag{NEC5}\label{eq:nec5}
+\end{align}
+On each connected simply connected compatibility subcomplex, the exact compatibility defects must imply the first relation below for every compatibility two-cell. The second line records the non-identification built into the contract:
+\begin{align}
+\boxed{\overrightarrow{\prod_{e\subset\partial f}}G_e=I}
+&\tag{NEC6}\label{eq:nec6}\\
+\NEC\ &\not\vdash\
+\overrightarrow{\prod_{e\subset\partial f_{\mathrm{phys}}}}U_e=I.
+\tag{NEC7}\label{eq:nec7}
+\end{align}
+\end{definition}
+
+\begin{proposition}[Continuum-to-core reduct]
+Let $\mathfrak M$ realize $\NEC$. Fix $\Delta$ and witnesses $x_{\Delta,\star}\in X_\Delta$, $\phi_\star\in\mathcal D$ satisfying
+\[
+c_\Delta(x_{\Delta,\star})=0,
+\qquad
+w(q_{\mathrm{phys}}(\phi_\star))\neq0.
+\]
+On the product state space $X_\Delta^\sharp:=X_\Delta\times\mathcal D$, define
+\[
+c_\Delta^\sharp(x,\phi):=c_\Delta(x),
+\qquad
+w^\sharp(x,\phi):=w(q_{\mathrm{phys}}(\phi)).
+\]
+Then
+\[
+\operatorname{Red}_{\mathrm{core}}(\mathfrak M,\Delta)
+:=
+\bigl(X_\Delta^\sharp,\R_{\ge0},Z,c_\Delta^\sharp,w^\sharp,
+(x_{\Delta,\star},\phi_\star),0,0_Z\bigr)
+\]
+is a model of $\NECore$.
+\end{proposition}
+\begin{proof}
+By definition,
+$c_\Delta^\sharp(x_{\Delta,\star},\phi_\star)=c_\Delta(x_{\Delta,\star})=0$ and
+$w^\sharp(x_{\Delta,\star},\phi_\star)=w(q_{\mathrm{phys}}(\phi_\star))\neq0_Z$.
+\end{proof}
+
+The contract is the exact continuum form of six certified locks:
+\[
+\boxed{
+\begin{gathered}
+\text{fold}\neq\text{lock},
+\qquad
+\text{construct}\neq\text{verify},
+\qquad
+\text{gluing}\neq\text{flatness},\\
+\text{return}\neq\text{reset},
+\qquad
+\text{macro read}\neq\text{microstate},
+\qquad
+\text{compatibility closure}\neq\text{physical-Function erasure}.
+\end{gathered}}
+\]
+Each lock is proved in its own carrier by the translation codex. The contract uses their common operational content and does not identify the carriers.
+
+\section{Covariant loop quantum gravity realizes the contract}
+
+Paper II supplies the following assignments:
+\[
+\begin{array}{c|c}
+\NEC\text{ field}&\text{Paper II object}\\
+\hline
+(\mathcal I,\preceq)&\text{directed family of discretizations }\Delta\preceq\Delta'\\
+X_\Delta&\text{local frames, bivectors, and induced face geometries}\\
+c_\Delta&\mathcal F_{\mathrm{comp},\Delta}\\
+\mathcal S_\Delta&\text{EPRL simplicity selection }\mathcal S_\gamma\\
+T_\Delta&\text{compatibility transport at scale }\Delta\\
+r_\Delta&\text{spin-two-resolving readout}\\
+P,\,q_{\mathrm{phys}}&P_\Sigma:\mathcal D_\Sigma\to\mathcal D_\Sigma^{*},\quad
+q_{\mathrm{phys}}:\mathcal D_\Sigma\to\overline{\mathcal D_\Sigma/\ker P_\Sigma}\\
+G_e&\text{completed compatibility transition}\\
+U_e&\text{physical gravitational connection transport}\\
+x_{\Delta,\star}&\text{compatible local data at }\mathcal F_{\mathrm{comp},\Delta}=0\\
+\phi_\star&\text{the admitted physical state/distribution carrying the spin-two witness}\\
+w&\mathcal W_2.
+\end{array}
+\]
+
+\begin{theorem}[Covariant-LQG realization of $\NEC$]
+Under hypotheses (i)--(v) of Paper II's non-erasing continuum-closure theorem, the displayed assignments define a realization of $\NEC$. In particular,
+\[
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\quad\land\quad
+\mathcal W_2[\mathcal G_{\mathrm{phys}}]\neq0,
+}
+\]
+and, on every connected simply connected compatibility subcomplex,
+\[
+\boxed{
+\overrightarrow{\prod_{e\subset\partial f}}G_e=I.
+}
+\]
+This compatibility closure imposes no equation $H_f^{\mathrm{phys}}=I$ on the separately typed physical connection holonomy.
+\end{theorem}
+\begin{proof}
+The realization is discharged clause by clause.
+\begin{enumerate}[label=(\arabic*)]
+\item Paper II Eq.~(21) gives the exact zero locus required by \eqref{eq:nec1}: cocycle, transported-bivector, and induced-geometry defects vanish simultaneously exactly when $\mathcal F_{\mathrm{comp}}=0$.
+\item The EPRL simplicity map, Paper II Eq.~(26), supplies the independently typed gravitational-sector selector $\mathcal S_\gamma$.
+\item Paper II Eqs.~(30) and (31) are exactly \eqref{eq:nec2} and \eqref{eq:nec3}.
+\item Paper II Eqs.~(34)--(36) supply the distributional physical quotient \eqref{eq:nec4}.
+\item Paper II Eqs.~(40)--(42) define $\mathcal W_2$ and impose the nonzero physical witness \eqref{eq:nec5}.
+\item Paper II Lemma~1 and Eqs.~(46)--(47) give the compatibility-loop closure \eqref{eq:nec6} on simply connected compatibility subcomplexes.
+\item Paper II Eqs.~(24)--(25) type the physical holonomy separately and prove that $\mathcal F_{\mathrm{comp}}=0$ does not imply $H_f^{\mathrm{phys}}=I$, which is exactly the non-identification retained by \eqref{eq:nec7}.
+\end{enumerate}
+Every field and equation of the contract is therefore inhabited. No row is established by word substitution alone.
+\end{proof}
+
+The remaining ultraviolet matching test in Paper II is model-specific: one must show that an admitted relevant deformation passes to the physical quotient and has nonzero spin-two residue. Its OPEN status does not reopen the contract realization under the theorem's stated hypotheses.
+
+The exact relation between the papers is now:
+\[
+\boxed{
+\mathfrak M_{\mathrm{root}}\models\NECore,
+\qquad
+\operatorname{Red}_{\mathrm{core}}(\mathfrak M_{\mathrm{LQG}},\Delta)\models\NECore,
+\qquad
+\mathfrak M_{\mathrm{LQG}}\models\NEC.
+}
+\]
+The local Lie-algebra adapter $\beta_\partial$ and its complexification provide a separate coordinate joint. The root does not manufacture the EPRL amplitudes. The translation codex defines the non-erasing contract that the covariant-LQG construction realizes.
+
+\section{The branched dependency architecture}
+
+The strict proof spine and its consequences are:
+\[
+\boxed{
+\begin{array}{c}
+\text{Stage 0: }(V,\omega),\ \omega(v,v)=0\\
+\downarrow\\
+\text{Stage 1: generic }Q_a\text{ family and selected }Q\in\Dtr\\
+\downarrow\\
+\text{Stages 2--4: }\Phi,\Psi,\sqrt5,\ G,\ D_4,\ D_\infty\\
+\downarrow\\
+\text{Stage 5: reciprocal axial carriage, quotient Return, harmonic Memory}
+\end{array}}
+\]
+From that common spine, the consequences branch:
+\[
+\boxed{
+\begin{array}{c}
+\text{common root and axial carriage}\\[2mm]
+\begin{array}{cc}
+\begin{array}{c}
+\text{finite Scope}\\
+8\to28\to7
+\end{array}
+&
+\begin{array}{c}
+\text{arithmetic Scope}\\
+m=4\to p_\star=137\to548
+\end{array}
+\\[4mm]
+\begin{array}{c}
+\text{metric adapter}\\
+\boldsymbol\Theta_{\mathrm{ax}}\to(ds_H^2,ds_L^2)
+\end{array}
+&
+\begin{array}{c}
+\text{continuum contract}\\
+\NEC\to\text{covariant LQG}
+\end{array}
+\end{array}
+\end{array}}
+\]
+The supplied Bertotti--Robinson completion continues the metric branch. The seven office names read the finite and axial branches. Neither branch is a premise of the LQG amplitude, and the LQG amplitude is not a consequence of the $K_8$ scanner or the integer $137$.
+
+The common exact sentence is smaller:
+\[
+\boxed{
+\LMForm\ \Lambda\ \LMFit\ \Delta\ \LMFunction.
+}
+\]
+At continuum resolution, this becomes a contract realization rather than a serial algebraic derivation:
+\[
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\quad\land\quad
+\mathcal W_2[\mathcal G_{\mathrm{phys}}]\neq0.
+}
+\]
+\section{Canonical basis and integrated dependency--status ledger}
+
+\subsection{The exact basis and branch points}
+The exact local basis is
+\[
+\boxed{\mathcal B_{\mathrm{root}}=\{I,Q,\Omega,G\}.}
+\]
+The exact center packet is
+\[
+\boxed{\mathcal C_0=(0,\theta,\pi).}
+\]
+The exact mirror/carriage block is
+\[
+\boxed{
+H=G/\sqrt5,
+\qquad
+S=(2Q-I)/\sqrt5,
+\qquad
+L_t=e^{t(\log\Phi)S}.
+}
+\]
+The exact finite/infinite lock is
+\[
+\boxed{D_\infty/\langle q^4\rangle\cong D_4.}
+\]
+The exact Return packet is
+\[
+\boxed{(0,-2I,\mathcal R_{n+1}).}
+\]
+The certified branches are
+\[
+\boxed{
+8\to28\to7,
+\qquad
+m=4\to p_\star=137\to548,
+\qquad
+\boldsymbol\Theta_{\mathrm{ax}}\to(ds_H^2,ds_L^2),
+\qquad
+\NEC\to\mathrm{LQG}.
+}
+\]
+
+\subsection{One ordered ledger}
+The proof order and claim status are carried in the same table. The Stage 7--8 boundary is the exact point at which derivation stops and supplied physical completion data enter.
+
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{0.095\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\bfseries\raggedright\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
+\toprule
+Stage / branch & Result & Status & Immediate dependency & Boundary\\
+\midrule
+\endfirsthead
+\toprule
+Stage / branch & Result & Status & Immediate dependency & Boundary\\
+\midrule
+\endhead
+0 & $\dim V=2$ is minimum for nondegenerate alternating $\omega$; $\omega(v,v)=0$ & Certified & alternating bilinear algebra & zero is relational, not absence\\
+1a & $Q_a^2=aQ_a+I$, $G_a^2=(a^2+4)I$, generic mirror/dihedral family & Derived & direct $2\times2$ multiplication & no golden selection yet\\
+1b & least trace in $\Dtr$ is $1$, orbit $\{Q,PQP\}$ & Certified / derived in declared class & class $\Dtr$ and trace argument & not universal over all real matrices\\
+2 & $\Phi,\Psi$, $\Phi-\Psi=\sqrt5$, $Q$ as multiplication by $\Phi$ & Derived & selected $Q$ and ordered chart & condition-first and selection-first reads require the chart\\
+3 & $G=[Q,\Omega]$, $G^2=5I$, $\{I,Q,\Omega,G\}$ basis of $M_2(\R)$ & Certified & selected $Q$, normalized $\Omega$ & local algebra only\\
+3 & alternating zero and golden signed nullity remain distinct & Certified & $\omega$ and $g_G$ & common carrier does not identify forms\\
+4 & exact wheel order $m=4$, $D_4$, $D_\infty$, $D_\infty/\langle q^4\rangle\cong D_4$ & Certified & normalized mirror $H$ & finite phase and infinite address remain different groups\\
+4 & central Return packet $(0,-2I,\mathcal R_{n+1})$ & Certified & odd central action and append law & closure, Difference, occurrence have different codomains\\
+5 & reciprocal carriage $L_t$, mirror inversion, quotient Return, harmonic period & Certified & $H,S,\Phi$ & projective quotient is not physical proper-time quotient\\
+5 & neutral-mean Return and $\sech^2r+\tanh^2r=1$ & Derived & reciprocal coordinates & reader identity, not new dynamics\\
+5 & axial center rail $\delta=0$ & Certified & Fermi chart & coordinate zero, not Lorentzian nullity\\
+6 & paired order-four identities select $m=4$ and $p_\star=137$ & Certified & Fibonacci/Lucas identities & pure number theory\\
+6 & $\operatorname{ord}_{137}(4)=34$, order-four quotient, address $548$ & Certified & modular arithmetic and CRT & no measured coupling generated\\
+7 & dual metric pullback by $\boldsymbol\Theta_{\mathrm{ax}}$ & Derived adapter & $H$-eigenframe and axial chart & actual map displayed\\
+7 & Lorentzian null interval $ds_L^2=0$ & Derived in adapter & signed pullback metric & first physical-metric-type zero\\
+8 & Bertotti--Robinson Einstein--Maxwell completion & Supplied and checked & equal-radius $S^2$, $\ell$, Maxwell flux & root does not supply these data\\
+Finite Scope & eight addresses, twenty-eight seams, seven-by-four scan, seven relative phases & Certified & four-phase wheel and two lift windows & branch does not generate continuum dynamics\\
+Finite Scope & seven-band exterior-energy fold & Derived & one-factorization and Lagrange identity & coarse, not invertible on all seams\\
+Method & Construct/Verify separation and responsibility domains & Certified & typed signatures and quantifiers & does not settle $P$ versus $NP$\\
+Method & verified variational symmetry yields Noether current & Imported / proved in source & Noether hypothesis & generator, test, current remain distinct\\
+Codex & fold/lock, gluing/flatness, macro/micro, return/reset locks & Certified in native carriers & cited source constructions & same duty does not identify carriers\\
+Gauge joint & $\beta_\partial:\mathfrak{su}(2)_{\rm root}\cong\mathfrak{su}(2)_{\rm boundary}$ and complexification & Derived adapter & compact root frame and Pauli basis & no EPRL data generated\\
+Contract & finite core $\NECore$ & Defined and root-inhabited & central Return theorem & closure and survival reads may differ in type\\
+Contract & continuum extension $\NEC$ & Defined & refinement, quotient, transport, readout fields & a specification, not a physical model by itself\\
+LQG & covariant-LQG realization of every $\NEC$ clause & Derived under Paper II hypotheses & Paper II Eqs. (21), (26), (30)--(36), (40)--(47) & no word-substitution proof\\
+LQG & model-specific ultraviolet deformation match & Open & Paper II Eq. (44) & target-side calculation only\\
+Reader & seven office names and experiential readings & Declared & certified operations & not used to prove algebra or LQG\\
+9 & $p_\star\leftrightarrow\alpha^{-1}$, $\Phi\leftrightarrow{}^4\mathrm{He}^{2+}$, $\Phi[\pi]\leftrightarrow h$ & Declared / outside dual proof & separate adapters and break tests & no certification borrowed here\\
+\bottomrule
+\end{longtable}
+\setlength{\tabcolsep}{6pt}
+\normalsize
+\section{Conclusion}
+
+The system begins with a typed zero. A nondegenerate alternating relation requires two real dimensions, and its self-pairing vanishes without making the carrier vanish. A generic reciprocal family then shows which parts of the mirror/dihedral architecture are structural. The declared discrete transport class selects $Q$ as its least-trace carrier, and only at that selected minimum do the golden spectrum, Fibonacci recurrence, $\sqrt5$ seam, and period $2\log\Phi$ become load-bearing.
+
+The selected root generates a complete planar algebra, a signed metric, a normalized mirror, a finite $D_4$ wheel, an infinite $D_\infty$ carriage, and their exact quotient. Euler's half-turn closes one read while leaving another nonzero. Reciprocal axial carriage preserves the split relation, its quotient returns, its cover coordinate advances, and its harmonic class retains the completed traversal. The four zeros remain different relations: alternating self-pairing, signed nullity, axial center, and Lorentzian null interval.
+
+The consequences branch. The finite branch gives eight occurrence addresses, twenty-eight pairwise seams, seven complete matching rounds, and seven relative phase coordinates. The arithmetic branch gives the order-four selection $p_\star=137$ and the finite address $548$. The metric branch gives an actual coframe adapter and, after supplied physical completion data, the Bertotti--Robinson solution. None of these branches is used as a serial cause of another.
+
+The continuum branch is now exact in the corpus's own sense of an adapter. The finite root supplies a model of the non-erasing closure core. The continuum contract $\NEC$ names the additional refinement, readout, physical quotient, transport, and survival obligations. Paper II realizes every clause under its stated hypotheses. The direct local Lie-algebra joint preserves brackets and trace pairing between the displayed compact root frame and the $\SU(2)$ boundary algebra, with complexification to the Lorentzian $\mathfrak{sl}(2,\C)$ bulk algebra. The EPRL simplicity map, amplitudes, physical quotient, and spin-two observable remain native LQG data.
+
+The two-paper dual therefore closes in one exact sentence:
+
+\goldbox{\Large An acceptable gravitational continuum closes without erasure only when compatibility closes and the required physical Difference remains readable after refinement and the physical quotient.}
+
+In the minimum grammar:
+\[
+\boxed{\LMForm\ \Lambda\ \LMFit\ \Delta\ \LMFunction.}
+\]
+In the covariant-LQG realization:
+\[
+\boxed{
+\mathcal F_{\mathrm{comp}}=0
+\quad\land\quad
+\mathcal W_2[\mathcal G_{\mathrm{phys}}]\neq0.
+}
+\]
+The first is the contract. The second is its proudly exact native realization under the stated hypotheses.
+\section*{Acknowledgments}
+The author used generative language-model tools for source organization, editorial synthesis, algebraic cross-checking, typesetting, and render inspection. Every definition, theorem statement, boundary, citation, and conclusion remains subject to the author's review and responsibility.
+
+\appendix
+
+\section{Compact algebra audit}
+
+For direct recomputation, begin with the generic family
+\[
+Q_a=\begin{pmatrix}a&1\\1&0\end{pmatrix},
+\quad
+\Omega=\begin{pmatrix}0&1\\-1&0\end{pmatrix},
+\quad
+G_a=Q_a\Omega-\Omega Q_a
+=\begin{pmatrix}-2&a\\a&2\end{pmatrix}.
+\]
+Then
+\[
+Q_a^2=aQ_a+I,
+\qquad
+G_a^2=(a^2+4)I.
+\]
+The selected least-trace case is $a=1$:
+\[
+Q=Q_1=\begin{pmatrix}1&1\\1&0\end{pmatrix},
+\qquad
+G=G_1=\begin{pmatrix}-2&1\\1&2\end{pmatrix}.
+\]
+Then
+\[
+Q^2=\begin{pmatrix}2&1\\1&1\end{pmatrix}=Q+I,
+\qquad
+\Omega^2=-I,
+\qquad
+G^2=5I.
+\]
+Moreover,
+\[
+Q^{\mathsf T}\Omega Q=-\Omega,
+\qquad
+Q^{\mathsf T}GQ=-G,
+\]
+so
+\[
+(Q^2)^{\mathsf T}\Omega Q^2=\Omega,
+\qquad
+(Q^2)^{\mathsf T}GQ^2=G.
+\]
+The forms return after two steps while a generic vector does not.
+
+With
+\[
+H=\frac{G}{\sqrt5},
+\qquad
+S=\frac{2Q-I}{\sqrt5},
+\]
+one computes
+\[
+H^2=S^2=I,
+\qquad
+SH=\Omega,
+\qquad
+HS=-\Omega,
+\qquad
+H\Omega H=\Omega^{-1},
+\]
+\[
+HQH=-Q^{-1}.
+\]
+Finally,
+\[
+L_{\mathrm{ax}}
+=e^{(\log\Phi)S}
+=\cosh(\log\Phi)I+\sinh(\log\Phi)S
+=\frac{Q+2I}{\sqrt5},
+\]
+because
+\[
+\cosh(\log\Phi)=\frac{\sqrt5}{2},
+\qquad
+\sinh(\log\Phi)=\frac12.
+\]
+These calculations are the complete local engine.
+
+
+With $K=\Omega H$ and the ordinary complex scalar $\mathbf i$,
+\[
+J_1=\Omega,
+\qquad
+J_2=\mathbf iH,
+\qquad
+J_3=\mathbf iK
+\]
+satisfy
+\[
+J_aJ_b=-\delta_{ab}I+\varepsilon_{abc}J_c.
+\]
+Thus $T_a=J_a/2$ has
+\[
+[T_a,T_b]=\varepsilon_{abc}T_c,
+\qquad
+-2\tr(T_aT_b)=\delta_{ab},
+\]
+which is the exact local algebra checked by the boundary adapter.
+
+\section{The staged contract in one page}
+
+\[
+\boxed{
+\begin{array}{rcl}
+\text{Stage 0: minimum relation}&&V=\R^2,\quad\omega(v,v)=0,\\[1mm]
+\text{Stage 1: generic family}&&Q_a^2=aQ_a+I,\quad G_a^2=(a^2+4)I,\\[1mm]
+\text{Stage 1: selected minimum}&&Q=Q_1\text{ is least trace in }\Dtr,\\[1mm]
+\text{Stage 2: golden spectrum}&&\Phi,\Psi,\quad\Phi-\Psi=\sqrt5,\\[1mm]
+\text{Stage 3: local algebra}&&G=[Q,\Omega],\quad\operatorname{Alg}_{\R}(Q,\Omega)=M_2(\R),\\[1mm]
+\text{Stage 4: dihedral lock}&&D_\infty/\langle q^4\rangle\cong D_4,\\[1mm]
+\text{Stage 4: central Return}&&(0,-2I,\mathcal R_{n+1}),\\[1mm]
+\text{Stage 5: Memory carriage}&&L_t^{\mathsf T}GL_t=G,\quad HL_tH=L_t^{-1},\\[1mm]
+\text{Stage 5: Return / lift}&&p(Lz)=p(z),\quad\Lambda(Lz)=\Lambda(z)+T,\\[1mm]
+\text{Stage 6: arithmetic branch}&&m=4\to p_\star=137\to548,\\[1mm]
+\text{Stage 7: metric adapter}&&\boldsymbol\Theta_{\mathrm{ax}}^*(g_i,\eta_G)=(ds_H^2,ds_L^2),\\[1mm]
+\text{Stage 8: supplied completion}&&\widetilde{\mathrm{AdS}}_2(\ell)\times S^2(\ell),\quad F=\ell^{-1}\theta^0\wedge\theta^1,\\[1mm]
+\text{Finite Scope branch}&&8\to28\to7,\\[1mm]
+\text{Local gauge joint}&&\mathfrak{su}(2)_{\rm root}\cong\mathfrak{su}(2)_{\rm boundary},\\[1mm]
+\text{Finite closure core}&&c(x_\star)=0,\quad w(x_\star)\neq0,\\[1mm]
+\text{Continuum contract}&&\NEC:\ \eqref{eq:nec1}\text{--}\eqref{eq:nec7},\\[1mm]
+\text{LQG realization}&&\mathcal F_{\mathrm{comp}}=0\land\mathcal W_2[\mathcal G_{\mathrm{phys}}]\neq0.
+\end{array}}
+\]
+
+\section{Reference deck}
+
+The bibliography preserves both the native historical coordinates and the internal proof sequence. Historical works are cited for their established results; internal papers are cited for the exact constructions composed into the present synthesis.
+
+\begin{thebibliography}{99}
+
+\bibitem{Euclid}
+Euclid, \emph{Elements}, Book VI, Proposition 30, c. 300 BCE.
+
+\bibitem{Galileo}
+G. Galilei, \emph{Discourses and Mathematical Demonstrations Relating to Two New Sciences}, 1638.
+
+\bibitem{Newton}
+I. Newton, \emph{Philosophi\ae\ Naturalis Principia Mathematica}, 1687.
+
+\bibitem{Euler}
+L. Euler, \emph{Introductio in Analysin Infinitorum}, 1748.
+
+\bibitem{Lagrange}
+J.-L. Lagrange, \emph{M\'ecanique Analytique}, 1788.
+
+\bibitem{Faraday}
+M. Faraday, \emph{Experimental Researches in Electricity}, 1839--1855.
+
+\bibitem{Maxwell}
+J. C. Maxwell, \emph{A Treatise on Electricity and Magnetism}, 1873.
+
+\bibitem{Darwin}
+C. Darwin, \emph{On the Origin of Species}, 1859.
+
+\bibitem{Mendel}
+G. Mendel, ``Versuche \"uber Pflanzen-Hybriden,'' 1866.
+
+\bibitem{Fisher}
+R. A. Fisher, \emph{The Genetical Theory of Natural Selection}, 1930.
+
+\bibitem{Boltzmann}
+L. Boltzmann, ``\"Uber die Beziehung zwischen dem zweiten Hauptsatze der mechanischen W\"armetheorie und der Wahrscheinlichkeitsrechnung,'' 1877.
+
+\bibitem{RiemannGeometry}
+B. Riemann, ``\"Uber die Hypothesen, welche der Geometrie zu Grunde liegen,'' 1854.
+
+\bibitem{RiemannZeta}
+B. Riemann, ``\"Uber die Anzahl der Primzahlen unter einer gegebenen Gr\"osse,'' 1859.
+
+\bibitem{EinsteinSR}
+A. Einstein, ``Zur Elektrodynamik bewegter K\"orper,'' 1905.
+
+\bibitem{EinsteinGR}
+A. Einstein, ``Die Grundlage der allgemeinen Relativit\"atstheorie,'' 1916.
+
+\bibitem{Noether}
+E. Noether, ``Invariante Variationsprobleme,'' 1918.
+
+\bibitem{Godel}
+K. G\"odel, ``\"Uber formal unentscheidbare S\"atze der Principia Mathematica und verwandter Systeme I,'' 1931.
+
+\bibitem{WittgensteinT}
+L. Wittgenstein, \emph{Tractatus Logico-Philosophicus}, 1921.
+
+\bibitem{WittgensteinPI}
+L. Wittgenstein, \emph{Philosophical Investigations}, 1953.
+
+\bibitem{Dirac}
+P. A. M. Dirac, ``The quantum theory of the electron,'' Proc. R. Soc. A \textbf{117}, 610--624 (1928).
+
+\bibitem{Shannon}
+C. E. Shannon, ``A mathematical theory of communication,'' Bell Syst. Tech. J. \textbf{27}, 379--423, 623--656 (1948).
+
+\bibitem{Bell}
+J. S. Bell, ``On the Einstein Podolsky Rosen paradox,'' Physics \textbf{1}, 195--200 (1964).
+
+\bibitem{Higgs1964}
+P. W. Higgs, ``Broken symmetries and the masses of gauge bosons,'' \emph{Physical Review Letters} \textbf{13}, 508--509 (1964).
+
+\bibitem{Weinberg1967}
+S. Weinberg, ``A model of leptons,'' \emph{Physical Review Letters} \textbf{19}, 1264--1266 (1967).
+
+\bibitem{Hatcher}
+A. Hatcher, \emph{Algebraic Topology}, Cambridge University Press, 2002.
+
+\bibitem{Wald}
+R. M. Wald, \emph{General Relativity}, University of Chicago Press, 1984.
+
+\bibitem{KobayashiNomizu}
+S. Kobayashi and K. Nomizu, \emph{Foundations of Differential Geometry}, Vol. I, Wiley, 1963.
+
+\bibitem{Arnold}
+V. I. Arnold, \emph{Mathematical Methods of Classical Mechanics}, 2nd ed., Springer, 1989.
+
+\bibitem{CoppaCoordinateRegister2026}
+A. V. Coppa, \emph{Coordinate Register: First Pass}, working reference register, 2026.
+
+\bibitem{CoppaConditionSurvival2025}
+A. V. Coppa, \emph{The Condition of Survival}, 21 December 2025.
+
+\bibitem{CoppaReturnCurvature2026}
+A. V. Coppa, \emph{Return Curvature Memory: A Minimal Translation Table for Existing Formalisms}, 24 January 2026.
+
+\bibitem{CoppaLanguageMechanics2026}
+A. V. Coppa, \emph{Language Mechanics: Field Basis and Charter}, canonical working edition, 2026.
+
+\bibitem{CoppaConditionConstraint2026}
+A. V. Coppa, \emph{Condition and Constraint: Structure Without Foundation}, original construction 22 January 2026; canonical edition 2026.
+
+\bibitem{CoppaFormFit2026}
+A. V. Coppa, \emph{Form and Fit: Confidence Cohered}, original construction 23 January 2026; canonical edition 2026.
+
+\bibitem{CoppaIdentityReference2026}
+A. V. Coppa, \emph{Identity and Reference: Reuse Fixed Point}, 2026.
+
+\bibitem{CoppaMethodKernel2026}
+A. V. Coppa, \emph{Form $\Lambda$ Fit $\Delta$ Function: A Canonical Method Kernel}, 2026.
+
+\bibitem{CoppaPersistence2026}
+A. V. Coppa, \emph{Persistence and Endurance: Admissible Reuse, Enactment, Holding, and Termination}, canonical edition, 2026.
+
+\bibitem{CoppaDihedralPhase2026}
+A. V. Coppa, \emph{The Dihedral Phase Constraint: Inversion, Phase Closure, and the Central Turning Lift}, proof composed 28 February 2026; canonical edition 2026.
+
+\bibitem{CoppaMinimumRoot2026}
+A. V. Coppa, \emph{Minimum Root Algebra: An Exact Two-Generator Kernel}, 2026.
+
+\bibitem{CoppaMotionDifference2026}
+A. V. Coppa, \emph{Motion and Difference}, 17 July 2026.
+
+\bibitem{CoppaMercy2026}
+A. V. Coppa, \emph{The Miracle of Mercy: A Minimum Derivation of Endurance}, 18 July 2026.
+
+\bibitem{CoppaMahogany2026}
+A. V. Coppa, \emph{The Mahogany Lock Box: A Weighted Boundary Identity Carried Through Fold and Read by Chatoyancy}, 22 July 2026.
+
+\bibitem{CoppaWheel2026}
+A. V. Coppa, \emph{$i$-Wheel Delta: Square Recognition Behind FourTurnHelixBridge}, 2026.
+
+\bibitem{CoppaMinimumEndurance2026}
+A. V. Coppa, \emph{Minimum Endurance Delta: Dual-Form Motion, Cup Symmetry, and the Positive Horizon of Return}, 25 July 2026.
+
+\bibitem{CoppaArchitectureSilence2026}
+A. V. Coppa, \emph{The Architecture of Silence: Closure Without Erasure}, 30 July 2026.
+
+\bibitem{CoppaMirrorEscapement2026}
+A. V. Coppa, \emph{Mirror Escapement Time Lift: A Mathematical--Mechanical Bridge Cycle}, 22 August 2026.
+
+\bibitem{CoppaGLMM2026}
+A. V. Coppa, \emph{Gravity Light Memory Motion: The Clear Root of Dynamical Identity}, canonical working edition 0.3, 12 August 2026.
+
+\bibitem{CoppaQFTSM2026}
+A. V. Coppa, \emph{QFT + Standard Model + Electroweak + QCD: Field-Source Ownership, Constrained Dynamics, Control, and Receipt}, 28 August 2026.
+
+\bibitem{CoppaGaugeSpine2026}
+A. V. Coppa, \emph{The Classical Gauge Spine: Connection, Curvature, Compact Real Form, and Holonomy}, 2026.
+
+\bibitem{CoppaLaw2026}
+A. V. Coppa, \emph{Law: Admissibility Cut, Law and Justice}, 2026.
+
+\bibitem{CoppaPianoforte2026}
+A. V. Coppa, \emph{Pianoforte $i$ Architecture $\Delta$}, 2026.
+
+\bibitem{CoppaVerifyConstruct2026}
+A. V. Coppa, \emph{$P=NP$; Verify $\perp_\tau$ Construct: Jurisdictional Separation of Construction and Verification}, exact typed edition, 25 August 2026.
+
+\bibitem{CoppaVerifyAddendum2026}
+A. V. Coppa, \emph{Verify $\perp_\tau$ Construct, Addendum A: Universal versus Local Responsibility}, 25 August 2026.
+
+\bibitem{CoppaCompatibility2026}
+A. V. Coppa, \emph{Compatibility Without Flatness: Exact Gluing with Nonzero Curvature, Holonomy, and Proper-Time Difference}, 2 September 2026.
+
+\bibitem{CoppaEntropy2026}
+A. V. Coppa, \emph{Coarse-Grained Entropy and Exterior Records: Compatible Microstates and a Reconstruction Boundary for Semiclassical Black Holes}, 2 September 2026.
+
+\bibitem{CoppaCCLQG2026}
+A. V. Coppa, \emph{Continuum Closure in Covariant Loop Quantum Gravity: Compatibility, Physical-State Refinement, and the Spin-Two Sector}, canonical edition 1.1, 2 September 2026.
+
+\end{thebibliography}
+
+\end{document}
