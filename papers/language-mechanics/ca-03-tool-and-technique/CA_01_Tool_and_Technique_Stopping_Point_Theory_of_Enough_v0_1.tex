@@ -1,0 +1,329 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,top=0.70in,bottom=0.72in,left=0.72in,right=0.72in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{framed}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.42em}
+\setlist[itemize]{leftmargin=1.45em,itemsep=0.15em,topsep=0.25em}
+\setlist[enumerate]{leftmargin=1.65em,itemsep=0.22em,topsep=0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\scshape COPPALINI ARCHITECTURE}
+\fancyhead[R]{\small\scshape TOOL \& TECHNIQUE v0.1}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{13pt}
+\newcommand{\term}[1]{\textsc{#1}}
+\newcommand{\fit}{\operatorname{Fit}}
+\newcommand{\stopop}{\operatorname{Stop}}
+\newcommand{\readop}{\operatorname{Read}}
+\newcommand{\gauge}{\Gamma}
+\newcommand{\blade}{B}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries TOOL \& TECHNIQUE}\\[2pt]
+{\large Stopping Point \& The Theory of Enough}\\[6pt]
+{\normalsize Anthony Vito Coppa}\\[2pt]
+{\itshape Coppalini Architecture -- Methodology Basis 01}\\[2pt]
+7 September 2026
+\end{center}
+
+\begin{framed}
+\small
+\textbf{Abstract.} Craft requires a stopping rule. A useful read begins from a retained reference, identifies the Difference required by the work, fixes a Scope, selects a sufficient instrument, compares against a declared tolerance or constraint, and stops when the relation Fits its Function. The method is modeled on ordinary workshop practice: eye, trained eye, rule, calipers, gauge, fixed-angle blade, microscope, telescope, and computational reader each extend resolution for a particular use. Greater resolution is another tool with its own Scope and Function. The governing sequence is
+\[
+\boxed{\mathrm{Reference}\to\mathrm{Difference}\to\mathrm{Scope}\to\mathrm{Gauge}\to\mathrm{Fit}\to\mathrm{Function}}
+\]
+and the stopping condition is
+\[
+\boxed{\fit_J(r)=1\;\Longrightarrow\;\stopop_J.}
+\]
+Enough is the minimum resolution at which the required relation Fits its declared Function inside Constraint. The remaining Difference may be measured later under a finer Scope. The present work stops when its required Fit is reached.
+\end{framed}
+
+\section{Position}
+
+This paper establishes the craft method of Coppalini Architecture.
+
+Its placement is deliberate. Language Mechanics 000 establishes the field basis. Language Mechanics 001 establishes Condition \& Constraint. The existing Language Mechanics 002, \emph{Form \& Fit}, remains at its original address, and Forms 003--011 remain retained. This paper establishes a methodology fork while the retained sequence continues:
+\[
+\boxed{
+\begin{array}{c}
+\text{Language Mechanics 000--001}\\
+\downarrow\\[-2pt]
+\begin{array}{cc}
+\text{Language Mechanics 002--011} & \text{Coppalini Architecture 01--}
+\end{array}
+\end{array}}
+\]
+
+Language Mechanics 002 asks what Fit is at a joint of use. Tool \& Technique asks how a worker selects a sufficient reader, recognizes Fit, and knows when to stop working the same joint.
+
+The governing principle is concise:
+\[
+\boxed{\textbf{Resolution serves Function.}}
+\]
+
+\section{The craft office}
+
+Fix a declared work office
+\[
+\mathcal W=(R,\Delta,S,\Gamma,B,F,\rho),
+\]
+where:
+\begin{itemize}
+\item $R$ is the retained reference;
+\item $\Delta$ is the Difference required by the work;
+\item $S$ is the declared Scope of the read;
+\item $\Gamma$ is the selected gauge or reader;
+\item $B$ is the fixed admissibility blade, tolerance, or comparison rule;
+\item $F$ is the intended Function;
+\item $\rho$ is the promised resolution.
+\end{itemize}
+
+These offices are operational. The worker fixes them before treating finer resolution as relevant to the present use.
+
+\paragraph{Reference.} The reference is what the comparison must be able to return to. In craft it may be an edge, axis, plane, gauge block, fixture, calibration state, version, or retained formal relation.
+
+\paragraph{Difference.} Difference is the distinction that can change the Function at the declared Scope.
+
+\paragraph{Scope.} Scope fixes the focal length and resolution of the present read. It selects which available Difference belongs to the present work.
+
+\paragraph{Gauge.} A gauge is any declared reader capable of resolving the required Difference at the promised resolution.
+
+\paragraph{Fit.} Fit is the passing relation between the read and the fixed blade for the declared Function.
+
+\paragraph{Function.} Function is the use licensed by that Fit.
+
+Thus the minimum technique is
+\[
+\boxed{R\to\Delta\to S\to\Gamma\to B\to\fit\to F.}
+\]
+
+\section{Tool}
+
+Tools extend the resolution of a comparison. Their authority is local to the Difference they are selected to read.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{>{\bfseries}p{0.23\linewidth}p{0.69\linewidth}}
+\toprule
+Tool & Minimum office \\
+\midrule
+Rule of thumb & Immediate embodied scale for a familiar operation. \\
+Conditioned eye & Trained recognition of finer Difference through repeated comparison. \\
+Rule & External coordinate carried against the work. \\
+Calipers & Comparative dimensional read at finer resolution. \\
+Gauge & A deliberately narrow test of whether the work lies inside its admitted tolerance. \\
+Fixed-angle blade & A retained angular reference carried directly to the work. \\
+Microscope & Increased local resolution where finer Difference changes the work. \\
+Telescope & Increased horizon resolution by reading information that has arrived at Contact. \\
+Computer & Rapid traversal and comparison of formal relations under a declared Scope. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A conditioned eye is itself a tool. Practice improves the resolution at which a useful Difference can be recognized. A machinist, carpenter, artist, surgeon, technician, mixer, or mechanic learns the scale of the work by repeatedly returning to reference.
+
+The method therefore uses the simplest reader adequate to the Function. A finer reader enters when the Function requires a Difference beyond the present gauge.
+
+\section{Technique}
+
+The working sequence is finite.
+
+\begin{enumerate}[label=\roman*.]
+\item \term{Reference}. Hold the comparison reference.
+\item \term{Difference}. Name the distinction required by the Function.
+\item \term{Scope}. Fix the useful resolution.
+\item \term{Gauge}. Select a reader capable of resolving that Difference.
+\item \term{Blade}. Carry the fixed admissibility relation to the work.
+\item \term{Read}. Produce the comparison record.
+\item \term{Fit}. Return the passing state when the declared relation is satisfied.
+\item \term{Stop}. End the present operation when the required Fit has been reached.
+\item \term{Function}. Use the fitted relation.
+\end{enumerate}
+
+The method selects sufficient precision for the declared use.
+
+\section{Calipers, tolerance, and remainder}
+
+Let $x_0$ be a reference dimension and $x$ the measured dimension. The residual is
+\[
+\delta=x-x_0.
+\]
+
+Let $\varepsilon_J$ be the tolerance owned by the declared Function. Then
+\[
+\boxed{|\delta|\le \varepsilon_J\;\Longrightarrow\;\fit_J=1.}
+\]
+
+The residual remains part of the measurement. Passing tolerance means that the remaining Difference stays inside the region in which the promised Function carries at resolution $\rho$.
+
+This is the ordinary discipline of calipers and gauges. The reading may contain more digits than the Function requires. Those digits remain available. Their additional resolution belongs to another operation when another Function requires it.
+
+A tolerance is therefore a resolution contract. Tightening it changes the work. Loosening it changes the work. The declared tolerance stays fixed during the comparison.
+
+\section{Justice of the blade}
+
+A fixed-angle blade carries one reference through the comparison. Its justice is reciprocal:
+\[
+\boxed{\textbf{You keep what you carry; you carry what you keep.}}
+\]
+
+For a candidate relation $r$ and fixed blade $B_J$, write
+\[
+B_J(r)=\operatorname{Compare}(r,R_J).
+\]
+
+The candidate Fits when the required relation is carried at the promised resolution. What the result keeps must remain carried by the representation that claims it. What the representation carries forward remains part of the result it keeps.
+
+This law is the craft form of reference preservation. It governs a machined joint, a drawing, a schedule translation, a mathematical proof, a software interface, or a language-model continuation by the same office: the retained relation must survive the move that claims to retain it.
+
+\section{Enough}
+
+\textbf{Definition 7.1 (Enough).} Enough is the minimum resolution at which the required relation Fits its declared Function inside the fixed Scope and Constraint.
+
+Formally, for candidate relation $r$ in office $J$,
+\[
+\boxed{\fit_J(r)=1\;\Longrightarrow\;\stopop_J.}
+\]
+
+The statement is local to the office. A later use may require a finer Scope, another gauge, another tolerance, or another Function. That later operation begins from its own declared reference.
+
+Enough is therefore a positive craft state: the present joint carries what its Function requires.
+
+\section{The Rubicon}
+
+Resolution can be refined continuously while usefulness reaches a stopping point. Let $\rho$ be the current resolution and let $d\rho$ be a finer read. The Rubicon occurs when the finer read leaves the functional classification unchanged:
+\[
+\boxed{\fit_{J,\rho}(r)=\fit_{J,\rho+d\rho}(r)=1.}
+\]
+
+Equivalently, the marginal improvement in Fit approaches zero at the present Function:
+\[
+\frac{\Delta\fit}{\Delta\rho}\longrightarrow 0.
+\]
+
+At the Rubicon the present operation is complete. Continued measurement becomes a new operation only when it serves a newly declared use.
+
+A line of best fit illustrates the same rule. Individual observations and residuals remain distinct. The fitted relation carries the global pattern at the selected resolution. Curvature enters the model when curvature becomes a required Difference.
+
+\begin{center}
+\fbox{\parbox{0.84\linewidth}{\centering\bfseries The line of best fit survives until curvature becomes a required Difference.}}
+\end{center}
+
+\section{Mastery}
+
+Mastery is visible in tool selection, reference control, execution, and restraint.
+
+A master can recognize the Difference that matters, choose a sufficient instrument, bring the work to Fit, and release the operation when its Function is available.
+
+Accordingly:
+\[
+\boxed{\textbf{Mastery includes recognizing the work's sufficient limit.}}
+\]
+
+This is precision about the office and stopping point of precision.
+
+\section{Address and measurement}
+
+Numerical systems supply different working resolutions.
+\[
+\boxed{
+\mathbb N:\text{ identity address}
+\quad | \quad
+\mathbb P:\text{ irreducible factor}
+\quad | \quad
+\mathbb Z:\text{ oriented address}
+\quad | \quad
+\mathbb R:\text{ continuous measurement}.}
+\]
+
+Whole numbers provide stable countable addresses. Prime numbers are irreducible multiplicative factors of those addresses. Integers add oriented sign. Rational and real coordinates extend the comparison into finer measurement.
+
+The correct reader is selected by Function. Continuous measurement enters when the task requires resolution beyond the whole-number or integer scale.
+
+\section{Scope and selection}
+
+A field may admit more readable Difference than a present Function requires. Scope performs the selection.
+\[
+\boxed{\operatorname{Readable}(r)\;\Longrightarrow\;\operatorname{Candidate}_J(r),\qquad \fit_J(r)=1\;\Longrightarrow\;\operatorname{Selected}_J(r).}
+\]
+
+The existence of a readable relation therefore supplies a candidate. The fixed Scope and blade determine whether that candidate belongs to the present work.
+
+The selection rule is:
+\[
+\boxed{\textbf{Scope admits candidates. Constraint selects structure.}}
+\]
+
+The practical consequence is equally short:
+\[
+\boxed{\textbf{Read enough to Fit. Fit enough to Function.}}
+\]
+
+\section{Placement and dependency receipt}
+
+This paper is entered as \textbf{Coppalini Architecture -- Methodology Basis 01}.
+
+Its placement preserves the existing Language Mechanics sequence:
+\begin{enumerate}[label=\arabic*.]
+\item Language Mechanics 000 remains the field basis.
+\item Language Mechanics 001, \emph{Condition \& Constraint}, remains the admissibility basis.
+\item Language Mechanics 002, \emph{Form \& Fit}, remains at its existing address.
+\item Language Mechanics Forms 003--011 remain retained.
+\item Tool \& Technique establishes the Coppalini Architecture methodology fork while the Language Mechanics numbering remains fixed.
+\end{enumerate}
+
+The formal craft relation established in \emph{Form \& Fit} is inherited only at its stated resolution. This paper adds the tool-selection, sufficient-resolution, and stopping discipline required for Coppalini Architecture practice.
+
+The active downstream use is \emph{The Structure of Survival}. The present method supplies its gauge. That paper retains its own physical proof burden.
+
+\section{Exact boundary}
+
+Tool \& Technique establishes the following working laws.
+
+\begin{enumerate}[label=\roman*.]
+\item A useful comparison begins from a retained reference.
+\item Difference is resolved at the Scope required by the Function.
+\item Tools extend resolution for declared uses.
+\item A gauge answers the comparison promised by its calibration and tolerance.
+\item A fixed blade retains the admissibility reference during the read.
+\item Residual Difference remains part of the measurement after a passing Fit.
+\item Enough is reached when the required relation Fits its declared Function.
+\item A finer read belongs to a finer Scope when a finer Difference becomes load-bearing.
+\item Mastery includes recognizing the stopping point.
+\end{enumerate}
+
+The canonical method is therefore
+\[
+\boxed{\mathrm{Reference}\to\mathrm{Difference}\to\mathrm{Scope}\to\mathrm{Gauge}\to\mathrm{Fit}\to\mathrm{Function}.}
+\]
+
+The stopping law is
+\[
+\boxed{\fit_J=1\;\Longrightarrow\;\stopop_J.}
+\]
+
+\begin{center}
+\large\bfseries When it Fits, stop cutting.
+\end{center}
+
+\section*{Provenance}
+
+This canonical Methodology Basis 01 was composed on 7 September 2026 from the Coppalini Architecture craft-method branch. It is placed downstream of the Language Mechanics field basis and Condition \& Constraint while preserving the existing Language Mechanics 002 \emph{Form \& Fit} and Forms 003--011. Earlier Tool \& Technique drafting is retained as provenance; this edition fixes the title \emph{Stopping Point \& The Theory of Enough} and the stopping law $\fit_J=1\Rightarrow\stopop_J$.
+
+\smallskip
+\noindent\textit{Internal lineage:} A. V. Coppa, \emph{Condition \& Constraint: Structure Without Foundation} (22 January 2026; canonical reading edition 22 August 2026); \emph{Form \& Fit: Confidence Cohered} (23 January 2026; canonical standalone edition v0.2, 29 August 2026); \emph{Form $\Lambda$ Fit $\Delta$ Function: A Canonical Method Kernel} (18 August 2026).
+
+\end{document}

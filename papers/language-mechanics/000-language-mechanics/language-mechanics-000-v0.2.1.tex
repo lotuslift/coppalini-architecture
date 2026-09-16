@@ -1,0 +1,501 @@
+\documentclass[10.5pt]{article}
+\usepackage[letterpaper,margin=0.72in,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{mathpazo}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=2pt}
+\definecolor{ink}{HTML}{2E3135}
+\definecolor{rule}{HTML}{64686C}
+\definecolor{shade}{HTML}{F3F3F1}
+\definecolor{deep}{HTML}{283747}
+\definecolor{green}{HTML}{2E6B57}
+\definecolor{gold}{HTML}{8A6427}
+\color{ink}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small LANGUAGE MECHANICS}
+\rhead{\small FIELD BASIS AND CHARTER v0.2.1}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\newcommand{\status}[1]{\textsf{#1}}
+\newcommand{\LM}{\textsc{Language Mechanics}}
+\newcommand{\LMRef}{\operatorname{Ref}}
+\newcommand{\LMThing}{\operatorname{Thing}}
+\newcommand{\LMObject}{\operatorname{Object}}
+\newcommand{\Change}{\operatorname{Change}}
+\newcommand{\IdRead}{\operatorname{Id}_{\rho}}
+\newcommand{\Gate}{\operatorname{Gate}}
+\newcommand{\Adm}{\operatorname{Adm}}
+\newtcolorbox{rulebox}[1][]{colback=shade,colframe=rule,boxrule=0.45pt,arc=0pt,left=7pt,right=7pt,top=6pt,bottom=6pt,#1}
+\newtcolorbox{certbox}[1][]{colback=white,colframe=deep,boxrule=0.65pt,arc=0pt,left=7pt,right=7pt,top=6pt,bottom=6pt,#1}
+\newtcolorbox{boundarybox}[1][]{colback=white,colframe=gold,boxrule=0.65pt,arc=0pt,left=7pt,right=7pt,top=6pt,bottom=6pt,#1}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries LANGUAGE MECHANICS}\\[4pt]
+{\large Field Basis and Charter}\\[4pt]
+{\small Charter Edition 0.2.1 \quad $\cdot$ \quad 29 August 2026}\\[6pt]
+{\normalsize Anthony Vito Coppa}
+\end{center}
+
+\begin{rulebox}
+\begin{center}
+\textbf{Field criterion}\\[3pt]
+{\large\bfseries Grammar of survivable trust}\\[8pt]
+\fbox{$\text{Form}\;\Lambda\;\text{Fit}\;\Delta\;\text{Function}$}\\[8pt]
+\textbf{Charter act:} \status{DECLARED}\qquad
+\textbf{Internal schema read:} \status{DERIVED}\qquad
+\textbf{Independent witness:} \status{OPEN}
+\end{center}
+\end{rulebox}
+
+\section*{Charter declaration}
+\LM\ is declared as a formal field of inquiry into the conditions under which signs, references, distinctions, relations, and operations remain readable and lawfully reusable through change.
+
+The governing criterion is:
+\begin{certbox}
+\centering
+\textbf{A grammar earns survivable trust when its declared relations remain readable under lawful reuse.}
+\end{certbox}
+
+This charter fixes the field's jurisdiction, reference threshold, primitive discipline, admissibility law, type discipline, evidence law, boundary law, provenance, corpus placement, and revision protocol. Scholarly adoption, institutional recognition, curricula, journals, and community formation are downstream acts of use rather than premises of the charter.
+
+\section*{1. Founding method and Wittgenstein provenance}
+\textbf{Founding coordinate.} Ludwig Wittgenstein is declared the founding methodological coordinate of \LM. This is a provenance claim about method, not an attribution of the later formal machinery below to Wittgenstein.
+
+The declared lineage reads two moments of Wittgenstein's work as one enduring boundary problem stated at two resolutions.
+
+\begin{enumerate}
+\item \textbf{Early boundary: sign, sense, silence.} The \emph{Tractatus} treats meaningful formal use as constrained by what can be said with signs whose use has been given sense, and closes with the strict refusal: ``Whereof one cannot speak, thereof one must be silent.'' The preceding methodological proposition makes the same discipline operational: when signs have not been given meaning, the correct move is refusal rather than speculative completion.
+\item \textbf{Later return: use, rule-following, public correction.} The \emph{Philosophical Investigations} returns to the boundary problem through use. Meaning is read through language-use; rule-following is tested in continued practice; and the possibility of correction belongs to the grammar by which a sign remains usable.
+\end{enumerate}
+
+\LM\ takes the later work as a methodological return to the earlier boundary under a more operational reader:
+\[
+\boxed{
+\text{sign boundary}
+\;\longrightarrow\;
+\text{use and rule-following}
+\;\longrightarrow\;
+\text{typed reference and lawful reuse}.}
+\]
+
+Its continuation is mechanical: state the reference, state the rule, expose the admissibility condition, preserve the distinction promised, and refuse what has no typed continuation.
+
+\begin{rulebox}
+\centering
+\textbf{Language Mechanics paraphrase}\\[3pt]
+\emph{Do not get hung up on the sign. Notice what it points to.}
+\end{rulebox}
+
+\section*{2. Foundational threshold: sign, thing, reference, object}
+The word \emph{thing} is admitted before formal objecthood. This is a Language Mechanics distinction introduced to prevent a sign, a referent, and a typed object from collapsing into one office.
+
+Let $S$ be a sign carrier and let $\Theta$ be a carrier of posed referents. Declare a reference relation
+\[
+\LMRef\;\subseteq\;S\times\Theta.
+\]
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{>{\bfseries}p{0.17\textwidth}X}
+\toprule
+Sign & A mark, token, word, symbol, gesture, or other carrier available for referential use.\\
+Thing & A posed referent $r\in\Theta$ toward which reference may be directed. No stronger ontological or disciplinary status is implied.\\
+Reference & A typed relation $\LMRef(s,r)$ by which sign $s$ presently points to thing $r$.\\
+Object$_D$ & A thing admitted and typed inside a declared jurisdiction $D$.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+For a jurisdiction $D=(\Sigma,R,\rho)$ with a declared type assignment $\tau_D$, define
+\[
+\LMObject_D(r)
+\iff
+r\in\Sigma\;\wedge\;\tau_D(r)\text{ is declared}.
+\]
+Thus
+\[
+\boxed{\LMObject_D(r)\Longrightarrow\LMThing(r),}
+\qquad
+\boxed{\LMThing(r)\not\Longrightarrow\LMObject_D(r).}
+\]
+
+\begin{certbox}
+\centering
+\textbf{A sign may point. A thing may be referred to. An object must be typed.}
+\end{certbox}
+
+The distinction is deliberately non-metaphysical. \emph{Thing} names the minimum referential position. \emph{Object} names formal admission under a specific discipline. A mathematical object, physical object, biological object, legal object, or software object therefore inherits its objecthood from the native jurisdiction that types it.
+
+\section*{3. Field jurisdiction and minimum primitive basis}
+A \LM\ office is declared by
+\[
+\boxed{D=(\Sigma,R,\rho)}
+\]
+where $\Sigma$ is the admitted class of candidate determinations, $R$ is the allowed relation of re-posing, reuse, comparison, or recurrence, and $\rho$ is the promised resolution at which retained distinctions are read. Changing any component creates a new version of the office; no later version rewrites the earlier address.
+
+The field therefore asks:
+\begin{rulebox}
+\centering
+Under what declared conditions can a thing be posed, typed, changed, compared, and posed again while the rule of admission and the promised distinctions remain readable?
+\end{rulebox}
+
+The minimum primitive burdens are:
+\begin{center}
+\begin{tabularx}{0.97\textwidth}{>{\bfseries}p{0.17\textwidth}X}
+\toprule
+Reference & Retained relation sufficient for the comparison being claimed.\\
+Difference & Distinguishable read under shared reference.\\
+Condition & What must already hold before a construction or operation is admitted.\\
+Constraint & What every admitted continuation must continue to preserve.\\
+Form & Declared carrier, operations, invariants, boundaries, and reader.\\
+Fit & Typed, checkable adapter by which one declared form may lawfully meet another jurisdiction while preserving the promised relation.\\
+Function & Operation lawfully carried by a fitted form.\\
+Receipt & Retained evidence adequate to the distinction, occurrence, provenance, or reuse being promised.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The field's type discipline is
+\[
+\boxed{\text{Form}\;\Lambda\;\text{Fit}\;\Delta\;\text{Function}}
+\]
+with the reading: Form declares; Fit admits; Function carries; $\Lambda$ marks admitted conjunction or closure; $\Delta$ marks retained distinction. No symbol inherits an office from resemblance. Every equality is typed in a declared codomain.
+
+\section*{4. Admissibility, minimum, identity, and change}
+For a proposed continuation $T$ at $x$, admissibility requires
+\[
+\Adm(T,x)\iff C(x)\wedge T\in\mathcal A\wedge Q(x,T(x)),
+\]
+and
+\[
+\Gate(T,x)=
+\begin{cases}
+\mathsf{can},&\Adm(T,x),\\
+\varnothing,&\text{otherwise}.
+\end{cases}
+\]
+Here $\varnothing$ is typed refusal in the present jurisdiction. It is not scalar zero and does not become another member of the candidate class.
+
+\textbf{Minimum.} Given an admitted class $\mathcal C$ and reduction order $\prec$, a construction $m$ is minimum exactly when
+\[
+m\in\mathcal C
+\quad\text{and}\quad
+\nexists c\in\mathcal C\;(c\prec m),
+\]
+subject to preservation of every declared relation. Minimum is therefore a selection condition, never an unqualified adjective.
+
+\textbf{Identity and change.} Let $T:X\rightharpoonup X$ be admitted and $\rho:X\to Q$ a declared reader. The field keeps three predicates separate:
+\[
+\begin{aligned}
+\text{state change} &:\quad T(x)\neq x,\\
+\text{resolved change} &:\quad \rho(Tx)\neq\rho(x),\\
+\text{reader identity} &:\quad \rho(Tx)=\rho(x).
+\end{aligned}
+\]
+Hence a lawful operation may satisfy
+\[
+\boxed{T(x)\neq x\quad\text{while}\quad\rho(Tx)=\rho(x).}
+\]
+This is change under retained reference, not contradiction. Exact state return $T(x)=x$ is strictly stronger than reader return.
+
+\textbf{Non-vacuity.} A field office cannot earn closure by choosing a reader so coarse that every promised distinction disappears. At least one lawful pair must remain legibly distinct at the promised resolution.
+
+\section*{5. Construction, native instantiation, and adapter law}
+A local formal construction may be typed as
+\[
+\boxed{K=(X,\mathcal A,\rho,C,Q,H)}
+\]
+with state space $X$, admitted transports $\mathcal A$, read-only office $\rho$, entry condition $C$, continuation constraint $Q$, and append-only receipt space $H$.
+
+The field distinguishes two operations that must not be conflated.
+
+\textbf{Native instantiation.} Let $\mathfrak S$ be a declared Language Mechanics schema: a finite list of typed offices together with the relations they are required to satisfy. A native discipline $D$ instantiates $\mathfrak S$ when an assignment
+\[
+\iota_D:\mathfrak S\rightsquigarrow D
+\]
+places a native object in every required office and supplies a witness for every required relation in the native codomain. The schema is not itself a carrier, so no artificial map from ``Language Mechanics'' into the native state space is required.
+
+\textbf{Adapter.} Once two constructions $K$ and $K'$ are already typed, an adapter $\phi:X\to X'$ earns Fit only when the required relations commute. For transports $T,T'$:
+\[
+\boxed{\phi\circ T=T'\circ\phi.}
+\]
+If readers are transported by $\bar\phi$:
+\[
+\boxed{\rho'\circ\phi=\bar\phi\circ\rho.}
+\]
+If receipts are transported by $\phi_H$, promised lossless carriage requires append preservation.
+
+Thus
+\[
+\boxed{\text{native instantiation}\neq\text{cross-carrier adapter}.}
+\]
+A native object may occupy an office duty without becoming identical to the office. Shared office does not imply shared mechanism. Cross-domain certification between already-typed constructions requires an explicit adapter; native instantiation requires an explicit office assignment and proof of the schema laws. Neither transfers by resemblance alone.
+
+\section*{6. Certified native instantiation: quantum projective identity}
+Quantum mechanics supplies an exact native instantiation of the field's reader/transport identity schema. This section imports standard quantum structure and proves the displayed instantiation only; it neither derives quantum mechanics from \LM\ nor identifies the two theories.
+
+Let $\mathcal H$ be a complex Hilbert space and declare the native carrier and reader
+\[
+X_Q:=\mathcal H\setminus\{0\},
+\qquad
+\rho_Q:=q:X_Q\longrightarrow\mathbb P(\mathcal H),
+\qquad
+q(\psi)=[\psi].
+\]
+Let the admitted transport class be
+\[
+\mathcal A_Q:=\{U:X_Q\to X_Q\mid U^\dagger U=I\}.
+\]
+Pure-state representatives obey
+\[
+\psi'=e^{i\alpha}\psi
+\quad\Longrightarrow\quad
+q(\psi')=q(\psi),
+\]
+and equivalently
+\[
+|\psi'\rangle\langle\psi'|
+=
+|\psi\rangle\langle\psi|.
+\]
+Thus the vector representative and the physical pure state occupy different native types.
+
+For every $U\in\mathcal A_Q$, define
+\[
+\bar U:\mathbb P(\mathcal H)\longrightarrow\mathbb P(\mathcal H),
+\qquad
+\bar U([\psi]):=[U\psi].
+\]
+This is well-defined: if $\psi'=\lambda\psi$ with $\lambda\neq0$, then
+\[
+U\psi'=\lambda U\psi,
+\qquad
+[U\psi']=[U\psi].
+\]
+Hence the native reader/transport square commutes exactly:
+\[
+\boxed{q\circ U=\bar U\circ q.}
+\]
+The Language Mechanics sub-schema is therefore instantiated by the exact office-by-office assignment
+\[
+\begin{array}{c|c}
+\text{Language Mechanics office} & \text{native quantum object}\\ \hline
+\text{carrier} & X_Q=\mathcal H\setminus\{0\}\\
+\text{reader} & q:\psi\mapsto[\psi]\\
+\text{transport} & U\in\mathcal A_Q\\
+\text{resolved transport} & \bar U\\
+\text{preservation law} & q\circ U=\bar U\circ q
+\end{array}
+\]
+with reader return and lifted return kept separate. In particular, whenever
+\[
+q(U\psi)=q(\psi),
+\]
+reader identity holds, while $U\psi=\psi$ is a strictly stronger condition. For example, if $U\psi=e^{i\alpha}\psi$ with $e^{i\alpha}\neq1$, then
+\[
+\boxed{q(U\psi)=q(\psi)\quad\text{and}\quad U\psi\neq\psi.}
+\]
+
+\begin{certbox}
+\textbf{Instantiation result.} The projective pure-state structure of quantum mechanics is a certified native instantiation of the declared Language Mechanics reader/transport identity schema. The certification concerns this office assignment and commuting law only.
+\end{certbox}
+
+\textbf{Native-instantiation certificate.}
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{>{\bfseries}p{0.13\textwidth}X}
+\toprule
+$D$ & Pure-state projective quantum mechanics on $X_Q=\mathcal H\setminus\{0\}$ with reader $q$.\\
+$C$ & $\psi\neq0$ and $U^\dagger U=I$.\\
+$Q$ & Phase-equivalent representatives remain phase-equivalent under $U$.\\
+$T$ & $U:X_Q\to X_Q$.\\
+$\rho$ & $q(\psi)=[\psi]$.\\
+$I$ & Projective equivalence and the descended action $\bar U$.\\
+$W$ & The well-definedness proof and exact identity $q\circ U=\bar U\circ q$.\\
+$F$ & A counterexample to well-defined descent, or failure of the stated unitary/phase hypotheses.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{boundarybox}
+\textbf{Quantum boundary.} The native owner remains quantum mechanics. Measurement requires its own POVM/instrument data; spinorial $2\pi/4\pi$ lift structure is owned by the later central-lift and Memory Return forms; no other quantum claim, and no cross-domain claim, inherits certification from this instantiation.
+\end{boundarybox}
+
+\section*{7. Claim certificate and audit order}
+Every load-bearing claim is submitted as
+\[
+\boxed{\mathcal C=(D,C,Q,T,\rho,I,W,F)}
+\]
+with domain $D$, condition $C$, constraint $Q$, transport $T$, reader $\rho$, invariant $I$, witness $W$, and falsifier $F$.
+
+The audit order is fixed:
+\begin{enumerate}
+\item \textbf{Type} --- every object, operation, equality, and codomain is declared.
+\item \textbf{Condition} --- the input satisfies the declared entry condition.
+\item \textbf{Constraint} --- the proposed continuation preserves the declared boundary.
+\item \textbf{Transport} --- the operation is defined on the admitted input.
+\item \textbf{Preservation} --- the required invariant survives the move.
+\item \textbf{Return} --- any claimed closure occurs under the declared reader and resolution.
+\item \textbf{Receipt} --- occurrence and source lineage are retained to the promised resolution.
+\item \textbf{Witness} --- the result can be recomputed or independently checked.
+\item \textbf{Falsifier} --- a named observation or calculation can fail the claim.
+\end{enumerate}
+The first failed gate stops the present continuation. A later success does not repair an earlier type failure.
+
+\begin{center}
+\begin{tabularx}{0.92\textwidth}{>{\bfseries\ttfamily}p{0.19\textwidth}X}
+\toprule
+CERTIFIED & All declared gates passed under the stated warrant.\\
+DERIVED & Follows from certified premises by an admitted transport.\\
+DECLARED & Definition, convention, scope choice, parameter placement, or constitutive act.\\
+OPEN & Required bridge, proof, estimate, or evidence remains unsupplied.\\
+REFUSED & A named gate failed; the failed trace remains in the receipt.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+No status is inherited merely because a neighboring office is certified.
+
+\section*{8. Provenance is not witness}
+The field distinguishes the address of a claim from its warrant.
+\[
+\boxed{
+\text{source/date/hash}\;\longrightarrow\;\text{provenance receipt}}
+\qquad
+\boxed{
+\text{proof/recomputation/observation}\;\longrightarrow\;\text{claim witness}.}
+\]
+A source may establish when and where a result entered the work without certifying that result. Conversely, a later independent witness may certify a result without becoming its provenance owner.
+
+The formal basis lineage is therefore recorded as \status{DECLARED PROVENANCE}:
+\begin{enumerate}
+\item \emph{Condition \& Constraint: Structure Without Foundation} --- 22 January 2026.
+\item \emph{Form \& Fit: Confidence Cohered} --- 23 January 2026.
+\item \emph{Formal Method v0.2} --- 23 July 2026.
+\item \emph{Form $\Lambda$ Fit $\Delta$ Function: A Canonical Method Kernel} --- 18 August 2026.
+\item \emph{Mirror\_Audit v1.0} --- 29 August 2026, executable reference-discipline utility.
+\end{enumerate}
+Individual theorems and constructions inherit only the status earned by their own proofs, receipts, and audits.
+
+\section*{9. Corpus placement and admitted paper sequence}
+All pre-charter project names, manuscripts, diagrams, software, and constructions remain provenance or liquid source material unless re-admitted by a numbered \LM\ form or an explicit typed adapter.
+
+\begin{center}
+\small
+\begin{longtable}{>{\bfseries}p{0.07\textwidth}p{0.39\textwidth}p{0.43\textwidth}}
+\toprule
+Form & Title & Present office\\
+\midrule
+000 & Language Mechanics & Field basis and charter\\
+001 & Condition \& Constraint & Boundary discipline; admission and refusal\\
+002 & Form \& Fit & Craft/mechanical method\\
+003 & Form $\Lambda$ Fit $\Delta$ Function & Typed operational method\\
+004 & Identity \& Reference & Reapplication, reader identity, reference fixation\\
+005 & Matrix Admissibility & Finite orientation/classification instrument\\
+006 & Minimum Formal / Mechanical Reference & Page-zero reference deck; minimum formal vocabulary\\
+007 & Memory Return & Return, lift, represented difference, recoverable receipt\\
+008 & Persistence \& Endurance & Admissible continuation versus enacted continuation\\
+009 & The Dihedral Phase Constraint & Reversal grammar and first carrier selection\\
+010 & Minimum Root Algebra & Minimum two-generator matrix carrier and normal form\\
+011 & Occurrence and the Twenty-Eight-Seam Reader & Phase return, occurrence address, pairwise relation, scan\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+Mirror\_Audit is the field's unnumbered reference-discipline instrument. Earlier frameworks such as Frame of Reference / GLMM remain source material unless and until their results are re-admitted under this sequence. Unified Field Theory and Theorem of Everything are downstream constructions and inherit no certification merely from inclusion in an earlier corpus.
+
+The initial field questions \emph{minimum} and \emph{change} are therefore no longer empty research placeholders. Their burdens have begun to resolve across Forms 004--011. Further field objects enter only when an obstruction or a new domain requires them.
+
+\section*{10. Erasure, receipt, and revision law}
+A downstream reader cannot reconstruct a distinction erased upstream beyond the resolution carried by the receipt. Therefore:
+\begin{rulebox}
+\centering
+\textbf{Reference before recognition.}\\
+\textbf{Scope before assertion.}\\
+\textbf{Receipt before reuse.}\\
+\textbf{Correction appends without erasure.}
+\end{rulebox}
+Corrections are versioned as new occurrences. Prior claims, failures, source addresses, and earlier editions remain recoverable.
+
+\section*{11. Self-instantiation of this charter}
+The charter does not certify its own constitutive act. The act of founding and naming the field is \status{DECLARED}. The document does, however, instantiate its own claim schema for the narrower claim that it is a complete charter record under its stated requirements.
+
+\begin{center}
+\begin{tabularx}{0.97\textwidth}{>{\bfseries}p{0.14\textwidth}X}
+\toprule
+$D$ & This edition of the \LM\ charter under the declared field-schema reader.\\
+$C$ & Field name, criterion, jurisdiction, primitive grammar, status law, boundary, provenance, and revision rule are present.\\
+$Q$ & No claim may outrun its type, native owner, witness, or declared adapter.\\
+$T$ & Static reading and explicitly versioned revision of the charter record.\\
+$\rho$ & Reader extracting the charter's declared fields and statuses.\\
+$I$ & Field identity, criterion, type discipline, non-coercion wall, and append-only revision law.\\
+$W$ & The displayed sections and their recoverable source/provenance addresses.\\
+$F$ & Any missing required field, type contradiction, silent status transfer, or revision that erases the prior record.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{Present status.} The schema instantiation above is \status{DERIVED} from the document's own contents. Claude's external audit of Edition 0.2 identified one type-label defect: the quantum section used the word \emph{witness} where only an unstated native-instantiation relation had been supplied. Edition 0.2.1 repairs that defect by the instantiation/adapter distinction of Section 5 and the explicit quantum office assignment of Section 6. Independent execution of this corrected edition by Mirror\_Audit or another reader remains \status{OPEN} until its receipt is appended. A successful external audit may upgrade only that compliance claim; it does not transform the constitutive field declaration into a theorem.
+
+
+\section*{Revision receipt: 0.2 $\rightarrow$ 0.2.1}
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{>{\bfseries}p{0.24\textwidth}X}
+\toprule
+Audit finding & ``Quantum witness'' outran the charter's own strict witness definition because no explicit native-instantiation record had been typed.\\
+Correction & Added the formal distinction native instantiation $\neq$ cross-carrier adapter; constructed the quantum office assignment; proved $q\circ U=\bar U\circ q$; renamed the section accordingly.\\
+Preserved boundary & Quantum mechanics remains the native theory owner; no derivation of QM, no identity of theories, and no certification transfer beyond the displayed sub-schema.\\
+Status & Point repair complete internally; independent re-audit of Edition 0.2.1 remains \status{OPEN}.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{12. Boundary and closure}
+\LM\ owns the grammar of admissible sign/reference use, distinction, typing, transport, comparison, receipt, and reuse. It may type how a native discipline instantiates those duties.
+
+Native mathematics, physics, biology, computation, law, linguistics, and other fields retain ownership of their objects, mechanisms, measurements, and theorems. The charter therefore fixes:
+\[
+\boxed{\text{shared formal duty}\neq\text{shared native mechanism}.}
+\]
+Universal sufficiency, physical identification, empirical law, priority, and cross-domain identity each require their own proof burden.
+
+This charter is sufficient when the field can conduct reproducible inquiry while remaining open to obstruction, correction, extension, and refusal.
+
+\begin{rulebox}
+\begin{center}
+\textbf{Canonical field rule}\\[4pt]
+Receive difference $\rightarrow$ scope it $\rightarrow$ type the thing $\rightarrow$ read honestly\\
+$\rightarrow$ preserve what the claim requires $\rightarrow$ return only what the receipt can carry.
+\end{center}
+\end{rulebox}
+
+\vfill
+\begin{center}
+{\small\bfseries LANGUAGE MECHANICS}\\
+{\small Field Basis and Charter, Edition 0.2.1}\\
+{\small 29 August 2026}
+\end{center}
+
+\clearpage
+\section*{References and provenance notes}
+\small
+\begin{enumerate}[label={[\arabic*]}]
+\item Ludwig Wittgenstein, \emph{Tractatus Logico-Philosophicus}, 1922, especially propositions 3.203, 6.53, and 7.
+\item Ludwig Wittgenstein, \emph{Philosophical Investigations}, 1953, especially \S43; rule-following remarks \S\S185--202; private-language remarks \S\S243--271.
+\item John von Neumann, \emph{Mathematical Foundations of Quantum Mechanics}, 1932/1955, for Hilbert-space state and measurement formalism.
+\item E. B. Davies and J. T. Lewis, ``An operational approach to quantum probability,'' \emph{Communications in Mathematical Physics} 17 (1970), 239--260, for quantum instruments.
+\item Karl Kraus, \emph{States, Effects, and Operations}, Springer, 1983, for operational state transformations and measurement.
+\item Anthony Vito Coppa, Forms 001--011 of the \emph{Language Mechanics} field sequence, 2026; individual proof dates and statuses remain attached to their own records.
+\end{enumerate}
+
+\textbf{Interpretive provenance note.} The reading of early and later Wittgenstein as a single enduring boundary lineage is the declared historical orientation of \LM. The formal distinctions \emph{Sign / Thing / Reference / Object}, the claim certificate, the adapter law, the receipt discipline, and the numbered field sequence are constructions of the present field and are not attributed to Wittgenstein.
+
+\end{document}

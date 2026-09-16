@@ -1,0 +1,235 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{LANGUAGE MECHANICS}
+\rhead{IDENTITY \& REFERENCE v0.2}
+\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\newtcolorbox{lawbox}{colback=black!3,colframe=black!65,boxrule=0.45pt,arc=0pt,left=8pt,right=8pt,top=7pt,bottom=7pt}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\ID}{\mathsf{ID}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries IDENTITY \& REFERENCE}\\[3pt]
+{\large Reapplication, Quotient Identity, and Active Reference}\\[8pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original construction sequence: 23--26 January 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+
+\begin{lawbox}
+\textbf{Abstract.}
+This paper separates three formal questions that ordinary language often compresses into sameness. Reapplication asks whether a partial operation remains defined when used again. Identity asks whether the result remains in the same declared reader class. Reference selects which already-admissible reader class is held fixed when more than one class remains available. A reader-induced equivalence relation makes the quotient type explicit. When a partial operation respects that relation on its admitted domain, it descends to a map on quotient classes, and operational identity is exactly a quotient fixed point. Exact state equality is stronger. Reference is therefore neither identity nor a source of identity: it is a versioned selection among already-admissible identity classes. The construction requires no substance, time, semantics, physical realization, or theory of meaning.
+\end{lawbox}
+
+\section{Scope}
+
+Fix a candidate class $\Sigma$ and a declared reader
+\[
+\rho:\Sigma\to Y.
+\]
+The reader induces the equivalence relation
+\[
+\boxed{x\sim_\rho y\iff \rho(x)=\rho(y).}
+\]
+Reflexivity, symmetry, and transitivity follow from equality in $Y$, so the quotient $\Sigma/{\sim_\rho}$ is well-defined.
+
+Let
+\[
+T:\Dom(T)\subseteq\Sigma\longrightarrow\Sigma
+\]
+be a partial operation admitted for study. No identity claim follows merely from the existence of $T$.
+
+The definitions in this paper are \textbf{DECLARED}. The theorem, corollary, and proposition below are \textbf{DERIVED} from those declarations. No additional document-level status is imposed.
+
+\begin{lawbox}
+\centering
+\textbf{Question.} When the same formal operation may be used again, what must be distinguished in order to state identity and reference exactly?
+\end{lawbox}
+
+\section{Reapplication}
+
+\textbf{Definition 2.1 (Reapplication).}
+For $x\in\Dom(T)$, a second application is admissible at $x$ exactly when
+\[
+T(x)\in\Dom(T).
+\]
+Equivalently, $T^2(x)$ is defined.
+
+Reapplication says only \emph{again}. It supplies no duration, history, explanation, or guarantee of indefinite continuation.
+
+\textbf{Definition 2.2 (Finite and indefinite reuse).}
+For $n\ge1$, reuse through $n$ is admissible at $x$ when $T^k(x)$ is defined for every $1\le k\le n$. Reuse is indefinitely admissible at $x$ when $T^n(x)$ is defined for every finite $n$.
+
+\section{Recognition-stable identity}
+
+Reapplication and identity are different tests. Reapplication asks whether the operation remains defined. Identity asks whether the declared reader class survives the lawful move.
+
+\textbf{Definition 3.1 (Operational identity under reuse).}
+For $x\in\Dom(T)$, identity under one admitted application holds when
+\[
+\boxed{T(x)\sim_\rho x.}
+\]
+Identity under reuse through $n$ holds when all required iterates are defined and
+\[
+T^k(x)\sim_\rho x
+\qquad(1\le k\le n).
+\]
+
+This is reader-relative identity. Exact state return
+\[
+T(x)=x
+\]
+is stronger and is never substituted silently for $T(x)\sim_\rho x$.
+
+\section{The quotient fixed point}
+
+Restrict $\sim_\rho$ to $\Dom(T)$. Assume $T$ respects the reader equivalence on its admitted domain:
+\[
+x\sim_\rho y
+\quad\Longrightarrow\quad
+T(x)\sim_\rho T(y)
+\qquad(x,y\in\Dom(T)).
+\]
+Then the map
+\[
+\overline T:\Dom(T)/{\sim_\rho}\longrightarrow \Sigma/{\sim_\rho},
+\qquad
+\overline T([x]_\rho)=[T(x)]_\rho
+\]
+is well-defined.
+
+\textbf{Theorem 4.1 (Reuse fixed point).}
+For every $x\in\Dom(T)$,
+\[
+\boxed{
+T(x)\sim_\rho x
+\iff
+\overline T([x]_\rho)=[x]_\rho.
+}
+\]
+Thus operational identity under reuse is exactly a fixed-point condition at the declared quotient reader.
+
+\textit{Proof.}
+By definition,
+\[
+\overline T([x]_\rho)=[T(x)]_\rho.
+\]
+Equality of quotient classes satisfies
+\[
+[T(x)]_\rho=[x]_\rho
+\iff
+T(x)\sim_\rho x.
+\]
+The two statements are therefore equivalent. $\square$
+
+\textbf{Corollary 4.2 (Exact fixed point is stronger).}
+If $T(x)=x$, then $T(x)\sim_\rho x$. Conversely, reader identity implies exact equality only when the reader is injective on the admitted comparison set containing $x$ and $T(x)$.
+
+\section{Closure and idempotence}
+
+A related construction occurs when an operation is intended to stabilize a candidate under repeated use.
+
+\textbf{Definition 5.1 (Recognition-idempotent closure).}
+Let $C$ be a partial map with $x,C(x)\in\Dom(C)$. It is recognition-idempotent at $x$ when
+\[
+\boxed{C(C(x))\sim_\rho C(x).}
+\]
+Exact idempotence
+\[
+C(C(x))=C(x)
+\]
+is stronger.
+
+Recognition-idempotence states stabilization under the declared reader. It does not define substance, selfhood, memory, or meaning.
+
+\section{Multiplicity and active reference}
+
+Reader identity need not determine a unique baseline. Let
+\[
+\ID\subseteq \Sigma/{\sim_\rho}
+\]
+be the set of reader classes presently admitted for a stated comparison.
+
+\textbf{Definition 6.1 (Active reference).}
+An active reference is a declared selection
+\[
+r\in\ID
+\]
+held fixed for a stated comparison or version. A candidate $x$ returns to that reference exactly when
+\[
+[x]_\rho=r.
+\]
+
+Reference performs a selection office. It fixes which already-admissible identity class is in force for the stated use. It does not create that class and does not establish why the class should be preferred outside the declared use.
+
+\textbf{Proposition 6.2 (Reference requirement under multiplicity).}
+If $|\ID|>1$, the phrase ``the identity in force'' is underdetermined until an active reference $r\in\ID$ is declared.
+
+\textit{Proof.}
+More than one admitted reader class satisfies the upstream requirements. Without a selection, no unique class is designated as the comparison baseline. Declaring $r$ supplies that missing address and nothing further. $\square$
+
+Changing the active reference creates a new reference version. It does not retroactively alter results obtained under an earlier reference.
+
+\section{Identity and reference are different offices}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Pressure} & \textbf{Formal operation} & \textbf{Office}\\
+\midrule
+Reuse & $T(x)\sim_\rho x$ & reader-relative identity\\
+Multiplicity & choose $r\in\ID$ & active reference\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The same ordinary word \emph{sameness} can appear in both pressures. The formal offices remain separate:
+\[
+\boxed{
+\text{identity tests preservation under reuse; reference fixes the baseline under alternatives.}
+}
+\]
+
+\section{Boundary}
+
+This paper establishes only:
+\begin{itemize}
+\item admissible reapplication for a partial operation;
+\item reader-relative identity under reuse;
+\item the quotient fixed-point characterization when the operation respects reader equivalence;
+\item recognition-idempotent closure;
+\item reference as declared fixation of an already-admissible identity class;
+\item versioning when the active reference changes.
+\end{itemize}
+
+It does not establish why a reference should be selected, a theory of truth or meaning, a physical or biological realization, memory as a receipt-and-decoder office, or a claim that one local reuse grammar governs every jurisdiction.
+
+\section{Canonical statement}
+
+\begin{lawbox}
+Reapplication asks whether the operation remains defined. Identity asks whether the declared reader class survives that lawful use. When the operation respects the reader equivalence, identity is exactly a fixed point of the induced quotient map. If more than one reader class remains admitted for a comparison, reference is the declared fixation of the class in force. Identity preserves under reuse; reference selects under multiplicity.
+\end{lawbox}
+
+\section*{Provenance}
+
+The construction consolidated here was developed across three January records: \emph{Identity \& Identity: The Rule of Reference} (23 January 2026), \emph{Application \& Reuse: Identity Fixed-point} (24 January 2026), and \emph{Identity \& Reference: Reuse Fixed Point} (26 January 2026). These titles and dates are retained as provenance only. The present standalone form contains every definition and proof used by its claims.
+
+\end{document}

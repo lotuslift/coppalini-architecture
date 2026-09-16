@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=2pt,topsep=2pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{LANGUAGE MECHANICS}
+\rhead{MATRIX ADMISSIBILITY v0.2}
+\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\newtcolorbox{lawbox}{colback=black!3,colframe=black!65,boxrule=0.45pt,arc=0pt,left=8pt,right=8pt,top=7pt,bottom=7pt}
+\newcommand{\Inst}{\operatorname{Inst}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries MATRIX ADMISSIBILITY}\\[3pt]
+{\large $2\times2$ Orientation Tables Under Constraint}\\[8pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original construction: January 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+
+\begin{lawbox}
+\textbf{Abstract.}
+This paper gives a typed discipline for using a $2\times2$ table as a neutral orientation instrument. Here \emph{matrix} means only a four-cell indexed lookup table. It is not, without an additional construction, an element of $M_2(\mathbb R)$, a linear operator, a transition system, or an algebra. The table begins from one already-defined primitive operation, two independent binary predicates, and descriptive cell labels. A valid reading is lookup only. Visual adjacency licenses no transition, causal mechanism, optimum, or cross-domain identity. The central result is therefore negative and conservative: the displayed table can organize already-declared regimes, but it cannot inherit composition or dynamics from its $2\times2$ appearance. Definitions in this paper are \textbf{DECLARED}; the no-composition proposition is \textbf{DERIVED}.
+\end{lawbox}
+
+\section{Scope}
+
+Let $D$ be a declared jurisdiction. This paper asks when four labeled addresses may be displayed as a $2\times2$ orientation table without importing structure that the jurisdiction has not supplied.
+
+The word \emph{matrix} is used here in the ordinary tabular sense:
+\[
+\boxed{\text{matrix} = \text{four-cell indexed table}.}
+\]
+Unless a separate construction explicitly supplies an algebraic carrier and operations, the table is not an element of $M_2(\mathbb R)$, not a linear map, and has no multiplication law.
+
+\section{Primitive operation}
+
+Let $P$ be an operation already independently defined in $D$.
+
+\textbf{Definition 2.1 (Admissible table primitive).}
+$P$ is admissible as the primitive of an orientation table when:
+\begin{enumerate}
+\item \textbf{Native definition.} $P$ is defined in the target jurisdiction before the table is built.
+\item \textbf{No imported explanation.} Stating $P$ requires no new causal, semantic, ontological, or evaluative commitment beyond that jurisdiction.
+\item \textbf{Local auditability.} A proposed instance of $P$ can be evaluated or refused from the data declared for that instance.
+\end{enumerate}
+
+Examples may include reapplication, return comparison, sequential order, or measurement when those operations are already native to the jurisdiction. The table itself does not make them native.
+
+\section{Binary axes}
+
+Let
+\[
+A,B:\Inst(P)\longrightarrow\{0,1\}
+\]
+be binary predicates on admitted instances of $P$.
+
+\textbf{Definition 3.1 (Admissible axes).}
+The pair $(A,B)$ is admissible when:
+\begin{enumerate}
+\item each predicate states an operationally testable distinction about an instance of $P$;
+\item each predicate can be evaluated or refused locally under the declared data;
+\item neither predicate is definitionally determined by the other;
+\item neither predicate authorizes a new inference, mechanism, or interpretation.
+\end{enumerate}
+
+The independence condition prevents a four-cell display from pretending to have two axes when one axis is only a restatement of the other.
+
+\section{The orientation table}
+
+Let $L$ be a set of descriptive labels. Define
+\[
+M_{P;A,B}:\{0,1\}^2\longrightarrow L.
+\]
+The four cells are addresses $(a,b)$ carrying labels $M_{P;A,B}(a,b)$.
+
+\textbf{Definition 4.1 (Admissible cell label).}
+A cell label is admissible when it:
+\begin{enumerate}
+\item describes the local regime indexed by $(a,b)$;
+\item introduces no primitive beyond $P,A,B$ and the already-declared jurisdiction;
+\item asserts no transition, tendency, cause, or mechanism between cells;
+\item asserts no identity between distinct native carriers or domains.
+\end{enumerate}
+
+\textbf{Definition 4.2 (Reading rule).}
+The orientation table supports one operation only:
+\[
+\boxed{(A(s),B(s))\longmapsto M_{P;A,B}(A(s),B(s))}
+\]
+for an already-evaluated instance $s\in\Inst(P)$.
+
+No cross-cell inference follows from adjacency. No arrow is licensed by geometric placement. No cell is privileged as cause, destination, optimum, or governing state merely by where it appears.
+
+\section{No inherited composition}
+
+\textbf{Proposition 5.1 (No inherited composition).}
+For two orientation tables $M_{P;A,B}$ and $M_{P';A',B'}$, the expression
+\[
+M_{P;A,B}\,M_{P';A',B'}
+\]
+is undefined in this schema unless a separate construction supplies:
+\begin{enumerate}
+\item compatible algebraic carriers for the two tables or their values;
+\item a multiplication or composition law on those carriers;
+\item typed maps placing the table data into that law.
+\end{enumerate}
+Therefore visual $2\times2$ form does not silently grant linear-algebraic or compositional structure.
+
+\textit{Proof.}
+By Definitions 4.1--4.2, an orientation table has only the function type
+\[
+\{0,1\}^2\to L
+\]
+and the operation of lookup. No binary operation on such tables, no multiplication on $L$, and no adapter into another algebra has been declared. The displayed product therefore has no typed operation that could interpret it. Supplying such an operation is additional structure and defines a new construction. $\square$
+
+\section{Admissibility criterion}
+
+\textbf{Definition 6.1 (Admissible orientation table).}
+A four-cell table $M_{P;A,B}$ is admissible as an orientation instrument exactly when:
+\begin{enumerate}
+\item $P$ is an admissible table primitive;
+\item $A$ and $B$ are admissible independent axes;
+\item every cell label is admissible;
+\item use is restricted to lookup under the declared axes;
+\item no cross-cell inference or undeclared composition is introduced.
+\end{enumerate}
+
+This is a criterion, not an additional theorem. The conditions define the office being admitted.
+
+\textbf{Corollary 6.2 (Conservative orientation).}
+Under Definition 6.1, the table adds addresses and descriptive labels but no operation beyond those already declared in $P$, the axis evaluations, and lookup.
+
+\textit{Proof.}
+The table contributes the finite address set $\{0,1\}^2$ and the labeling map $M_{P;A,B}$. Proposition 5.1 blocks undeclared composition, while Definition 4.2 restricts use to lookup. Hence any transition, mechanism, or additional algebra would require a new typed operation outside the present schema. $\square$
+
+\section{Construction procedure}
+
+Given a target jurisdiction $D$:
+\begin{enumerate}
+\item identify an already-defined operation $P$;
+\item propose two independent, locally auditable binary predicates $A$ and $B$;
+\item populate the four addresses with descriptive labels already licensed by the declared predicates;
+\item remove every label that imports cause, dynamics, ontology, or cross-domain identity;
+\item state the reading rule as lookup only;
+\item name every proposed additional operation as a new construction rather than silently assigning it to the table.
+\end{enumerate}
+Failure at any step refuses the proposed table in its present form.
+
+\section{Reference-boundary example}
+
+The schema may classify two independently declared questions: whether a rule test is locally evaluable and whether a reference is locally retained.
+
+Let
+\[
+\begin{array}{lll}
+A=0&:&\text{rule admissibility is locally evaluable},\\
+A=1&:&\text{rule admissibility depends on data outside the local application},\\
+B=0&:&\text{reference is locally versioned and available},\\
+B=1&:&\text{reference depends on data outside the local application}.
+\end{array}
+\]
+
+One descriptive table is:
+
+\begin{center}
+\begin{tabular}{@{}p{1.7in}p{2.0in}p{2.0in}@{}}
+\toprule
+& \textbf{Local reference $(B=0)$} & \textbf{External-reference boundary $(B=1)$}\\
+\midrule
+\textbf{Local rule test $(A=0)$} & bounded rule / bounded reference & reference-boundary obstruction\\
+\textbf{External-rule boundary $(A=1)$} & rule-boundary obstruction & double boundary obstruction\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The table says only where the declared local specification encounters an unavailable dependency. It does not say that one cell evolves into another or that either boundary is impossible to resolve in a larger jurisdiction.
+
+\section{Boundary}
+
+This paper establishes a typed discipline for four-cell orientation tables. It does not establish:
+\begin{itemize}
+\item a universal $2\times2$ ontology;
+\item an algebra of orientation tables;
+\item transitions or dynamics among cells;
+\item equivalence between domains that admit similarly labeled tables;
+\item physical meaning for a table absent a native physical construction.
+\end{itemize}
+
+Any such extension is a new construction and must declare its own carrier, operations, invariants, adapters or instantiation maps where applicable, witnesses, and falsifier.
+
+\section{Canonical statement}
+
+\begin{lawbox}
+A $2\times2$ orientation matrix is a typed lookup table on two independent binary predicates. It is admissible when its primitive operation is already native to the jurisdiction, its axes are independently auditable and non-authorizing, its labels are descriptive, and its reading rule is lookup only. The table orients. Algebra, dynamics, explanation, cross-domain identity, or composition requires another construction.
+\end{lawbox}
+
+\section*{Provenance}
+
+The general construction was first written in January 2026 as \emph{Matrix Admissibility Schema: $2\times2$ Translation Tables Under Constraint}. The source preserves only a month-level date. This standalone edition reproduces every definition and proof used by its claims. No prior or later project paper is a premise.
+
+\end{document}

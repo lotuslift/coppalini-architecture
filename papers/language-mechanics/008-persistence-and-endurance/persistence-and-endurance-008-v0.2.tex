@@ -1,0 +1,335 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.5pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=3pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small LANGUAGE MECHANICS}
+\rhead{\small PERSISTENCE \& ENDURANCE v0.2}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\newcommand{\status}[1]{\textbf{Status.} #1}
+\newcommand{\lawbox}[1]{\begin{center}\fcolorbox{black!60}{black!2}{\parbox{0.88\linewidth}{\centering #1}}\end{center}}
+\newcommand{\can}{\mathsf{can}}
+\newcommand{\refuse}{\varnothing}
+\newcommand{\Persists}{\mathsf{Persists}}
+\newcommand{\Endures}{\mathsf{Endures}}
+\begin{document}
+
+\begin{center}
+{\Large\bfseries 008 Persistence \& Endurance}\\[3pt]
+{\large Admissible Reuse, Enactment, Holding, and Termination}\\[10pt]
+Anthony Vito Coppa\\[2pt]
+\textit{Original construction: 24 January 2026}\\
+\textit{Canonical standalone edition v0.2: 29 August 2026}
+\end{center}
+\vspace{3pt}
+\hrule
+\vspace{8pt}
+
+\status{Definitions are \textsc{Declared}. The separation, independence, finite-cycle, and state/history results proved below are \textsc{Derived} under their displayed fixed-version and reader hypotheses.}
+
+\textbf{Abstract.} This paper separates six predicates that ordinary language often compresses: application, another admissible application, persistence, enacted endurance, return, and occurrence. A partial operation can remain reusable without being enacted; an enacted sequence can continue without returning; a reader can return while an adequate history receipt remains non-null. The paper types the reuse gate on the domain of a partial map, makes rule-version identity explicit, declares the history reader that induces the history quotient, and separates receipt adequacy from mere legibility. No force, energy, physical time, biological survival, or psychological endurance is inferred from the abstract grammar.
+
+\section{Scope and rule version}
+Let $X$ be a state space and let
+\[
+O:X\rightharpoonup X
+\]
+be a partial operation with admissible domain
+\[
+A_O:=\operatorname{Dom}(O)\subseteq X.
+\]
+
+\begin{definition}[Rule version]
+For a declared partial operation $F:X\rightharpoonup X$ with domain $A_F$ and state reader $\rho:X\to Y$, its rule version is the record
+\[
+\nu_F=(F,A_F,\rho).
+\]
+Every persistence, endurance, and return statement in this paper is relative to one fixed $\nu_F$. Changing $F$, $A_F$, or the promised reader/resolution creates a new rule version. A version change is not silently counted as continuation of the old run.
+\end{definition}
+
+The distinctions studied here are:
+\lawbox{\textbf{can continue} \quad $\neq$ \quad \textbf{remains reusable} \quad $\neq$ \quad \textbf{does continue} \quad $\neq$ \quad \textbf{returns}.}
+
+\section{Application and the reuse gate}
+\begin{definition}[Application]
+$O$ is applicable at $x$ exactly when
+\[
+x\in A_O.
+\]
+\end{definition}
+
+\begin{definition}[Reuse gate]
+The reuse gate is posed only after one lawful application is available. Thus, for $x\in A_O$, define
+\[
+\operatorname{Next}_O(x)=
+\begin{cases}
+\can, & O(x)\in A_O,\\
+\refuse, & O(x)\notin A_O.
+\end{cases}
+\]
+Write $\can_O(x)$ for the proposition $\operatorname{Next}_O(x)=\can$.
+\end{definition}
+If $x\notin A_O$, the first application is already refused; $O(x)$ is not formed and the reuse question is not yet posed. The gate says that another application is available. It does not say that another application occurs.
+
+\section{Persistence and endurance}
+Fix $x_0\in X$ and $N\ge1$.
+
+\begin{definition}[Persistence through $N$]
+Write
+\[
+\Persists_N(O,x_0)
+\]
+when
+\[
+O^k(x_0)\in A_O,
+\qquad k=0,\ldots,N-1.
+\]
+Thus $N$ applications are admitted under the fixed rule version. Persistence is continued applicability, not occurrence.
+\end{definition}
+
+Let
+\[
+e_k\in\{0,1\},\qquad k=0,\ldots,N-1,
+\]
+record whether the $k$th admitted application is actually enacted.
+
+\begin{definition}[Endurance through $N$]
+Write
+\[
+\Endures_N(O,x_0;e)
+\]
+when
+\[
+O^k(x_0)\in A_O
+\quad\text{and}\quad
+e_k=1,
+\qquad k=0,\ldots,N-1.
+\]
+Endurance is admitted continuation enacted.
+\end{definition}
+
+\begin{theorem}[Persistence/endurance separation]
+For every $N\ge1$,
+\[
+\Endures_N(O,x_0;e)\Longrightarrow\Persists_N(O,x_0),
+\]
+while the converse fails in general.
+\end{theorem}
+\begin{proof}
+Endurance contains every domain-membership condition required for persistence. For the converse, choose any operation whose first $N$ iterates are admitted and choose an enactment record with $e_j=0$ for at least one $j<N$. Persistence still holds while endurance fails.
+\end{proof}
+
+\lawbox{\textbf{persistence} = continued admissibility \qquad \textbf{endurance} = admitted continuation enacted.}
+
+\section{Return and order sensitivity}
+Let
+\[
+\rho:X\to Y
+\]
+be the state reader in the fixed rule version.
+
+\begin{definition}[Return closure]
+$O$ returns after $n\ge1$ applications at reader $\rho$ from $x$ when
+\[
+\rho(O^n x)=\rho(x),
+\]
+provided the required iterates are defined. Exact carrier return is the stronger statement
+\[
+O^n x=x.
+\]
+\end{definition}
+Closure does not imply that another application occurs, and endurance does not require closure at every step.
+
+\begin{definition}[Order sensitivity]
+Two partial operations $O_1,O_2$ are order-sensitive at $x$ when both composites are defined and
+\[
+O_2O_1x\neq O_1O_2x.
+\]
+\end{definition}
+
+\begin{theorem}[Return and order are independent]
+Return non-closure does not imply order sensitivity, and individual operator closure does not imply mutual order independence.
+\end{theorem}
+\begin{proof}
+Translation $T(x)=x+1$ on $\mathbb R$ has no finite exact return, while translations commute. Conversely, let
+\[
+A=\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Then
+\[
+A^2=B^2=I,
+\]
+while
+\[
+AB=\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+\neq
+\begin{pmatrix}0&-1\\1&0\end{pmatrix}=BA.
+\]
+Thus individual return and mutual commutation are separate predicates.
+\end{proof}
+
+\section{Holding and the reusable cycle}
+A primary operation may remain reusable because a separate maintenance operation preserves or restores the conditions required for another application.
+
+\begin{definition}[Holding operation]
+A holding or reset operation is a partial map
+\[
+H:X\rightharpoonup X
+\]
+used to restore or preserve next-step admissibility for $O$. The declared reusable cycle is
+\[
+C:=H\circ O
+\]
+where the composition is defined, with
+\[
+A_C:=\operatorname{Dom}(C).
+\]
+Naming $C$ does not identify $H$ with $O$.
+\end{definition}
+
+\textbf{Restoration boundary.} If an external intervention restores admissibility, either it is typed as part of the declared cycle before the run is certified, or the later activity belongs to a new rule version. An unrecorded rescue cannot be attributed to the original operation.
+
+\section{Protocol motion and termination}
+\begin{definition}[Protocol motion]
+Motion through $N$ is the enacted sequence of $N$ admitted applications of the declared operation or cycle. The application index is discrete because the protocol counts uses. A physical realization may assign continuous trajectories to those uses; no continuous-time claim follows from the discrete count alone.
+\end{definition}
+
+\begin{definition}[Termination]
+Persistence terminates at the first stage at which the next declared application is unavailable under the fixed rule version. Endurance ceases at the first admitted stage whose enactment flag is $0$.
+\end{definition}
+A pause in enactment need not destroy persistence. Loss of admissibility prevents further endurance under the same rule version.
+
+\begin{theorem}[Finite endurance criterion]
+Fix the cycle rule version
+\[
+\nu_C=(C,A_C,\rho).
+\]
+Then the cycle endures through $N$ from $x_0$ exactly when
+\begin{enumerate}[label=(\roman*)]
+\item $C^k(x_0)\in A_C$ for $k=0,\ldots,N-1$;
+\item each of those $N$ admitted cycle applications is enacted.
+\end{enumerate}
+If any component of $\nu_C$ changes before the $N$th application, the old run ends and the theorem applies separately to the new version.
+\end{theorem}
+\begin{proof}
+Under fixed $\nu_C$, condition (i) is exactly $\Persists_N(C,x_0)$ and condition (ii) is exactly the additional enactment requirement in $\Endures_N(C,x_0;e)$. The version clause follows from Definition 1: a changed operation, domain, or reader is a new rule version rather than another step of the old one.
+\end{proof}
+
+\section{History reader, adequate receipt, and occurrence}
+Let $\mathcal H$ be a history class containing a distinguished null history $h_{\varnothing}$. Declare a history reader
+\[
+\rho_{\mathcal H}:\mathcal H\to Y_{\mathcal H}
+\]
+and the induced equivalence relation
+\[
+h_1\sim_{\rho_{\mathcal H}}h_2
+\iff
+\rho_{\mathcal H}(h_1)=\rho_{\mathcal H}(h_2).
+\]
+Let
+\[
+\pi_{\mathcal H}:\mathcal H\to \mathcal H/{\sim_{\rho_{\mathcal H}}}
+\]
+be the quotient map, and let
+\[
+\sigma:\mathcal H\to\Sigma_{\mathcal H}
+\]
+be a receipt map.
+
+\begin{definition}[Receipt adequacy]
+The receipt $\sigma$ is adequate at the declared history resolution when
+\[
+h_1\not\sim_{\rho_{\mathcal H}}h_2
+\Longrightarrow
+\sigma(h_1)\neq\sigma(h_2).
+\]
+Thus every history distinction promised by the reader remains legible in the receipt.
+\end{definition}
+
+If exact quotient recovery is claimed, the stronger requirement is a decoder
+\[
+\operatorname{Dec}:\operatorname{im}(\sigma)\to
+\mathcal H/{\sim_{\rho_{\mathcal H}}}
+\]
+satisfying
+\[
+\operatorname{Dec}\circ\sigma=\pi_{\mathcal H}.
+\]
+The history resolution may not be weakened after observation merely to make a constant or lossy receipt appear adequate.
+
+\begin{definition}[Occurrence at history resolution]
+An enacted history $h$ is a non-null occurrence at the declared history resolution when
+\[
+h\not\sim_{\rho_{\mathcal H}}h_{\varnothing}.
+\]
+\end{definition}
+
+\begin{theorem}[Closed state, non-null history]
+Let $C$ be a completed cycle with associated history $h_C$. If
+\[
+\rho(Cx)=\rho(x)
+\]
+and
+\[
+h_C\not\sim_{\rho_{\mathcal H}}h_{\varnothing},
+\]
+then every adequate receipt satisfies
+\[
+\sigma(h_C)\neq\sigma(h_{\varnothing}).
+\]
+Hence reader return is compatible with a traversal that remains distinguishable from null history at the declared history resolution.
+\end{theorem}
+\begin{proof}
+The state equality is a statement in the codomain $Y$ of the state reader. The history inequality is a statement in the quotient induced by $\rho_{\mathcal H}$. Receipt adequacy therefore gives $\sigma(h_C)\neq\sigma(h_{\varnothing})$. The two conclusions concern different carriers and may hold simultaneously.
+\end{proof}
+
+\section{Operational register}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.85in}p{1.75in}X@{}}
+\toprule
+Word & Formal office & Minimum test\\
+\midrule
+can & next use available & $x\in A_O$ and $O(x)\in A_O$\\
+persistence & continued applicability & $\Persists_N(O,x_0)$\\
+endurance & persistence enacted & $\Endures_N(O,x_0;e)$\\
+hold/reset & maintenance operation & $H$ restores/preserves next admissibility\\
+return & state-reader closure & $\rho(O^n x)=\rho(x)$\\
+termination & end of present run & first failed admissibility or enactment test\\
+occurrence & enacted non-null history & $h\not\sim_{\rho_{\mathcal H}}h_{\varnothing}$ with adequate receipt\\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+\section{Boundary}
+This paper does not infer force, energy, entropy, physical time, causal accessibility, biological survival, or psychological endurance from the abstract grammar. Those require separate native constructions.
+
+It also does not identify persistence with endurance, closure with motion, a repeated symbol with an occurrence, or state return with empty history.
+
+\lawbox{\textbf{Persistence} is permission for another application.\\
+\textbf{Endurance} is that admitted application actually continuing.\\
+\textbf{Return} is equality at a declared state reader.\\
+\textbf{Occurrence} is a history distinction retained at a declared history reader.}
+
+{\small\textbf{Provenance.} The reuse question and persistence/endurance distinction were first isolated on 24 January 2026; a formal revision on 21 August 2026 separated possible reuse from enacted continuation, return from order sensitivity, and discrete protocol count from continuous physical evolution. These dates are provenance only; every required definition and proof is stated locally.}\par
+
+\end{document}

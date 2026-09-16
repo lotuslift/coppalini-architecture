@@ -1,0 +1,897 @@
+\documentclass[10pt,oneside]{article}
+
+\usepackage[letterpaper,top=0.82in,bottom=0.82in,left=1.02in,right=1.02in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{xcolor}
+
+\hypersetup{
+  pdftitle={Motion and Difference},
+  pdfauthor={Anthony Vito Coppa},
+  pdfsubject={Projective arithmetic and Lorentzian gauge compatibility},
+  pdfkeywords={projective dynamics, Fibonacci matrix, hyperbolic geometry,
+    Lorentzian gauge field, holonomy, Maxwell equations}
+}
+
+\definecolor{ink}{RGB}{18,18,18}
+\color{ink}
+
+\setlength{\parindent}{1.15em}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{0.25in}
+\linespread{1.035}
+\allowdisplaybreaks[2]
+
+\titleformat{\section}
+  {\normalfont\small\scshape\centering}
+  {\Roman{section}.}{0.55em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\itshape}
+  {\thesubsection.}{0.45em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .7ex minus .2ex}{1.2ex}
+\titlespacing*{\subsection}{0pt}{1.7ex plus .5ex minus .2ex}{0.7ex}
+
+\newtheoremstyle{plaincompact}
+  {1.1ex}{1.1ex}{\itshape}{}{}{.}{0.55em}{}
+\theoremstyle{plaincompact}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheoremstyle{definitioncompact}
+  {1.1ex}{1.1ex}{\normalfont}{}{}{.}{0.55em}{}
+\theoremstyle{definitioncompact}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Hh}{\mathbb H}
+\newcommand{\RP}{\mathbb {RP}}
+\newcommand{\Fib}{F}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Eq}{\operatorname{Eq}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\Ad}{\mathcal A}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\dd}{\,\mathrm d}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\scshape Motion and Difference}
+\fancyhead[R]{\footnotesize A. V. Coppa}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\setlength{\headheight}{13pt}
+\fancypagestyle{first}{
+  \fancyhf{}
+  \fancyfoot[C]{\footnotesize\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+
+\thispagestyle{first}
+\begin{center}
+  \vspace*{0.42in}
+  {\fontsize{23}{27}\selectfont\scshape Motion and Difference\par}
+  \vspace{0.34in}
+  {\large Anthony Vito Coppa\par}
+  \vspace{0.08in}
+  {\small Independent Researcher\par}
+  \vspace{0.08in}
+  {\small July 17, 2026\par}
+  \vspace{0.08in}
+  {\small\href{https://doi.org/10.5281/zenodo.22780641}{doi:10.5281/zenodo.22780641}\par}
+\end{center}
+
+\vspace{0.34in}
+
+\begin{abstract}
+\noindent
+We construct one explicit mathematical realization in which a two-dimensional
+carrier supports complex phase, square symmetry, projective arithmetic
+reflection, Fibonacci refinement, and a Lorentzian $SO(2)$ gauge field.  The
+elementary factorization
+$Q=M_JC_1=\left(\begin{smallmatrix}1&1\\1&0\end{smallmatrix}\right)$
+turns alternating projective involutions into the exact matrix record of the
+Fibonacci sequence.  Its two fixed points form a maximal equalizer in
+$PGL(2,\R)$, determine a hyperbolic glide axis, and recover the sharp
+Diophantine scale $\sqrt5$.  On a Lorentzian four-manifold, the same phase
+generator $C_1$ carries a global $SO(2)$ connection.  A nonnegative gluing
+functional detects exact compatibility of local bundle data.  An explicit
+one-parameter family of connections keeps a nonzero source-free Maxwell
+curvature fixed while varying relative holonomy independently; a pair of
+endpoint-sharing timelike paths also has unequal proper time.  The completed
+zeta reflection is placed on the same arithmetic involution, with no asserted
+spectral, causal, or functional identification among the resulting scalar and
+geometric quantities.  The main result is therefore a compatibility theorem:
+the declared structures coexist exactly in a single realization, while the
+boundaries between them remain explicit.
+\end{abstract}
+
+\vspace{0.12in}
+\noindent\textit{Keywords:} projective dynamics; Fibonacci matrix; hyperbolic
+geometry; Diophantine approximation; Lorentzian gauge field; holonomy;
+Maxwell equations.
+
+\vspace{0.18in}
+\hrule
+\vspace{0.10in}
+\noindent\footnotesize
+\textit{Classification:} 11B39, 11J70, 20H10, 53C29, 58J28, 83C50.
+\normalsize
+
+\section{Statement and scope}
+
+The object of this paper is narrow.  We ask whether several exact structures,
+normally written in separate mathematical languages, can be carried without
+contradiction by one explicit model.  The answer is affirmative.  The model
+contains a common two-dimensional carrier, but it does not collapse the roles
+placed on that carrier.
+
+The arithmetic core begins with two involutions on the real projective line.
+One is induced by a complex quarter-turn; the other is induced by the affine
+reflection $x\mapsto 1-x$.  Their alternating composition is represented by
+the classical Fibonacci matrix.  The same reflection is also the argument
+symmetry of the completed Riemann zeta function.  These statements meet at a
+precisely declared two-point set and nowhere else.
+
+The geometric core begins with an oriented rank-two Euclidean bundle over a
+Lorentzian four-manifold.  Its $SO(2)$ connection uses the same infinitesimal
+quarter-turn generator.  Exact gluing is detected by a positive functional.
+In an explicit product spacetime, the connection has nonzero source-free
+Maxwell curvature, independently variable holonomy, and timelike paths of
+unequal proper time.
+
+The classical ingredients concerning Fibonacci numbers, continued fractions,
+Hurwitz approximation, hyperbolic isometries, the completed zeta function,
+connections, and Maxwell fields are standard.  The point proved here is their
+exact placement in a single bounded construction, centered on the factorization
+$Q=M_JC_1$ and completed by an explicit Lorentzian witness.
+
+\begin{theorem}[Simultaneous realization]\label{thm:main}
+There exists a tuple
+\[
+\mathfrak A=(V,C_1,\Pi,M_J,Q,J,\xi,M,g,E,\Ad,q,\gamma_0,\gamma_1)
+\]
+with the following properties.
+\begin{enumerate}[label=(\roman*),leftmargin=2.25em,itemsep=0.25ex,topsep=0.5ex]
+\item $\langle C_1,\Pi\rangle\cong D_4$ on $V=\R^2$ and
+      $\mathbb P(D_4)\cong V_4$;
+\item $Q=M_JC_1$, $Q^2=Q+I$, and the alternating projective iterate has
+      Fibonacci coefficients;
+\item the equalizer of the two projective involutions is maximal and consists
+      exactly of the two roots of $s^2-s-1$;
+\item $Q$ acts on the upper half-plane as a glide reflection of displacement
+      $2\log\Phi$, and the Fibonacci convergents attain the sharp Hurwitz scale
+      asymptotically;
+\item the completed zeta function obeys $\xi\circ J=\xi$, including equality
+      on the two refinement roots;
+\item $E\to M$ carries an $SO(2)$ connection with nonzero source-free Maxwell
+      curvature and exact local gluing;
+\item within a one-parameter family, curvature is fixed while relative holonomy
+      is arbitrarily prescribable in $SO(2)$;
+\item two timelike paths with common endpoints have unequal proper time.
+\end{enumerate}
+No equality or functional dependence is asserted among the zeta remainder,
+Maxwell curvature, relative holonomy, proper-time difference, and gluing
+functional.
+\end{theorem}
+
+The proof occupies Sections~II--VIII.  Each interface is typed before it is
+used, and the nonidentifications are collected in Section~IX.
+
+\section{The carrier and the alternating factorization}
+
+Let $V=\R^2$ with its standard Euclidean inner product.  We use the same real
+space as $\C$ for phase and as $\mathbb P(V)\cong\RP^1$ for projective action.
+Define
+\begin{equation}\label{eq:generators}
+C_1=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad
+\Pi=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+M_J=\begin{pmatrix}-1&1\\0&1\end{pmatrix}.
+\end{equation}
+Then
+\begin{equation}\label{eq:d4relations}
+C_1^2=-I,\qquad C_1^4=I,\qquad
+\Pi^2=I,\qquad \Pi C_1\Pi=C_1^{-1},\qquad M_J^2=I.
+\end{equation}
+Thus $\langle C_1,\Pi\rangle\cong D_4$, the order-eight symmetry group of the
+square.  Under $V\cong\C$, multiplication by $i$ is $C_1$, and
+\begin{equation}\label{eq:exp}
+e^{\theta C_1}=I\cos\theta+C_1\sin\theta,
+\qquad e^{\pi C_1}=-I,\qquad e^{2\pi C_1}=I.
+\end{equation}
+The projective image has kernel $\{I,-I\}$, hence
+\begin{equation}\label{eq:projectived4}
+\mathbb P(D_4)\cong D_4/\{\pm I\}\cong V_4.
+\end{equation}
+
+Let $\mathbb P(A)$ denote the projective map induced by an invertible real
+matrix $A$.  Put
+\begin{equation}\label{eq:projmaps}
+\sigma=\mathbb P(C_1),\qquad J_{\mathbb P}=\mathbb P(M_J).
+\end{equation}
+On the affine chart $\iota(x)=[x:1]$, these are
+\begin{equation}\label{eq:affineinvolutions}
+\sigma_{\mathrm{aff}}(x)=-\frac1x,\qquad
+J_{\mathrm{aff}}(x)=1-x.
+\end{equation}
+Both projective maps are involutions.  They are distinct because the signs of
+$\det C_1=1$ and $\det M_J=-1$ cannot be changed by rescaling a real matrix
+representative.
+
+The central factorization is
+\begin{equation}\label{eq:factorization}
+\boxed{
+Q=M_JC_1=
+\begin{pmatrix}1&1\\1&0\end{pmatrix}.}
+\end{equation}
+Its characteristic polynomial is $\lambda^2-\lambda-1$.  Cayley-Hamilton gives
+\begin{equation}\label{eq:refinementlaw}
+Q^2=Q+I,\qquad Q^{-1}=Q-I=C_1^{-1}M_J.
+\end{equation}
+Defining $\cT=\mathbb P(Q)$, we obtain
+\begin{equation}\label{eq:orderedcomposition}
+\cT=J_{\mathbb P}\circ\sigma,\qquad
+\cT^{-1}=\sigma\circ J_{\mathbb P}.
+\end{equation}
+On the affine chart,
+\begin{equation}\label{eq:T}
+T(x)=1+\frac1x,\qquad T^{-1}(x)=\frac1{x-1}.
+\end{equation}
+The order matters.  Directly,
+\begin{equation}\label{eq:commutator}
+[Q,C_1]=QC_1-C_1Q=
+\begin{pmatrix}2&-1\\-1&-2\end{pmatrix}\ne0.
+\end{equation}
+
+\subsection{The maximal meeting}
+
+Let $P(s)=s^2-s-1$ and define the affine reflection
+\begin{equation}\label{eq:J}
+J(s)=1-s.
+\end{equation}
+The polynomial is invariant under $J$:
+\begin{equation}\label{eq:Pinvariance}
+P\circ J=P.
+\end{equation}
+Its roots are
+\begin{equation}\label{eq:roots}
+\Phi=\frac{1+\sqrt5}{2},\qquad
+J(\Phi)=\frac{1-\sqrt5}{2}=-\frac1\Phi.
+\end{equation}
+Equivalently, a whole-remainder proportion $W=L+R$ and
+$W/L=L/R=x$ yields $x=T(x)$, hence $P(x)=0$.  In the centered coordinate
+$w=s-1/2$, the same equation is $w^2=5/4$.
+
+\begin{proposition}[Maximal equalizer]\label{prop:equalizer}
+Let $\mathcal R_\Phi=\{\Phi,J(\Phi)\}$.  Then
+\begin{equation}\label{eq:equalizer}
+\Eq(J_{\mathbb P},\sigma)=\Fix(\cT)=\Fix(\cT^{-1})
+=\{[x:1]:x\in\mathcal R_\Phi\}.
+\end{equation}
+This two-point set is the largest possible equalizer of two distinct elements
+of $PGL(2,\R)$.
+\end{proposition}
+
+\begin{proof}
+Since $J_{\mathbb P}$ is an involution,
+$J_{\mathbb P}(p)=\sigma(p)$ if and only if
+$(J_{\mathbb P}\circ\sigma)(p)=p$.  Neither $0$ nor $\infty$ is fixed by
+$\cT$.  On the affine chart, $T(x)=x$ if and only if $P(x)=0$, giving the two
+points in Eq.~\eqref{eq:equalizer}.  The inverse has the same fixed points.
+For distinct $f,g\in PGL(2,\R)$,
+$\Eq(f,g)=\Fix(g^{-1}f)$.  A nonidentity real projective transformation has at
+most two real eigenlines, hence at most two fixed points in $\RP^1$.
+\end{proof}
+
+\begin{corollary}\label{cor:dinfty}
+The group generated by the two projective involutions is infinite dihedral:
+\begin{equation}\label{eq:dinfty}
+\langle J_{\mathbb P},\sigma\rangle\cong D_\infty.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The eigenvalues of $Q$ are $\Phi$ and $-\Phi^{-1}$.  Their ratio has modulus
+$\Phi^2\ne1$, so $\cT=\mathbb P(Q)$ has infinite order.  Two involutions whose
+product has infinite order generate $D_\infty$.
+\end{proof}
+
+\section{Fibonacci dynamics and the hyperbolic axis}
+
+Let $\Fib_0=0$, $\Fib_1=1$, and
+$\Fib_{n+1}=\Fib_n+\Fib_{n-1}$ for $n\ge1$.
+
+\begin{proposition}[Fibonacci powers]\label{prop:fibpowers}
+For every $n\ge1$,
+\begin{equation}\label{eq:fibpowers}
+Q^n=\Fib_nQ+\Fib_{n-1}I
+=\begin{pmatrix}
+\Fib_{n+1}&\Fib_n\\
+\Fib_n&\Fib_{n-1}
+\end{pmatrix}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:projectivefib}
+(J_{\mathbb P}\circ\sigma)^n=\mathbb P(Q^n),
+\qquad
+\cT^n(\infty)=\frac{\Fib_{n+1}}{\Fib_n}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The assertion holds for $n=1$.  If
+$Q^n=\Fib_nQ+\Fib_{n-1}I$, then Eq.~\eqref{eq:refinementlaw} gives
+\[
+Q^{n+1}=\Fib_n(Q+I)+\Fib_{n-1}Q
+=\Fib_{n+1}Q+\Fib_nI.
+\]
+The matrix formula and projective statements follow.
+\end{proof}
+
+The ratios in Eq.~\eqref{eq:projectivefib} are the finite continued fractions
+$[1;1,\ldots,1]$ with $n$ entries.  The exact Binet normalization is
+\begin{equation}\label{eq:binet}
+\Fib_n=\frac{\Phi^n-J(\Phi)^n}{\Phi-J(\Phi)}
+=\frac{\Phi^n-J(\Phi)^n}{\sqrt5},
+\end{equation}
+and
+\begin{equation}\label{eq:exacterror}
+\Fib_{n+1}-\Phi\Fib_n=J(\Phi)^n.
+\end{equation}
+It follows that
+\begin{equation}\label{eq:scalederror}
+\sqrt5\,\Fib_n^2
+\left|\Phi-\frac{\Fib_{n+1}}{\Fib_n}\right|
+=1-(-1)^n\Phi^{-2n},
+\end{equation}
+so
+\begin{equation}\label{eq:hurwitzlimit}
+\lim_{n\to\infty}\sqrt5\,\Fib_n^2
+\left|\Phi-\frac{\Fib_{n+1}}{\Fib_n}\right|=1.
+\end{equation}
+Hurwitz's theorem~\cite{HardyWright,Khinchin} states that every irrational
+$\alpha$ has infinitely many
+rational approximants $p/q$ with
+\begin{equation}\label{eq:hurwitz}
+\left|\alpha-\frac pq\right|<\frac1{\sqrt5\,q^2},
+\end{equation}
+and that the constant is optimal uniformly over irrational $\alpha$.
+Equation~\eqref{eq:hurwitzlimit} places the Fibonacci convergents to $\Phi$ at
+that sharp asymptotic scale.  The same $\sqrt5$ is also the exact separation
+\begin{equation}\label{eq:rootgap}
+\Phi-J(\Phi)=\sqrt5
+\end{equation}
+of the two refinement branches.  These are two declared mathematical offices
+of one constant, not a causal relation.
+
+Taking determinants in Eq.~\eqref{eq:fibpowers} yields Cassini's identity,
+\begin{equation}\label{eq:cassini}
+\Fib_{n+1}\Fib_{n-1}-\Fib_n^2=(-1)^n.
+\end{equation}
+Thus even projective iterates preserve orientation and odd iterates reverse it.
+
+\subsection{Upper-half-plane realization}
+
+For $A=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)\in
+GL(2,\R)$, define the standard extended action on $\Hh$ by
+Refs.~\cite{Beardon,Lang}:
+\begin{equation}\label{eq:extendedaction}
+\rho_A(z)=
+\begin{cases}
+(az+b)/(cz+d),&\det A>0,\\[3pt]
+(a\overline z+b)/(c\overline z+d),&\det A<0.
+\end{cases}
+\end{equation}
+Then
+\begin{equation}\label{eq:hyperbolicmaps}
+\rho_{C_1}(z)=-\frac1z,\qquad
+\rho_{M_J}(z)=1-\overline z,\qquad
+\rho_Q(z)=1+\frac1{\overline z}.
+\end{equation}
+The first is rotation by $\pi$ about $i$.  The second is reflection in
+$\operatorname{Re}z=1/2$.  The third preserves the geodesic with endpoints
+$J(\Phi)$ and $\Phi$,
+\begin{equation}\label{eq:axis}
+\left|z-\frac12\right|=\frac{\sqrt5}{2},\qquad \operatorname{Im}z>0.
+\end{equation}
+
+\begin{proposition}[Glide displacement]\label{prop:glide}
+The map $\rho_Q$ is an orientation-reversing glide reflection along the axis
+\eqref{eq:axis}, with glide displacement $2\log\Phi$.  Its square is a
+hyperbolic translation of length $4\log\Phi$.
+\end{proposition}
+
+\begin{proof}
+The boundary fixed points solve $x=1+1/x$, hence are the two points of
+$\mathcal R_\Phi$.  The map has no fixed point in $\Hh$, so it is a glide
+reflection along their geodesic.  Moreover,
+\[
+Q^2=\begin{pmatrix}2&1\\1&1\end{pmatrix}\in SL(2,\R),
+\qquad \Tr(Q^2)=3,
+\]
+with eigenvalues $\Phi^2$ and $\Phi^{-2}$.  Its translation length is
+\begin{equation}\label{eq:translationlength}
+2\operatorname{arccosh}(3/2)=4\log\Phi.
+\end{equation}
+A glide reflection squares to translation by twice its displacement.
+\end{proof}
+
+Equations~\eqref{eq:fibpowers} and \eqref{eq:hyperbolicmaps} therefore describe
+one discrete orbit in three compatible readings: integer matrix coefficients,
+continued-fraction refinement, and alternating translation-reflection along a
+fixed hyperbolic axis.
+
+\section{The completed-zeta reflection}
+
+Let $\zeta_{\mathrm R}$ denote the analytically continued Riemann zeta function
+and define
+\begin{equation}\label{eq:xi}
+\xi(s)=\frac12s(s-1)\pi^{-s/2}
+\Gamma\!\left(\frac s2\right)\zeta_{\mathrm R}(s).
+\end{equation}
+The function $\xi$ is entire and satisfies the classical functional
+equation~\cite{Titchmarsh}
+\begin{equation}\label{eq:xifunctional}
+\xi(s)=\xi(1-s),
+\end{equation}
+or, using Eq.~\eqref{eq:J},
+\begin{equation}\label{eq:xiJ}
+\xi\circ J=\xi.
+\end{equation}
+Since the refinement roots form a $J$-pair,
+\begin{equation}\label{eq:xiroots}
+\xi(\Phi)=\xi(J(\Phi)).
+\end{equation}
+Also, because $\sigma_{\mathrm{aff}}$ exchanges these same two points,
+\begin{equation}\label{eq:restrictedxi}
+\left.(\xi\circ\sigma_{\mathrm{aff}})\right|_{\mathcal R_\Phi}
+=\left.\xi\right|_{\mathcal R_\Phi}.
+\end{equation}
+Equation~\eqref{eq:restrictedxi} is a two-point restriction, not a global
+identity on $\R^\times$.
+
+For the antiholomorphic reflection $J_{\Hh}(s)=1-\overline s$, Schwarz
+reflection and Eq.~\eqref{eq:xifunctional} give
+\begin{equation}\label{eq:modxi}
+\xi(J_{\Hh}(s))=\overline{\xi(s)},
+\qquad |\xi(J_{\Hh}(s))|=|\xi(s)|.
+\end{equation}
+This is the standard symmetry about the critical line.  Nothing here implies a
+claim about the location of zeta zeros.
+
+For later separation of types, define only the scalar remainder
+\begin{equation}\label{eq:epsilon}
+\epsilon_\Phi=\zeta_{\mathrm R}(\Phi)-\sqrt5.
+\end{equation}
+Then $\zeta_{\mathrm R}(\Phi)=\sqrt5+\epsilon_\Phi$ is an identity by
+definition.  No magnitude, geometric meaning, or coupling is assigned to
+$\epsilon_\Phi$.
+
+\section{Lorentzian bundle structure and exact gluing}
+
+Let $(M,g)$ be a time-oriented Lorentzian four-manifold and let $h$ be an
+auxiliary Riemannian metric on $M$.  Let $\pi:E\to M$ be an oriented rank-two
+real vector bundle with structure group $SO(2)$ and positive-definite fiber
+metric $h_E$.  On a finite trivializing cover $\{U_\alpha\}$, take local
+section representatives $q_\alpha:U_\alpha\to V$, transition maps
+$\cU_{\alpha\beta}:U_{\alpha\beta}\to SO(2)$, and local connection one-forms
+$\Ad_\alpha\in\Omega^1(U_\alpha)$; see
+Refs.~\cite{KobayashiNomizu,Nakahara,BaezMuniain}.
+
+Normalize
+\begin{equation}\label{eq:normalization}
+\cU_{\alpha\alpha}=I,\qquad
+\cU_{\beta\alpha}=\cU_{\alpha\beta}^{-1},
+\end{equation}
+and choose overlaps on which
+\begin{equation}\label{eq:lifts}
+\cU_{\alpha\beta}=e^{\chi_{\alpha\beta}C_1}
+\end{equation}
+for smooth real lifts $\chi_{\alpha\beta}$.  Different lifts differ locally by
+$2\pi\mathbb Z$, so $d\chi_{\alpha\beta}$ is lift-independent.  Define
+\begin{equation}\label{eq:covariantderivative}
+D_\alpha q_\alpha=dq_\alpha+\Ad_\alpha C_1q_\alpha.
+\end{equation}
+The connection law
+\begin{equation}\label{eq:connectionlaw}
+\Ad_\beta=\Ad_\alpha-d\chi_{\alpha\beta}
+\end{equation}
+makes $F_\alpha=d\Ad_\alpha$ global.  Because
+$\mathfrak{so}(2)=\R C_1$, the matrix-valued connection and curvature are
+\begin{equation}\label{eq:matrixcurvature}
+\widehat\Ad_\alpha=\Ad_\alpha C_1,\qquad
+\Omega_\alpha=d\widehat\Ad_\alpha+
+\widehat\Ad_\alpha\wedge\widehat\Ad_\alpha=F_\alpha C_1.
+\end{equation}
+The Abelian quadratic term vanishes.  Thus $C_1$ is at once the complex phase
+generator, the quarter-turn in $D_4$, the infinitesimal generator of parallel
+transport, and the Lie-algebra value of curvature.  This is shared carrier
+structure.  It is not equality of the scalar quantities multiplying $C_1$.
+
+The arithmetic reflection remains outside the gauge group.  Indeed,
+\begin{equation}\label{eq:MJnotorthogonal}
+M_J^{T}M_J=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\ne I,
+\qquad M_J\notin O(2).
+\end{equation}
+Hence $M_J$ is neither an $SO(2)$ structure transformation nor a fiber
+isometry.
+
+\subsection{A zero-detecting functional}
+
+Define the local defects
+\begin{align}
+\Delta^q_{\alpha\beta}
+  &=q_\beta-\cU_{\alpha\beta}q_\alpha,
+  \label{eq:qdefect}\\
+\Delta^{\Ad}_{\alpha\beta}
+  &=\Ad_\beta-\Ad_\alpha+d\chi_{\alpha\beta},
+  \label{eq:Adefect}\\
+\Delta^{\cU}_{\alpha\beta\gamma}
+  &=\cU_{\alpha\beta}\cU_{\beta\gamma}
+    \cU_{\gamma\alpha}-I.
+  \label{eq:Udefect}
+\end{align}
+Assume continuity and square-integrability with respect to $h$ and $h_E$.
+For fixed $\kappa_{\Ad},\kappa_{\cU}>0$, set
+\begin{align}
+\cF_q
+  &=\sum_{\alpha<\beta}\int_{U_{\alpha\beta}}
+    \|\Delta^q_{\alpha\beta}\|_{h_E}^2\dd\vol_h,
+  \label{eq:Fq}\\
+\cF_{\Ad}
+  &=\sum_{\alpha<\beta}\int_{U_{\alpha\beta}}
+    \|\Delta^{\Ad}_{\alpha\beta}\|_{h}^2\dd\vol_h,
+  \label{eq:FA}\\
+\cF_{\cU}
+  &=\sum_{\substack{\alpha<\beta<\gamma\\
+      U_{\alpha\beta\gamma}\ne\varnothing}}
+    \int_{U_{\alpha\beta\gamma}}
+    \|\Delta^{\cU}_{\alpha\beta\gamma}\|_{\mathrm{HS}}^2\dd\vol_h,
+  \label{eq:FU}\\
+\cF_\Lambda
+  &=\cF_q+\kappa_{\Ad}\cF_{\Ad}
+    +\kappa_{\cU}\cF_{\cU}.
+  \label{eq:Flambda}
+\end{align}
+
+\begin{proposition}[Exact gluing]\label{prop:gluing}
+Under the stated assumptions,
+\begin{equation}\label{eq:gluingiff}
+\cF_\Lambda=0
+\quad\Longleftrightarrow\quad
+\Delta^q_{\alpha\beta}=0,
+\quad\Delta^{\Ad}_{\alpha\beta}=0,
+\quad\Delta^{\cU}_{\alpha\beta\gamma}=0
+\end{equation}
+on every relevant overlap.
+\end{proposition}
+
+\begin{proof}
+Every integrand in Eq.~\eqref{eq:Flambda} is nonnegative.  If all defects
+vanish, the functional vanishes.  Conversely, a zero finite sum with positive
+coefficients forces each integral to vanish.  If a continuous squared norm
+were positive at one point, it would remain positive on a nonempty open
+neighborhood of positive $h$-volume, a contradiction.
+\end{proof}
+
+The auxiliary metric changes the numerical value of $\cF_\Lambda$ but not its
+zero locus.
+
+\subsection{Mirror covariance}
+
+Under
+\begin{equation}\label{eq:mirroraction}
+q_\alpha\mapsto\Pi q_\alpha,\qquad
+\Ad_\alpha\mapsto-\Ad_\alpha,\qquad
+\chi_{\alpha\beta}\mapsto-\chi_{\alpha\beta},\qquad
+\cU_{\alpha\beta}\mapsto\Pi\cU_{\alpha\beta}\Pi,
+\end{equation}
+the defects transform as
+\begin{equation}\label{eq:mirrordefects}
+\Delta^q\mapsto\Pi\Delta^q,\qquad
+\Delta^{\Ad}\mapsto-\Delta^{\Ad},
+\qquad \Delta^{\cU}\mapsto\Pi\Delta^{\cU}\Pi.
+\end{equation}
+Orthogonality of $\Pi$ therefore gives
+\begin{equation}\label{eq:mirrorfunctional}
+\cF_\Lambda(\Pi q,-\Ad,\Pi\cU\Pi;h,h_E)
+=\cF_\Lambda(q,\Ad,\cU;h,h_E).
+\end{equation}
+Curvature changes sign, $F\mapsto-F$, preserving the source-free Maxwell
+equations $dF=0$ and $d\star_gF=0$.
+
+\section{Relative phase, proper time, and independent tuning}
+
+For a piecewise-smooth path $\gamma:[0,1]\to M$, parallel transport solves
+\begin{equation}\label{eq:paralleltransport}
+\dot v+\Ad(\dot\gamma)C_1v=0.
+\end{equation}
+In a global Abelian trivialization,
+\begin{equation}\label{eq:pathtransport}
+P_\Ad(\gamma)=\exp\!\left(-C_1\int_\gamma\Ad\right).
+\end{equation}
+For paths $\gamma_1,\gamma_2:p\to q$, let
+$\ell_{12}=\gamma_1*\overline{\gamma_2}$.  Then
+\begin{equation}\label{eq:relativeholonomy}
+\Hol_\Ad(\ell_{12})=P_\Ad(\gamma_2)^{-1}P_\Ad(\gamma_1),
+\qquad
+\Delta_{\mathrm{phase}}(\gamma_1,\gamma_2)
+=\Hol_\Ad(\ell_{12})-I.
+\end{equation}
+If the paths are timelike, define
+\begin{equation}\label{eq:propertime}
+\tau[\gamma]=\frac1c\int
+\sqrt{-g(\dot\gamma,\dot\gamma)}\dd\lambda,
+\qquad
+\Delta_{\mathrm{time}}(\gamma_1,\gamma_2)
+=\tau[\gamma_1]-\tau[\gamma_2].
+\end{equation}
+The two differences have different codomains:
+$\Delta_{\mathrm{phase}}\in\operatorname{End}(E_p)$ and
+$\Delta_{\mathrm{time}}\in\R$.
+
+\begin{lemma}[Fixed curvature, variable holonomy]\label{lem:tuning}
+Let $M$ carry a closed one-form $\eta$ and a loop $\ell$ satisfying
+\begin{equation}\label{eq:eta}
+d\eta=0,\qquad \int_\ell\eta=2\pi.
+\end{equation}
+For a global $SO(2)$ connection form $\Ad_0$ on the trivial bundle, define
+\begin{equation}\label{eq:Aa}
+\Ad_a=\Ad_0+a\eta,\qquad a\in\R.
+\end{equation}
+Then
+\begin{equation}\label{eq:tuning}
+d\Ad_a=d\Ad_0,\qquad
+\Hol_{\Ad_a}(\ell)=\Hol_{\Ad_0}(\ell)e^{-2\pi aC_1}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The curvature statement follows from $d\eta=0$.  The holonomy statement
+follows from Eq.~\eqref{eq:pathtransport}, commutativity of $SO(2)$, and the
+normalization in Eq.~\eqref{eq:eta}.
+\end{proof}
+
+When $\int_\ell\Ad_0=0$, varying $a$ reaches every target element of $SO(2)$
+without changing curvature.
+
+\section{An explicit Lorentzian witness}
+
+Let
+\begin{equation}\label{eq:spacetime}
+M=\R_t\times S^1_\vartheta\times\R_x\times\R_y,
+\end{equation}
+and let $\eta$ be the standard closed one-form on $S^1$, normalized by
+$\int_{S^1}\eta=2\pi$.  Fix $c,\rho>0$ and define
+\begin{equation}\label{eq:metrics}
+g=-c^2dt^2+\rho^2\eta^2+dx^2+dy^2,
+\qquad
+h=c^2dt^2+\rho^2\eta^2+dx^2+dy^2.
+\end{equation}
+Take the trivial bundle $E=M\times V$.  Let $f\in C^2(\R)$ satisfy
+$f'\not\equiv0$, put
+\begin{equation}\label{eq:nullcoordinate}
+u=t-\frac{x}{c},
+\end{equation}
+and define
+\begin{equation}\label{eq:explicitconnection}
+\Ad_a=a\eta+f(u)\,dy.
+\end{equation}
+Its curvature is independent of $a$:
+\begin{equation}\label{eq:explicitF}
+F=d\Ad_a=f'(u)\,du\wedge dy.
+\end{equation}
+Clearly $dF=0$.  The nonzero coordinate components are
+\begin{equation}\label{eq:Fcomponents}
+F_{ty}=f'(u),\qquad F_{xy}=-\frac1c f'(u).
+\end{equation}
+Since the metric coefficients are constant,
+\begin{equation}\label{eq:maxwellcheck}
+\nabla_\mu F^{\mu y}
+=\partial_tF^{ty}+\partial_xF^{xy}
+=-\frac1{c^2}f''(u)+\frac1{c^2}f''(u)=0,
+\end{equation}
+and the other divergences vanish.  Hence, in the standard differential-form
+description of source-free electromagnetism~\cite{Wald},
+\begin{equation}\label{eq:maxwell}
+dF=0,\qquad d\star_gF=0,\qquad F\ne0.
+\end{equation}
+The dependence on $u=t-x/c$ is a propagating plane-wave profile.
+
+Restrict the global bundle, connection, and any global section $q$ to a finite
+trivializing cover, using identity transition maps.  Every defect in
+Eqs.~\eqref{eq:qdefect}--\eqref{eq:Udefect} vanishes, so
+\begin{equation}\label{eq:explicitgluing}
+\cF_\Lambda=0.
+\end{equation}
+
+Fix
+\begin{equation}\label{eq:endpoints}
+p=(0,[0],0,0),\qquad q=(T,[0],0,0),
+\qquad T>\frac{2\pi\rho}{c},
+\end{equation}
+and define, for $0\le t\le T$,
+\begin{equation}\label{eq:paths}
+\gamma_0(t)=(t,[0],0,0),\qquad
+\gamma_1(t)=\left(t,\left[\frac{2\pi t}{T}\right],0,0\right).
+\end{equation}
+Both paths are timelike and join $p$ to $q$.  Their proper times are
+\begin{equation}\label{eq:times}
+\tau[\gamma_0]=T,
+\qquad
+\tau[\gamma_1]=T\sqrt{1-\left(\frac{2\pi\rho}{cT}\right)^2},
+\end{equation}
+hence
+\begin{equation}\label{eq:timedifference}
+\Delta_{\mathrm{time}}(\gamma_0,\gamma_1)\ne0.
+\end{equation}
+
+Let $\ell=\gamma_1*\overline{\gamma_0}$.  Along both paths $dy=0$, while
+$\ell$ winds once around $S^1$.  Therefore
+\begin{equation}\label{eq:loopholonomy}
+\int_\ell f(u)\,dy=0,\qquad
+\int_\ell\eta=2\pi,\qquad
+\Hol_{\Ad_a}(\ell)=e^{-2\pi aC_1}.
+\end{equation}
+Choose $a\notin\mathbb Z$.  Then
+\begin{equation}\label{eq:phasedifference}
+\Delta_{\mathrm{phase}}(\gamma_1,\gamma_0)\ne0.
+\end{equation}
+Varying $a$ prescribes the holonomy arbitrarily in $SO(2)$ while leaving the
+nonzero Maxwell curvature in Eq.~\eqref{eq:explicitF} unchanged.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Equations~\eqref{eq:generators}--\eqref{eq:dinfty} provide the common carrier,
+square symmetry, exact projective factorization, maximal equalizer, and
+infinite-dihedral dynamics.  Proposition~\ref{prop:fibpowers},
+Eqs.~\eqref{eq:binet}--\eqref{eq:hurwitzlimit}, and
+Proposition~\ref{prop:glide} give Fibonacci iteration, the sharp approximation
+scale, and the hyperbolic realization.  Equations~\eqref{eq:xiJ} and
+\eqref{eq:xiroots} place the completed-zeta reflection without extending its
+scope.  Proposition~\ref{prop:gluing} supplies exact local compatibility.
+The explicit data in Eqs.~\eqref{eq:spacetime}--\eqref{eq:phasedifference}
+satisfy the source-free Maxwell equations, exact gluing, nontrivial relative
+holonomy, and unequal proper time simultaneously.  Lemma~\ref{lem:tuning}
+proves independent curvature and holonomy tuning.
+\end{proof}
+
+\section{The strict boundary}
+
+The construction contains several nonzero or exactly vanishing quantities,
+but they are not of one type:
+\begin{equation}\label{eq:types}
+\begin{aligned}
+\epsilon_\Phi &\in\R,\\
+F &\in\Omega^2(M),\\
+\Delta_{\mathrm{phase}} &\in\operatorname{End}(E_p),\\
+\Delta_{\mathrm{time}} &\in\R,\\
+\cF_\Lambda &\in\R_{\ge0}.
+\end{aligned}
+\end{equation}
+No equation in this paper identifies these objects or makes one a function of
+another.  In particular:
+\begin{enumerate}[label=(\alph*),leftmargin=2.1em,itemsep=0.3ex,topsep=0.6ex]
+\item the completed-zeta reflection supplies no statement about the location
+      of zeta zeros;
+\item $M_J\notin O(2)$, so the arithmetic reflection does not act as a gauge
+      transformation or fiber isometry;
+\item the common generator $C_1$ does not constrain the scalar Maxwell profile
+      $f'(u)$;
+\item exact gluing $\cF_\Lambda=0$ does not force zero curvature, zero holonomy,
+      or equal proper time;
+\item nonzero holonomy and unequal proper time are jointly readable but are not
+      equated.
+\end{enumerate}
+
+This boundary is part of the theorem.  The result is coexistence under exact
+typing, not derivation of one canonical theory from another.
+
+\section{Conclusion}
+
+The factorization
+\begin{equation}\label{eq:closingfactorization}
+M_JC_1=
+\begin{pmatrix}1&1\\1&0\end{pmatrix}
+\end{equation}
+is the smallest algebraic hinge in the construction.  Its alternating
+projective action produces the Fibonacci matrices exactly, locates a maximal
+two-point meeting of distinct involutions, and fixes a hyperbolic axis whose
+length scale is governed by $\Phi$.  The same two-dimensional carrier admits a
+separate $SO(2)$ gauge office on a Lorentzian manifold, where exact gluing,
+nonzero Maxwell curvature, variable holonomy, and unequal proper time coexist
+in one explicit witness.
+
+The point is exact and limited: these structures can inhabit one realization
+without being identified.  Compatibility is proved by construction.  Every
+stronger bridge remains open.
+
+\section*{Acknowledgments}
+
+The author used generative language-model tools for editorial assistance and
+algebraic cross-checking.  Every definition, argument, citation, and conclusion
+was reviewed by the author, who accepts full responsibility for the manuscript.
+
+\section*{Author declarations}
+
+\noindent\textit{Conflict of interest.}
+The author has no conflicts to disclose.
+
+\medskip
+\noindent\textit{Author contributions.}
+Anthony Vito Coppa: Conceptualization; Formal analysis; Investigation;
+Methodology; Writing, original draft; Writing, review and editing.
+
+\medskip
+\noindent\textit{Data availability.}
+Data sharing is not applicable to this article because no new data were created
+or analyzed.  All mathematical data supporting the result are contained in the
+article.
+
+\begin{thebibliography}{99}
+\small
+
+\bibitem{BaezMuniain}
+J. C. Baez and J. P. Muniain,
+\textit{Gauge Fields, Knots and Gravity}
+(World Scientific, Singapore, 1994).
+
+\bibitem{Beardon}
+A. F. Beardon,
+\textit{The Geometry of Discrete Groups}, Graduate Texts in Mathematics,
+Vol. 91 (Springer, New York, 1983).
+
+\bibitem{HardyWright}
+G. H. Hardy and E. M. Wright,
+\textit{An Introduction to the Theory of Numbers}, 6th ed., revised by
+D. R. Heath-Brown and J. H. Silverman (Oxford University Press, Oxford, 2008).
+
+\bibitem{Khinchin}
+A. Ya. Khinchin,
+\textit{Continued Fractions} (Dover, Mineola, NY, 1997).
+
+\bibitem{KobayashiNomizu}
+S. Kobayashi and K. Nomizu,
+\textit{Foundations of Differential Geometry}, Vol. I
+(Wiley, New York, 1963).
+
+\bibitem{Lang}
+S. Lang,
+\textit{$SL_2(\mathbb R)$}, Graduate Texts in Mathematics, Vol. 105
+(Springer, New York, 1985).
+
+\bibitem{Nakahara}
+M. Nakahara,
+\textit{Geometry, Topology and Physics}, 2nd ed.
+(Institute of Physics Publishing, Bristol, 2003).
+
+\bibitem{Titchmarsh}
+E. C. Titchmarsh,
+\textit{The Theory of the Riemann Zeta-Function}, 2nd ed., revised by
+D. R. Heath-Brown (Oxford University Press, Oxford, 1986).
+
+\bibitem{Wald}
+R. M. Wald,
+\textit{General Relativity} (University of Chicago Press, Chicago, 1984).
+
+\end{thebibliography}
+
+\end{document}
